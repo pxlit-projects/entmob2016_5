@@ -15,4 +15,3 @@ Final version:
  - Laurens Kits van Heijningen
  - Rolf Stifter
  - Sander Elsen
- - 
