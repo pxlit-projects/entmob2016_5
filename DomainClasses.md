@@ -1,26 +1,26 @@
 Magazijn:
-  ID
-  List<Rekken>
-
+  - ID (int)
+  - Rekken (lijst)
+  
 Rek:
-  ID
-  Locatie
-  List<Producten>
-
+  - ID
+  - Locatie
+  - List<Producten>
+  
 Product:
-  ID
-  RekID
-  Naam
-  MinimumTemperatuur
-  MaximumTemperatuur
-  MinimumVochtigheid
-  MaximumVochtigheid
-  MinimumLuchtdruk
-  MaximumLuchtdruk
-
+  - ID
+  - RekID
+  - Naam
+  - MinimumTemperatuur
+  - MaximumTemperatuur
+  - MinimumVochtigheid
+  - MaximumVochtigheid
+  - MinimumLuchtdruk
+  - MaximumLuchtdruk
+  
 Waarneming:
-  ID
-  Timestamp
-  Temperatuur
-  Vochtigheid
-  Luchtdruk
+  - ID
+  - Timestamp
+  - Temperatuur
+  - Vochtigheid
+  - Luchtdruk
