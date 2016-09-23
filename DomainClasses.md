@@ -3,24 +3,24 @@ Magazijn:
   - Rekken (lijst)
   
 Rek:
-  - ID
-  - Locatie
-  - List<Producten>
+  - ID (int)
+  - Locatie (coördinaat)
+  - Producten (lijst)
   
 Product:
-  - ID
-  - RekID
-  - Naam
-  - MinimumTemperatuur
-  - MaximumTemperatuur
-  - MinimumVochtigheid
-  - MaximumVochtigheid
-  - MinimumLuchtdruk
-  - MaximumLuchtdruk
+  - ID (int)
+  - RekID (int)
+  - Naam (string)
+  - MinimumTemperatuur (double)
+  - MaximumTemperatuur (double)
+  - MinimumVochtigheid (double)
+  - MaximumVochtigheid (double)
+  - MinimumLuchtdruk (double)
+  - MaximumLuchtdruk (double)
   
 Waarneming:
-  - ID
-  - Timestamp
-  - Temperatuur
-  - Vochtigheid
-  - Luchtdruk
+  - ID (int)
+  - Timestamp (???)
+  - Temperatuur (double)
+  - Vochtigheid (double)
+  - Luchtdruk (double)
