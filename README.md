@@ -18,7 +18,7 @@ bestuurder voorstelt in de uiteindelijke versie. Ook zal het management of de pe
 in het magazijn deze info kunnen raadplegen op de desktop applicatie.
 
 Architecture: (!warning this is subject to change)
-![alt tag](https://raw.githubusercontent.com/pxlit-projects/entmob2016_5/master/architecture/architecture.png)
+![alt tag](/architecture/architecture.png?raw=true)
 
 Prototype:
   - Auto afstandsbediening
