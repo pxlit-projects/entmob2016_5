@@ -17,6 +17,9 @@ Ons prototype bestaat uit het plaatsen van de sensortag samen met een smartphone
 bestuurder voorstelt in de uiteindelijke versie. Ook zal het management of de persoon die instaat voor het regelen van de temperatuur
 in het magazijn deze info kunnen raadplegen op de desktop applicatie.
 
+Architecture: (!warning this is subject to change)
+![alt tag](https://raw.githubusercontent.com/pxlit-projects/entmob2016_5/master/architecture/architecture.png)
+
 Prototype:
   - Auto afstandsbediening
   - Temperatuur, luchtvochtigheid
