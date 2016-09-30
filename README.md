@@ -1,5 +1,5 @@
 # entmob2016_5
-##Beschrijving  
+##Beschrijving Temp Track Tech/Triple T/TTT
 Tegenwoordig worden in veel bedrijven voortdurend de huidige temperatuur bijgehouden. Als deze temperatuur niet
 voldoet aan de eisen van de producten in het magazijn, moet deze aangepast worden. Wij willen de kost verlagen en de
 efficiëntie verhogen van het meten door vaste thermometers in elk hoekje en gaatje te vervangen met sensortags, en
@@ -12,6 +12,10 @@ wordt aangezien er hier een constante temperatuur aanwezig moet zijn.
 
 Door middel van deze opstelling zullen al deze factors continu gemonitord kunnen worden op de app én de desktop app. Zo zullen er verschillende
 variabelen (temperatuur, luchtdruk, vochtigheid) beschikbaar zijn in cijfers en grafiekvormen.
+
+Validatieregels worden beheerd door een extern systeem, dat meestal het algemeen inventarisatiesysteem van de onderneming zal zijn. Dit betekend
+dat TTT eigenlijk geen validatieregels in gevallen zoals deze heeft: "Product A zit op plaats X, maar persoon Z wil product B ook op plaats X
+zetten". Een goed iventarisatiesysteem doet normaal zelf de check of er op een plaats al een product zit.
 
 Ons prototype bestaat uit het plaatsen van de sensortag samen met een smartphone op een RC auto, die de heftruck en de smartphone van de heftruck-
 bestuurder voorstelt in de uiteindelijke versie. Ook zal het management of de persoon die instaat voor het regelen van de temperatuur
