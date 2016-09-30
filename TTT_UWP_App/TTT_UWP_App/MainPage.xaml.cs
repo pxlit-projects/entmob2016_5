@@ -26,9 +26,6 @@ namespace TTT_UWP_App
         public MainPage()
         {
             this.InitializeComponent();
-
-            ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
-            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
     }
 }
