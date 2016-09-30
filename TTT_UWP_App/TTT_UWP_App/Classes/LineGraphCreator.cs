@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Shapes;
 //Daan Bergmans
 //3AONc
 //PXL-IT
-namespace UWP_Desktop_App.Classes
+namespace TTT_UWP_App.Classes
 {
     public class LineGraphCreator
     {
