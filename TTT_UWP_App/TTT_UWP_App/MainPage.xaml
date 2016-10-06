@@ -5,9 +5,51 @@
     xmlns:local="using:TTT_UWP_App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-
+    mc:Ignorable="d"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts">
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="1215,0,0,0" VerticalAlignment="Top"/>
+        <StackPanel x:Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0, 1, 60, 0"/>
+        </StackPanel>
+        <Grid x:Name="contentGrid" Margin="50,50,50,50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Temperature graph</TextBlock>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="0" Margin="5, 0, 10, 15">
+
+            </Border>
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Humidity graph</TextBlock>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="1" Margin="10, 0, 10 ,15">
+
+            </Border>
+            <TextBlock Grid.Row="0" Grid.Column="2" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Air pressure graph</TextBlock>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="2" Margin="5, 0, 10, 15">
+
+            </Border>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Employee productivity</TextBlock>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="0" Margin="5, 0, 10, 15">
+
+            </Border>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Measured extremes</TextBlock>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="1" Margin="5, 0, 10, 15">
+                <ListBox />
+            </Border>
+            <TextBlock Grid.Row="2" Grid.Column="2" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Product list</TextBlock>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="2" Margin="5, 0, 10, 15">
+                <ListBox>
+
+                </ListBox>
+            </Border>
+        </Grid>
     </Grid>
 </Page>
