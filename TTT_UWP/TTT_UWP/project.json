@@ -3,12 +3,7 @@
     "Microsoft.ApplicationInsights": "1.0.0",
     "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
     "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "Syncfusion.OfficeChart.UWP46": "14.3.0.49",
-    "Syncfusion.SfBulletGraph.UWP46": "14.3.0.49",
-    "Syncfusion.SfChart.UWP46": "14.3.0.49",
-    "Syncfusion.SfDiagram.UWP46": "14.3.0.49",
-    "Xamarin.Forms": "2.3.2.127"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
   },
   "frameworks": {
     "uap10.0": {}
