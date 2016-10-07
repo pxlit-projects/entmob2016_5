@@ -12,6 +12,8 @@ namespace TTT_UWP.Utility
         private Action<object> execute;
         private Predicate<object> canExecute;
 
+        public event EventHandler CanExecuteChanged;
+
         public CustomCommand(Action<object> execute, Predicate<object> canExecute)
         {
             this.execute = execute;

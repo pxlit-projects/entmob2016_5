@@ -5,7 +5,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TTT_UWP.Classes;
+using TTT_UWP.Utility;
 
 namespace TTT_UWP.ViewModels
 {
@@ -14,6 +16,36 @@ namespace TTT_UWP.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private ObservableCollection<Magazijn> magazijnen;
         private Magazijn selectedMag;
+
+        public ICommand ChangeMagCommand { get; set; }
+
+        public MainPageViewModel()
+        {
+            LoadData();
+            LoadCommands();
+        }
+
+        private void LoadData()
+        {
+            //laad magazijnen
+        }
+
+        private void LoadCommands()
+        {
+            ChangeMagCommand = new CustomCommand(ChangeMag, CanChangeMag);
+        }
+
+        private void ChangeMag(object obj)
+        {
+            
+        }
+
+        private bool CanChangeMag(object obj)
+        {
+            if (SelectedMag != null)
+                return true;
+            return false;
+        }
 
         private void RaisePropertyChanged(string propertyName)
         {
