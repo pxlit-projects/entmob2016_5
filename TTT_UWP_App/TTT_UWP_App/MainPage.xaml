@@ -9,5 +9,17 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="1215,0,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TempGraphLabel" HorizontalAlignment="Left" Margin="64,117,0,0" TextWrapping="Wrap" Text="Temperature graph" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <Image x:Name="TempImage"  HorizontalAlignment="Left" Height="199" Margin="64,142,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBlock x:Name="HumidityGraphLabel" HorizontalAlignment="Left" Margin="538,117,0,0" TextWrapping="Wrap" Text="Humidity graph" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <Image x:Name="HumidityImage" HorizontalAlignment="Left" Height="199" Margin="538,142,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBlock x:Name="AirPressureGraphLabel" HorizontalAlignment="Left" Margin="1035,117,0,0" TextWrapping="Wrap" Text="Air pressure graph" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <Image x:Name="AirPressureImage" HorizontalAlignment="Left" Height="199" Margin="1035,142,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBlock x:Name="EmployeeProductivityLabel" HorizontalAlignment="Left" Margin="64,423,0,0" TextWrapping="Wrap" Text="Employee productivity graph" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <Image x:Name="EmpProdImage" HorizontalAlignment="Left" Height="199" Margin="64,448,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBlock x:Name="MeasuredExtremersLabel" HorizontalAlignment="Left" Margin="538,423,0,0" TextWrapping="Wrap" Text="Measured extremes" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <Image x:Name="MeasuredExtremesImage" HorizontalAlignment="Left" Height="199" Margin="538,448,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBlock x:Name="ProductListLabel" HorizontalAlignment="Left" Margin="1035,423,0,0" TextWrapping="Wrap" Text="Product List" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <Image x:Name="ProductListImage" HorizontalAlignment="Left" Height="199" Margin="1035,448,0,0" VerticalAlignment="Top" Width="193"/>
     </Grid>
 </Page>
