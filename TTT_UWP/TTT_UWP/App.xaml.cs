@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace TTT_UWP_App
+namespace TTT_UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -43,12 +43,12 @@ namespace TTT_UWP_App
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
-//#if DEBUG
-//            if (System.Diagnostics.Debugger.IsAttached)
-//            {
-//                this.DebugSettings.EnableFrameRateCounter = true;
-//            }
-//#endif
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                this.DebugSettings.EnableFrameRateCounter = true;
+            }
+#endif
 
             Frame rootFrame = Window.Current.Content as Frame;
 

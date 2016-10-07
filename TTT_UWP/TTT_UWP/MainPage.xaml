@@ -1,13 +1,12 @@
 ﻿<Page
-    x:Class="TTT_UWP_App.MainPage"
+    x:Class="TTT_UWP.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:TTT_UWP_App"
+    xmlns:local="using:TTT_UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts">
-    
+    mc:Ignorable="d">
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel x:Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
             <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0, 1, 60, 0"/>
