@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TTT_UWP
+namespace TTT_UWP.ViewModels
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    public class DetailsPageViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
 
     }
 }
