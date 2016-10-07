@@ -29,7 +29,6 @@ namespace TTT_UWP
 
         public void DoSomething()
         {
-            DataTable dt = new DataTable();
 
         }
     }
