@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Pageitem template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace TTT_UWP_App
 {
@@ -25,25 +25,10 @@ namespace TTT_UWP_App
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    {
-
-        public ObservableCollection<TestItem> Tests { get; set; }
-
+    {       
         public MainPage()
         {
             this.InitializeComponent();
-
-            this.Tests = new ObservableCollection<TestItem>
-                {
-                    new TestItem()
-                {
-                    MyString = "Hoi", MyInt = 666
-                },
-                     new TestItem()
-                {
-                    MyString = "Hoi2", MyInt = 1666
-                }
-            };
         }
     }
 }
