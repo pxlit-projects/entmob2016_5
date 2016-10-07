@@ -30,16 +30,24 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Temperature graph</TextBlock>
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="0" Margin="5,10,10,15">
-                <syncfusion:SfChart Margin="-10,-16,8,-26" Name="TemperatureGraph">
-                    <syncfusion:LineSeries
-                        
+            
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="0" Margin="5,0,10,15">
+                <Button Click="Temp_Button_Click">
+                <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent">
+                    <syncfusion:LineSeries                        
                         ItemsSource="{Binding Temps}"
                         XBindingPath="Date"
-                        YBindingPath="Temp" Margin="-629,123,629,-123">
-                    </syncfusion:LineSeries>
+                        YBindingPath="Temp"/>
+                    <syncfusion:SfChart.PrimaryAxis>
+                        <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
+                    </syncfusion:SfChart.PrimaryAxis>
+                    <syncfusion:SfChart.SecondaryAxis>
+                        <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
+                    </syncfusion:SfChart.SecondaryAxis>
                 </syncfusion:SfChart>
+                </Button>
             </Border>
+            
             <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Humidity graph</TextBlock>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="1" Margin="10, 0, 10 ,15">
 
