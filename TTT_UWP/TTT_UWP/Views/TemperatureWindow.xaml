@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="TTT_UWP.Views.TemperatureWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TTT_UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="0,0,0,142">
+            <syncfusion:LineSeries                        
+                        ItemsSource="{Binding Temps}"
+                        XBindingPath="Date"
+                        YBindingPath="Temp"/>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent"/>
+            </syncfusion:SfChart.PrimaryAxis>
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
+            </syncfusion:SfChart.SecondaryAxis>
+        </syncfusion:SfChart>
+    </Grid>
+</Page>

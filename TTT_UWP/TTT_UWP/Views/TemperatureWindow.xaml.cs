@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using TTT_UWP.Views;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -15,14 +14,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace TTT_UWP
-{
-    public sealed partial class MainPage : Page
-    {
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
+namespace TTT_UWP.Views
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class TemperatureWindow : Page
+    {
         public ObservableCollection<TemperatureMeasurement> Temps { get; set; }
 
-        public MainPage()
+        public TemperatureWindow()
         {
             this.InitializeComponent();
             ChangeLayout();
@@ -30,7 +33,6 @@ namespace TTT_UWP
 
         public void ChangeLayout()
         {
-            TemperatureGraph.PrimaryAxis.Visibility = Visibility.Collapsed;
 
             this.Temps = new ObservableCollection<TemperatureMeasurement>
             {
@@ -42,11 +44,6 @@ namespace TTT_UWP
                 new TemperatureMeasurement { Date = "6", Temp = 23},
             };
             DataContext = this;
-        }
-
-        private void Temp_Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(TemperatureWindow));            
         }
     }
 }
