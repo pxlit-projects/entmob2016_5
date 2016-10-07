@@ -11,6 +11,7 @@ Regions:
   - ID (int)
   - Name (string)
   - WarehouseID (int)
+  - SensorTagID (int)
   - Racks (lijst)
   - Observations (lijst)
   
