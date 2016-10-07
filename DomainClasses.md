@@ -1,5 +1,6 @@
 Magazijn:
   - ID (int)
+  - Naam (string)
   - Rekken (lijst)
   
 Rek:
