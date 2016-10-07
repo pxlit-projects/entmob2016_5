@@ -6,21 +6,41 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:sfss="using:Syncfusion.UI.Xaml.Spreadsheet"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="0,0,0,142">
+        <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,599">
             <syncfusion:LineSeries                        
                         ItemsSource="{Binding Temps}"
                         XBindingPath="Date"
-                        YBindingPath="Temp"/>
+                        YBindingPath="Temp" Margin="0,59,0,-151"/>
             <syncfusion:SfChart.PrimaryAxis>
                 <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent"/>
             </syncfusion:SfChart.PrimaryAxis>
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
+                <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" Height="436" Width="31" />
             </syncfusion:SfChart.SecondaryAxis>
         </syncfusion:SfChart>
-        
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="269" Margin="10,441,0,0" VerticalAlignment="Top" Width="1260">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Temp}" 
+                           Margin="20,0,20,8"
+                           FontSize="24" 
+                           FontStyle="Italic" 
+                           FontWeight="SemiBold"
+                           Foreground="DarkBlue" />
+                        <TextBlock Text="{Binding Day}" 
+                           Margin="20,0,20,8"
+                           FontSize="16"
+                           Foreground="DarkGray" 
+                           Opacity="0.8" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Page>
