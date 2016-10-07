@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TTT_UWP
+namespace TTT_UWP.Extensions
 {
     public static class ListExtensions
     {

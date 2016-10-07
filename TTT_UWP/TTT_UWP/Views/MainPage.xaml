@@ -6,8 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
-    mc:Ignorable="d"
-    xmlns:ViewModels="using:TTT_UWP.ViewModels">
+    xmlns:viewmodel="using:TTT_UWP.ViewModels"
+    mc:Ignorable="d">
+    
+    <Page.DataContext>
+        <viewmodel:MainPageViewModel/>
+    </Page.DataContext>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel x:Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
             <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}" SelectedValue="{Binding selectedMag.naam}"/>

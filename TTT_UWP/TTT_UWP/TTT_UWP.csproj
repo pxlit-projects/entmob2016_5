@@ -98,8 +98,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Classes\Magazijn.cs" />
+    <Compile Include="TemperatureMeasurement.cs" />
+    <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\DetailsPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\DetailsPage.xaml.cs">
