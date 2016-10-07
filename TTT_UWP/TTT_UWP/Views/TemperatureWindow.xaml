@@ -21,6 +21,5 @@
                 <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
             </syncfusion:SfChart.SecondaryAxis>
         </syncfusion:SfChart>
-        
     </Grid>
 </Page>
