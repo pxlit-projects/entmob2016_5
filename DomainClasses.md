@@ -1,7 +1,3 @@
-SensorTag:
-  - ID (int)
-  - RegionID (int)
-
 Warehouse:
   - ID (int)
   - Name (string)
@@ -11,7 +7,6 @@ Regions:
   - ID (int)
   - Name (string)
   - WarehouseID (int)
-  - SensorTagID (int)
   - Racks (lijst)
   - Observations (lijst)
   
@@ -33,7 +28,7 @@ Product:
   
 Observation:
   - ID (int)
-  - SensorTagID (int)
+  - RegionID (int)
   - Timestamp (timestamp)
   - Temperature (double)
   - Humidity (double)
