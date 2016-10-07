@@ -24,14 +24,21 @@ namespace TTT_UWP
         public MainPage()
         {
             this.InitializeComponent();
+            ChangeLayout();
+        }
+
+        public void ChangeLayout()
+        {
+            TemperatureGraph.PrimaryAxis.Visibility = Visibility.Collapsed;
+
             this.Temps = new ObservableCollection<TemperatureMeasurement>
             {
-                new TemperatureMeasurement { Date = "23/05/2016", Temp = 23},
-                new TemperatureMeasurement { Date = "24/05/2016", Temp = 24},
-                new TemperatureMeasurement { Date = "25/05/2016", Temp = 24},
-                new TemperatureMeasurement { Date = "26/05/2016", Temp = 23},
-                new TemperatureMeasurement { Date = "27/05/2016", Temp = 25},
-                new TemperatureMeasurement { Date = "28/05/2016", Temp = 23},
+                new TemperatureMeasurement { Date = "1", Temp = 23},
+                new TemperatureMeasurement { Date = "2", Temp = 24},
+                new TemperatureMeasurement { Date = "3", Temp = 24},
+                new TemperatureMeasurement { Date = "4", Temp = 23},
+                new TemperatureMeasurement { Date = "5", Temp = 25},
+                new TemperatureMeasurement { Date = "6", Temp = 23},
             };
             DataContext = this;
         }

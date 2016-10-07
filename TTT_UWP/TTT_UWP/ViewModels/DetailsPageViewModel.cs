@@ -10,7 +10,6 @@ namespace TTT_UWP.ViewModels
 {
     public class DetailsPageViewModel : INotifyPropertyChanged
     {
-        
-
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
