@@ -44,6 +44,8 @@ namespace TTT_UWP.Views
                 new TemperatureMeasurement { Date = "6", Temp = 23},
             };
             DataContext = this;
+
+            listView.ItemsSource = Temps;
         }
     }
 }
