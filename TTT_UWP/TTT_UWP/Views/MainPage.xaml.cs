@@ -24,6 +24,9 @@ namespace TTT_UWP
 
         public MainPage()
         {
+
+            //DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=MainPageViewModel}
+
             this.InitializeComponent();
             ChangeLayout();
         }

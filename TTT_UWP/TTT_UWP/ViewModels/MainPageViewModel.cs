@@ -12,19 +12,8 @@ namespace TTT_UWP.ViewModels
     public class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
         private ObservableCollection<Magazijn> magazijnen;
         private Magazijn selectedMag;
-
-        public MainPageViewModel()
-        {
-            LoadData();
-        }
-
-        private void LoadData()
-        {
-            //haal magazijnen op
-        }
 
         private void RaisePropertyChanged(string propertyName)
         {
@@ -47,8 +36,6 @@ namespace TTT_UWP.ViewModels
             }
         }
 
-        
-
         public Magazijn SelectedMag
         {
             get
@@ -61,7 +48,5 @@ namespace TTT_UWP.ViewModels
                 RaisePropertyChanged("SelectedMag");
             }
         }
-
-
     }
 }

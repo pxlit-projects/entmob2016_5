@@ -5,8 +5,13 @@
     xmlns:local="using:TTT_UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:TTT_UWP.ViewModels"
     mc:Ignorable="d">
-
+    
+    <Page.DataContext>
+        <viewmodel:MainPageViewModel/>
+    </Page.DataContext>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel x:Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0">
             <Button x:Name="btnBack" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Back" Margin="1"/>
