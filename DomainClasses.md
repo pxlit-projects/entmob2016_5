@@ -1,27 +1,35 @@
-Magazijn:
+Warehouse:
   - ID (int)
-  - Naam (string)
-  - Rekken (lijst)
+  - Name (string)
+  - Regions (lijst)
   
-Rek:
+Regions:
   - ID (int)
-  - Locatie (coördinaat)
-  - Producten (lijst)
+  - Name (string)
+  - WarehouseID (int)
+  - Racks (lijst)
+  - Observations (lijst)
+  
+Rack:
+  - ID (int)
+  - RegionID (int)
+  - Products (lijst)
   
 Product:
   - ID (int)
-  - RekID (int)
-  - Naam (string)
-  - MinimumTemperatuur (double)
-  - MaximumTemperatuur (double)
-  - MinimumVochtigheid (double)
-  - MaximumVochtigheid (double)
-  - MinimumLuchtdruk (double)
-  - MaximumLuchtdruk (double)
+  - Name (string)
+  - MinimumTemperature (double)
+  - MaximumTemperature (double)
+  - MinimumHumidity (double)
+  - MaximumHumidity (double)
+  - MinimumAirPressure (double)
+  - MaximumAirPressure (double)
+  - RackID (int)
   
-Waarneming:
+Observation:
   - ID (int)
-  - Timestamp (???)
-  - Temperatuur (double)
-  - Vochtigheid (double)
-  - Luchtdruk (double)
+  - RegionID (int)
+  - Timestamp (timestamp)
+  - Temperature (double)
+  - Humidity (double)
+  - AirPressure (double)
