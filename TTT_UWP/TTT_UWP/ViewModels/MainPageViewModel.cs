@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TTT_UWP.Classes;
+using TTT_UWP.Domainclasses;
 using TTT_UWP.Utility;
 
 namespace TTT_UWP.ViewModels
@@ -14,10 +15,11 @@ namespace TTT_UWP.ViewModels
     public class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private ObservableCollection<Magazijn> magazijnen;
-        private Magazijn selectedMag;
 
-        public ICommand ChangeMagCommand { get; set; }
+        private ObservableCollection<Warehouse> warehouses;
+        private Warehouse SelectedWarehouse;
+
+        public ICommand ChangeWarehouseCommand { get; set; }
 
         public MainPageViewModel()
         {
@@ -27,22 +29,22 @@ namespace TTT_UWP.ViewModels
 
         private void LoadData()
         {
-            //laad magazijnen
+            
         }
 
         private void LoadCommands()
         {
-            ChangeMagCommand = new CustomCommand(ChangeMag, CanChangeMag);
+            ChangeWarehouseCommand = new CustomCommand(ChangeWarehouse, CanChangeWarehouse);
         }
 
-        private void ChangeMag(object obj)
+        private void ChangeWarehouse(object obj)
         {
             
         }
 
-        private bool CanChangeMag(object obj)
+        private bool CanChangeWarehouse(object obj)
         {
-            if (SelectedMag != null)
+            if (SelectedWarehouse != null)
                 return true;
             return false;
         }
@@ -55,28 +57,28 @@ namespace TTT_UWP.ViewModels
             }
         }
 
-        public ObservableCollection<Magazijn> Magazijnen
+        public ObservableCollection<Warehouse> Magazijnen
         {
             get
             {
-                return magazijnen;
+                return warehouses;
             }
             set
             {
-                magazijnen = value;
+                warehouses = value;
                 RaisePropertyChanged("Magazijnen");
             }
         }
 
-        public Magazijn SelectedMag
+        public Warehouse SelectedMag
         {
             get
             {
-                return selectedMag;
+                return selectedWarehouse;
             }
             set
             {
-                selectedMag = value;
+                selectedWarehouse = value;
                 RaisePropertyChanged("SelectedMag");
             }
         }

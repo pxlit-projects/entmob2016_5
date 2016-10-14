@@ -12,11 +12,9 @@
     <Page.DataContext>
         <viewmodel:MainPageViewModel/>
     </Page.DataContext>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel x:Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-            <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}" SelectedValue="{Binding selectedMag.naam}"/>
-        </StackPanel>
+        <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}"/>
         <Grid x:Name="contentGrid" Margin="50,50,50,50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

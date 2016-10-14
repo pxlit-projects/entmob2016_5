@@ -26,21 +26,15 @@ namespace TTT_UWP.Utility
             return b;
         }
 
-        /*public event EventHandler CanExecuteChanged
-        {
-            add
-            {
-                CommandManager.RequerySuggested += value;
-            }
-            remove
-            {
-                CommandManager.RequerySuggested -= value;
-            }
-        }*/
-
         public void Execute(object parameter)
         {
-            execute(parameter); 
+            execute(parameter);
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+                CanExecuteChanged(this, EventArgs.Empty);
         }
     }
 }
