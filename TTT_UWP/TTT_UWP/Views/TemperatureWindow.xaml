@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,599">
+        <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,142">
             <syncfusion:LineSeries                        
                         ItemsSource="{Binding Temps}"
                         XBindingPath="Date"
