@@ -32,7 +32,10 @@ namespace EntityFrameworkDummy.Migrations
                 new Rack { RegionID = 1, Products = null },
                 new Rack { RegionID = 2, Products = null },
                 new Rack { RegionID = 3, Products = null },
-                new Rack { RegionID = 4, Products = null }
+                new Rack { RegionID = 4, Products = null },
+                new Rack { RegionID = 3, Products = null },
+                new Rack { RegionID = 3, Products = null },
+                new Rack { RegionID = 3, Products = null }
             );
             context.SaveChanges();
         }
