@@ -13,7 +13,7 @@ namespace TTT_UWP.Domainclasses
         public int RegionID { get; set; }
         public string RegionName { get; set; }
         public int WarehouseID { get; set; }
-        //public Rack[] Racks { get; set; }
+        public Rack[] Racks { get; set; }
         public Observation[] Observations { get; set; }
     }
 }
