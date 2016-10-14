@@ -17,7 +17,7 @@ namespace TTT_UWP.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ObservableCollection<Warehouse> warehouses;
-        private Warehouse SelectedWarehouse;
+        private Warehouse selectedWarehouse;
 
         public ICommand ChangeWarehouseCommand { get; set; }
 
@@ -44,7 +44,7 @@ namespace TTT_UWP.ViewModels
 
         private bool CanChangeWarehouse(object obj)
         {
-            if (SelectedWarehouse != null)
+            if (selectedWarehouse != null)
                 return true;
             return false;
         }

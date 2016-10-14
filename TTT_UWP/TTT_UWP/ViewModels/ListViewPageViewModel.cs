@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TTT_UWP.ViewModels
 {
-    class ListViewPageViewModel
+    public class ListViewPageViewModel
     {
     }
 }

@@ -23,29 +23,9 @@ namespace TTT_UWP.Views
     /// </summary>
     public sealed partial class TemperatureWindow : Page
     {
-        public ObservableCollection<TemperatureMeasurement> Temps { get; set; }
-
         public TemperatureWindow()
         {
             this.InitializeComponent();
-            ChangeLayout();
-        }
-
-        public void ChangeLayout()
-        {
-
-            this.Temps = new ObservableCollection<TemperatureMeasurement>
-            {
-                new TemperatureMeasurement { Date = "1", Temp = 23},
-                new TemperatureMeasurement { Date = "2", Temp = 24},
-                new TemperatureMeasurement { Date = "3", Temp = 24},
-                new TemperatureMeasurement { Date = "4", Temp = 23},
-                new TemperatureMeasurement { Date = "5", Temp = 25},
-                new TemperatureMeasurement { Date = "6", Temp = 23},
-            };
-            DataContext = this;
-
-            listView.ItemsSource = Temps;
         }
     }
 }

@@ -159,19 +159,26 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
     <SDKReference Include="Syncfusion Controls for UWP XAML, Version=14.3.0.49">
       <Name>Syncfusion Controls for UWP XAML</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TTT_UWP.Datalayer\TTT_UWP.Datalayer.csproj">
-      <Project>{89c49a0f-b08c-4c44-be0e-4cf8b93a0b4d}</Project>
-      <Name>TTT_UWP.Datalayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TTT_UWP.Domainclasses\TTT_UWP.Domainclasses.csproj">
       <Project>{1ccffaa6-9ff8-4ffe-a1ac-fbd988cd4885}</Project>
       <Name>TTT_UWP.Domainclasses</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Interactions">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Interactivity">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
