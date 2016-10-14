@@ -30,31 +30,56 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Temperature graph</TextBlock>
-            
+
             <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="0" Margin="5,0,10,15">
-                <Button Click="Temp_Button_Click">
-                <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent">
-                    <syncfusion:LineSeries                        
+                <Button x:Name="btnTemp">
+                    <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent">
+                        <syncfusion:LineSeries                        
                         ItemsSource="{Binding Temps}"
                         XBindingPath="Date"
                         YBindingPath="Temp"/>
-                    <syncfusion:SfChart.PrimaryAxis>
-                        <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
-                    </syncfusion:SfChart.PrimaryAxis>
-                    <syncfusion:SfChart.SecondaryAxis>
-                        <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
-                    </syncfusion:SfChart.SecondaryAxis>
-                </syncfusion:SfChart>
+                        <syncfusion:SfChart.PrimaryAxis>
+                            <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
+                        </syncfusion:SfChart.PrimaryAxis>
+                        <syncfusion:SfChart.SecondaryAxis>
+                            <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
+                        </syncfusion:SfChart.SecondaryAxis>
+                    </syncfusion:SfChart>
                 </Button>
             </Border>
-            
             <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Humidity graph</TextBlock>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="1" Margin="10, 0, 10 ,15">
-
+                <Button x:Name="btnHum">
+                    <syncfusion:SfChart Name="HumidityGraph" BorderBrush="Transparent" Background="Transparent">
+                        <syncfusion:LineSeries                        
+                        ItemsSource="{Binding Temps}"
+                        XBindingPath="Date"
+                        YBindingPath="Temp"/>
+                        <syncfusion:SfChart.PrimaryAxis>
+                            <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
+                        </syncfusion:SfChart.PrimaryAxis>
+                        <syncfusion:SfChart.SecondaryAxis>
+                            <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
+                        </syncfusion:SfChart.SecondaryAxis>
+                    </syncfusion:SfChart>
+                </Button>
             </Border>
             <TextBlock Grid.Row="0" Grid.Column="2" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Air pressure graph</TextBlock>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="2" Margin="5, 0, 10, 15">
-
+                <Button x:Name="btnPressure">
+                    <syncfusion:SfChart Name="PressureGraph" BorderBrush="Transparent" Background="Transparent">
+                        <syncfusion:LineSeries                        
+                        ItemsSource="{Binding Temps}"
+                        XBindingPath="Date"
+                        YBindingPath="Temp"/>
+                        <syncfusion:SfChart.PrimaryAxis>
+                            <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
+                        </syncfusion:SfChart.PrimaryAxis>
+                        <syncfusion:SfChart.SecondaryAxis>
+                            <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
+                        </syncfusion:SfChart.SecondaryAxis>
+                    </syncfusion:SfChart>
+                </Button>
             </Border>
             <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Employee productivity</TextBlock>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="0" Margin="5, 0, 10, 15">

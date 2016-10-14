@@ -101,6 +101,7 @@
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Classes\Magazijn.cs" />
     <Compile Include="TemperatureMeasurement.cs" />
+    <Compile Include="Utility\CustomCommand.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\DetailsPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
