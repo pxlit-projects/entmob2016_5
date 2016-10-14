@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace TTT_UWP.Domainclasses
 {
-    public class Warehouse
+    public class Region
     {
+        public int RegionID { get; set; }
+        public string RegionName { get; set; }
         public int WarehouseID { get; set; }
-        public string WarehouseName { get; set; }
-        public List<Region> Regions { get; set; }
+        public Rack[] Racks { get; set; }
+        public Observation[] Observations { get; set; }
     }
 }

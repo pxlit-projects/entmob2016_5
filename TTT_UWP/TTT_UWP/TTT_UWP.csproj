@@ -155,6 +155,16 @@
       <Name>Syncfusion Controls for UWP XAML</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TTT_UWP.Datalayer\TTT_UWP.Datalayer.csproj">
+      <Project>{89c49a0f-b08c-4c44-be0e-4cf8b93a0b4d}</Project>
+      <Name>TTT_UWP.Datalayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TTT_UWP.Domainclasses\TTT_UWP.Domainclasses.csproj">
+      <Project>{1ccffaa6-9ff8-4ffe-a1ac-fbd988cd4885}</Project>
+      <Name>TTT_UWP.Domainclasses</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
