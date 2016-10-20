@@ -22,6 +22,7 @@ namespace EntityFrameworkDummy
         public DbSet<Region> Regions { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Rack> Racks { get; set; }
+        public DbSet<Sensor> Sensors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
