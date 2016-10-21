@@ -1,6 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Input;
+using TTT_UWP.DAL;
 using TTT_UWP.Model;
 using TTT_UWP.Utility;
 
@@ -9,26 +12,43 @@ namespace TTT_UWP.ViewModels
     public class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
-        private ObservableCollection<Warehouse> warehouses;
+        
+        private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
         private Warehouse selectedWarehouse;
+        private IWarehouseRepository warehouseRepository = new WarehouseRepository();
 
-        public ICommand ChangeWarehouseCommand { get; set; }
+        public ICommand ButtonCommand { get; set; }
+        public ICommand RedirectCommand { get; set; }
 
         public MainPageViewModel()
         {
             LoadData();
             LoadCommands();
+            ButtonCommand = new CustomCommand(OnDelete, CanDelete);
+        } 
+
+        //Command nest
+        private void OnDelete(object o)
+        {
+            Debug.WriteLine("awd");
+        }
+
+        private bool CanDelete(object o)
+        {
+            return true;
         }
 
         private void LoadData()
         {
-            
+            foreach (Warehouse item in warehouseRepository.GetWarehouses())
+            {
+                warehouses.Add(item);
+            }
         }
 
         private void LoadCommands()
         {
-            ChangeWarehouseCommand = new CustomCommand(ChangeWarehouse, CanChangeWarehouse);
+            //ChangeWarehouseCommand = new CustomCommand(ChangeWarehouse, CanChangeWarehouse);
         }
 
         private void ChangeWarehouse(object obj)
@@ -51,7 +71,7 @@ namespace TTT_UWP.ViewModels
             }
         }
 
-        public ObservableCollection<Warehouse> Magazijnen
+        public ObservableCollection<Warehouse> Warehouses
         {
             get
             {
@@ -60,11 +80,11 @@ namespace TTT_UWP.ViewModels
             set
             {
                 warehouses = value;
-                RaisePropertyChanged("Magazijnen");
+                RaisePropertyChanged("Warehouses");
             }
         }
 
-        public Warehouse SelectedMag
+        public Warehouse SelectedWarehouse
         {
             get
             {
@@ -73,7 +93,7 @@ namespace TTT_UWP.ViewModels
             set
             {
                 selectedWarehouse = value;
-                RaisePropertyChanged("SelectedMag");
+                RaisePropertyChanged("SelectedWarehouse");
             }
         }
     }
