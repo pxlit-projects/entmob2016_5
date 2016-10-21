@@ -177,6 +177,10 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TTT_UWP.DAL\TTT_UWP.DAL.csproj">
+      <Project>{B80BC782-688D-4C5F-B041-D26E313CE841}</Project>
+      <Name>TTT_UWP.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TTT_UWP.Model\TTT_UWP.Model.csproj">
       <Project>{70ecc56e-e782-4b9a-845c-94af4735b5bb}</Project>
       <Name>TTT_UWP.Model</Name>

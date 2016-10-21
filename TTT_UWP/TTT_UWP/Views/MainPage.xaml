@@ -9,13 +9,26 @@
     xmlns:viewmodel="using:TTT_UWP.ViewModels"
     xmlns:interact="using:Microsoft.Xaml.Interactivity"
     xmlns:interactcore="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+   xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
-<!--
-    <Page.Resources>
-        <viewmodel:MainPageViewModel x:Key="mainViewModel"/>
-    </Page.Resources>
--->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <viewmodel:MainPageViewModel/>
+        </Page.DataContext>
+    
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
+                ItemsSource="{Binding Warehouses}" 
+                SelectedItem="{Binding ButtonCommand}"
+                DisplayMemberPath="WarehouseName">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="SelectionChanged">
+                    <core:InvokeCommandAction Command="{Binding ButtonCommand}" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </ComboBox>
+
         <RelativePanel Margin="50,50,50,50" Name="relPanel">
             <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
@@ -24,16 +37,7 @@
                     <ColumnDefinition Width="7*"/>
                 </Grid.ColumnDefinitions>
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png" Margin="50,50,35.789,50"></Image>
-            </Grid>
-            <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}">
-                <interact:Interaction.Behaviors>
-                    <interactcore:EventTriggerBehavior EventName="SelectionChanged">
-                        <interactcore:InvokeCommandAction   
-                    Command="{Binding ChangeWarehouseCommand}"
-                    CommandParameter="{Binding ElementName=cmbSelectWarehouse, Path=SelectedItem}"/>
-                    </interactcore:EventTriggerBehavior>
-                </interact:Interaction.Behaviors>
-            </ComboBox>
+            </Grid>           
 
             <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelAirPressure" Name="Grid2" Width="250" Height="250">

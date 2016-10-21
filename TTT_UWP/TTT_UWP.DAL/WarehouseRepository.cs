@@ -49,7 +49,12 @@ namespace TTT_UWP.DAL
 
         public void LoadWarehouses()
         {
-            //Get data
+            warehouses = new List<Warehouse> {
+                new Warehouse { Regions = null, WarehouseID = 1, WarehouseName = "Iets Warehouse ofzo" },
+                new Warehouse { Regions = null, WarehouseID = 2, WarehouseName = "Iets Warehousawdawde ofzo" },
+                new Warehouse { Regions = null, WarehouseID = 3, WarehouseName = "Iets Waraasehouse ofzo" },
+                new Warehouse { Regions = null, WarehouseID = 4, WarehouseName = "Iets Warehsssssouse ofzo" }
+            };
         }
 
     }
