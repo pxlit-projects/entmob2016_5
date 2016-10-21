@@ -20,11 +20,11 @@
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
                 ItemsSource="{Binding Warehouses}" 
-                SelectedItem="{Binding ButtonCommand}"
+                SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
                 DisplayMemberPath="WarehouseName">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="SelectionChanged">
-                    <core:InvokeCommandAction Command="{Binding ButtonCommand}" />
+                    <core:InvokeCommandAction Command="{Binding ButtonCommand}"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </ComboBox>

@@ -14,7 +14,7 @@ namespace TTT_UWP.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         
         private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
-        private Warehouse selectedWarehouse;
+        private Warehouse selectedWarehouse = new Warehouse();
         private IWarehouseRepository warehouseRepository = new WarehouseRepository();
 
         public ICommand ButtonCommand { get; set; }
@@ -30,7 +30,7 @@ namespace TTT_UWP.ViewModels
         //Command nest
         private void OnDelete(object o)
         {
-            Debug.WriteLine("awd");
+            Debug.WriteLine("Warehouse: " + selectedWarehouse.WarehouseName);
         }
 
         private bool CanDelete(object o)
