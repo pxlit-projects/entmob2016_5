@@ -6,6 +6,7 @@ using System.Windows.Input;
 using TTT_UWP.DAL;
 using TTT_UWP.Model;
 using TTT_UWP.Utility;
+using Windows.UI.Xaml.Controls;
 
 namespace TTT_UWP.ViewModels
 {
@@ -24,16 +25,24 @@ namespace TTT_UWP.ViewModels
         {
             LoadData();
             LoadCommands();
-            ButtonCommand = new CustomCommand(OnDelete, CanDelete);
+            ButtonCommand = new CustomCommand(OnChangeWareHouse, CanRedirect);
+            RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
         } 
 
         //Command nest
-        private void OnDelete(object o)
+        private void OnChangeWareHouse(object o)
         {
+            //TODO: redirect naar warehouse db enzo
             Debug.WriteLine("Warehouse: " + selectedWarehouse.WarehouseName);
         }
 
-        private bool CanDelete(object o)
+        private void OnRedirect(object o)
+        {
+            Debug.WriteLine("awdawdawda" + o.ToString());
+
+        }
+
+        private bool CanRedirect(object o)
         {
             return true;
         }
@@ -96,5 +105,7 @@ namespace TTT_UWP.ViewModels
                 RaisePropertyChanged("SelectedWarehouse");
             }
         }
+
+
     }
 }
