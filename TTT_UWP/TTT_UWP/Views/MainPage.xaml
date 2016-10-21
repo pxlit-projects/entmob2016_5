@@ -15,9 +15,9 @@
 
     <Page.DataContext>
         <viewmodel:MainPageViewModel/>
-    </Page.DataContext>
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        </Page.DataContext>
+    
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
                 ItemsSource="{Binding Warehouses}" 
                 SelectedItem="{Binding ButtonCommand}"
