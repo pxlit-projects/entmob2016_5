@@ -19,7 +19,11 @@
         <RelativePanel Margin="50,50,50,50" Name="relPanel">
             <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
-                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="118*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png" Margin="50,50,35.789,50"></Image>
             </Grid>
             <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}">
                 <interact:Interaction.Behaviors>
@@ -31,7 +35,7 @@
                 </interact:Interaction.Behaviors>
             </ComboBox>
 
-            <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
+            <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelAirPressure" Name="Grid2" Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
@@ -41,18 +45,18 @@
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
 
-            <TextBlock RelativePanel.Below="Grid1" Name="LabelEmployeeProd" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
-            <Grid RelativePanel.Below="LabelEmployeeProd" Name="Grid4" Width="250" Height="250">
+            <TextBlock RelativePanel.Above="Grid4" Name="LabelEmployeeProd" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <Grid RelativePanel.AlignBottomWithPanel="True" Name="Grid4" Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
 
-            <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Grid2" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
-            <Grid Name="Grid5"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelExtremes"  Width="250" Height="250">
+            <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Above="Grid5" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <Grid Name="Grid5"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True"  Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
 
-            <TextBlock Name="LabelProducts" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="Grid2" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
-            <Grid Name="Grid6"  RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="LabelProducts"  Width="250" Height="250">
+            <TextBlock Name="LabelProducts" RelativePanel.AlignRightWithPanel="True" RelativePanel.Above="Grid6" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <Grid Name="Grid6"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"  Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
         </RelativePanel>
