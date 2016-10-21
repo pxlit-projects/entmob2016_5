@@ -10,7 +10,6 @@ namespace TTT_UWP.Services
     public interface IObservationDataService
     {
         void DeleteObservation(Observation observation);
-        List<Observation> GetAllObservations();
         Observation GetObservationById(int id);
         List<Observation> GetObservations();
         List<Observation> GetObservationsByRegion(Region region);

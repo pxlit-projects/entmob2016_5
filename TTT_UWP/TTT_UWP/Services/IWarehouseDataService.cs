@@ -10,8 +10,8 @@ namespace TTT_UWP.Services
     public interface IWarehouseDataService
     {
         void DeleteWarehouse(Warehouse warehouse);
-        List<Warehouse> GetAllWarehouses();
-        Warehouse GetWarehouseById(int warehouseId);
+        Warehouse GetWarehouseById(int id);
+        List<Warehouse> GetWarehouses();
         void UpdateWarehouse(Warehouse warehouse);
     }
 }
