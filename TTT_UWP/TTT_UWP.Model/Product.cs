@@ -17,5 +17,6 @@ namespace TTT_UWP.Model
         public double MinimumAirPressure{ get; set; }
         public double MaximumAirPressure { get; set; }
         public int RackID { get; set; }
+        public int WarehouseID { get; set; }
     }
 }

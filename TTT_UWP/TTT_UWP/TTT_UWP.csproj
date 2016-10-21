@@ -98,7 +98,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\AirPressureConverter.cs" />
+    <Compile Include="Converters\HumidityConverter.cs" />
+    <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Services\IObservationDataService.cs" />
+    <Compile Include="Services\IProductDataService.cs" />
+    <Compile Include="Services\IWarehouseDataService.cs" />
+    <Compile Include="Services\ObservationDataService.cs" />
+    <Compile Include="Services\ProductDataService.cs" />
+    <Compile Include="Services\WarehouseDataService.cs" />
     <Compile Include="Utility\CustomCommand.cs" />
     <Compile Include="ViewModels\LineGraphPageViewModel.cs" />
     <Compile Include="ViewModels\ListViewPageViewModel.cs" />
@@ -173,12 +182,10 @@
     </Reference>
     <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\TTT_UWP.DAL\TTT_UWP.DAL.csproj">
-      <Project>{B80BC782-688D-4C5F-B041-D26E313CE841}</Project>
+      <Project>{b80bc782-688d-4c5f-b041-d26e313ce841}</Project>
       <Name>TTT_UWP.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\TTT_UWP.Model\TTT_UWP.Model.csproj">

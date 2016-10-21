@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IObservationRepository.cs" />
+    <Compile Include="IProductRepository.cs" />
     <Compile Include="IWarehouseRepository.cs" />
     <Compile Include="ObservationRepository.cs" />
+    <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WarehouseRepository.cs" />
   </ItemGroup>

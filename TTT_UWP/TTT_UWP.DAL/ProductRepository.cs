@@ -53,7 +53,7 @@ namespace TTT_UWP.DAL
 
         public void LoadProducts()
         {
-
+            //Load Products
         }
     }
 }
