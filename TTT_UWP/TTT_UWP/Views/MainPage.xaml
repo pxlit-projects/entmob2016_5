@@ -10,13 +10,13 @@
     xmlns:interact="using:Microsoft.Xaml.Interactivity"
     xmlns:interactcore="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
-
+<!--
     <Page.Resources>
         <viewmodel:MainPageViewModel x:Key="mainViewModel"/>
     </Page.Resources>
-
+-->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel Name="relPanel">
+        <RelativePanel Margin="50,50,50,50" Name="relPanel">
             <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
