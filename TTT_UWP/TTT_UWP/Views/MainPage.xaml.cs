@@ -20,7 +20,7 @@ namespace TTT_UWP
     public sealed partial class MainPage : Page
     {
 
-        public ObservableCollection<TemperatureMeasurement> Temps { get; set; }
+        //public ObservableCollection<TemperatureMeasurement> Temps { get; set; }
 
         public MainPage()
         {
@@ -28,9 +28,9 @@ namespace TTT_UWP
             //DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=MainPageViewModel}
 
             this.InitializeComponent();
-            ChangeLayout();
+            //ChangeLayout();
         }
-
+        /*
         public void ChangeLayout()
         {
             TemperatureGraph.PrimaryAxis.Visibility = Visibility.Collapsed;
@@ -45,11 +45,6 @@ namespace TTT_UWP
                 new TemperatureMeasurement { Date = "6", Temp = 23},
             };
             DataContext = this;
-        }
-
-        private void Temp_Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(TemperatureWindow));            
-        }
+        }*/
     }
 }

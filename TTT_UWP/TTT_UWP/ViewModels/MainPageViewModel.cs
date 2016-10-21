@@ -74,11 +74,11 @@ namespace TTT_UWP.ViewModels
         {
             get
             {
-                return selectedWarehouse;
+                return SelectedWarehouse;
             }
             set
             {
-                selectedWarehouse = value;
+                SelectedWarehouse = value;
                 RaisePropertyChanged("SelectedMag");
             }
         }
