@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TTT_UWP.ViewModels
+namespace TTT_UWP.Services
 {
-    public class ListViewPageViewModel
+    class IWarehouseDataService
     {
     }
 }

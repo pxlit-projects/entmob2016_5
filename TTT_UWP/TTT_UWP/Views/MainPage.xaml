@@ -7,11 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
     xmlns:viewmodel="using:TTT_UWP.ViewModels"
+    xmlns:interact="using:Microsoft.Xaml.Interactivity"
+    xmlns:interactcore="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
-    
-    <Page.DataContext>
-        <viewmodel:MainPageViewModel/>
-    </Page.DataContext>
+
+    <Page.Resources>
+        <viewmodel:MainPageViewModel x:Key="mainViewModel"/>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel Name="relPanel">
@@ -19,6 +21,15 @@
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
+            <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}">
+                <interact:Interaction.Behaviors>
+                    <interactcore:EventTriggerBehavior EventName="SelectionChanged">
+                        <interactcore:InvokeCommandAction   
+                    Command="{Binding ChangeWarehouseCommand}"
+                    CommandParameter="{Binding ElementName=cmbSelectWarehouse, Path=SelectedItem}"/>
+                    </interactcore:EventTriggerBehavior>
+                </interact:Interaction.Behaviors>
+            </ComboBox>
 
             <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelAirPressure" Name="Grid2" Width="250" Height="250">

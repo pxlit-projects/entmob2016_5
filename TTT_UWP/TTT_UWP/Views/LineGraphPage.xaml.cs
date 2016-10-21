@@ -24,12 +24,7 @@ namespace TTT_UWP.Views
     public sealed partial class TemperatureWindow : Page
     {
         //public ObservableCollection<TemperatureMeasurement> Temps { get; set; }
-
-        public TemperatureWindow()
-        {
-            //this.InitializeComponent();
-            //ChangeLayout();
-        }
+        
         /*
         public void ChangeLayout()
         {
@@ -47,5 +42,9 @@ namespace TTT_UWP.Views
 
             listView.ItemsSource = Temps;
         }*/
+        public TemperatureWindow()
+        {
+            this.InitializeComponent();
+        }
     }
 }
