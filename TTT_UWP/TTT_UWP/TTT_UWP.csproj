@@ -109,6 +109,7 @@
     <Compile Include="Services\ProductDataService.cs" />
     <Compile Include="Services\WarehouseDataService.cs" />
     <Compile Include="Utility\CustomCommand.cs" />
+    <Compile Include="Utility\Messenger.cs" />
     <Compile Include="ViewModels\LineGraphPageViewModel.cs" />
     <Compile Include="ViewModels\ListViewPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />

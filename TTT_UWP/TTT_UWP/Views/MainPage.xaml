@@ -20,11 +20,11 @@
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
                 ItemsSource="{Binding Warehouses}" 
-                SelectedItem="{Binding ButtonCommand}"
+                SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
                 DisplayMemberPath="WarehouseName">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="SelectionChanged">
-                    <core:InvokeCommandAction Command="{Binding ButtonCommand}" />
+                    <core:InvokeCommandAction Command="{Binding ButtonCommand}"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </ComboBox>
@@ -36,7 +36,9 @@
                     <ColumnDefinition Width="118*"/>
                     <ColumnDefinition Width="7*"/>
                 </Grid.ColumnDefinitions>
-                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png" Margin="50,50,35.789,50"></Image>
+                <Button Command="{Binding RedirectCommand}" CommandParameter="Temp" Background="Transparent" Width="150" Height="150" Margin="50,50,35.789,50">
+                    <Image Width="150" Height="150" Source="/Assets/StoreLogo.png" Margin="-10,-6"></Image>
+                </Button>
             </Grid>           
 
             <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
