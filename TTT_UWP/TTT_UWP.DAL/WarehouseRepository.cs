@@ -10,12 +10,10 @@ namespace TTT_UWP.DAL
     public class WarehouseRepository : IWarehouseRepository
     {
 
-        private static List<Warehouse> warehouses;
+        private List<Warehouse> warehouses;
 
         public WarehouseRepository()
-        {
-
-        }
+        { }
 
         public void DeleteWarehouse(Warehouse warehouse)
         {
@@ -51,7 +49,7 @@ namespace TTT_UWP.DAL
 
         public void LoadWarehouses()
         {
-
+            //Get data
         }
 
     }
