@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using TTT_UWP.Classes;
-using TTT_UWP.Domainclasses;
+using TTT_UWP.Model;
 using TTT_UWP.Utility;
 
 namespace TTT_UWP.ViewModels

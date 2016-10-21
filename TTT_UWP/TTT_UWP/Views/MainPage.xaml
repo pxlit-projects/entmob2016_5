@@ -16,93 +16,45 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}">
-            <interact:Interaction.Behaviors>
-                <interactcore:EventTriggerBehavior EventName="SelectionChanged">
-                    <interactcore:InvokeCommandAction   
+        <RelativePanel Name="relPanel">
+            <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
+            <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
+                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+            </Grid>
+            <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" ItemsSource="{Binding magazijnen}" SelectedItem="{Binding selectedMag}">
+                <interact:Interaction.Behaviors>
+                    <interactcore:EventTriggerBehavior EventName="SelectionChanged">
+                        <interactcore:InvokeCommandAction   
                     Command="{Binding ChangeWarehouseCommand}"
                     CommandParameter="{Binding ElementName=cmbSelectWarehouse, Path=SelectedItem}"/>
-                </interactcore:EventTriggerBehavior>
-            </interact:Interaction.Behaviors>
-        </ComboBox>
-        <Grid x:Name="contentGrid" Margin="50,50,50,50">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Temperature graph</TextBlock>
+                    </interactcore:EventTriggerBehavior>
+                </interact:Interaction.Behaviors>
+            </ComboBox>
 
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="0" Margin="5,0,10,15">
-                <Button x:Name="btnTemp">
-                    <syncfusion:SfChart Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Temps}"
-                        XBindingPath="Date"
-                        YBindingPath="Temp"/>
-                        <syncfusion:SfChart.PrimaryAxis>
-                            <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
-                        </syncfusion:SfChart.PrimaryAxis>
-                        <syncfusion:SfChart.SecondaryAxis>
-                            <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
-                        </syncfusion:SfChart.SecondaryAxis>
-                    </syncfusion:SfChart>
-                </Button>
-            </Border>
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Humidity graph</TextBlock>
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="1" Margin="10, 0, 10 ,15">
-                <Button x:Name="btnHum">
-                    <syncfusion:SfChart Name="HumidityGraph" BorderBrush="Transparent" Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Temps}"
-                        XBindingPath="Date"
-                        YBindingPath="Temp"/>
-                        <syncfusion:SfChart.PrimaryAxis>
-                            <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
-                        </syncfusion:SfChart.PrimaryAxis>
-                        <syncfusion:SfChart.SecondaryAxis>
-                            <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
-                        </syncfusion:SfChart.SecondaryAxis>
-                    </syncfusion:SfChart>
-                </Button>
-            </Border>
-            <TextBlock Grid.Row="0" Grid.Column="2" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Air pressure graph</TextBlock>
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.Column="2" Margin="5, 0, 10, 15">
-                <Button x:Name="btnPressure">
-                    <syncfusion:SfChart Name="PressureGraph" BorderBrush="Transparent" Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Temps}"
-                        XBindingPath="Date"
-                        YBindingPath="Temp"/>
-                        <syncfusion:SfChart.PrimaryAxis>
-                            <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent" FontFamily="null"/>
-                        </syncfusion:SfChart.PrimaryAxis>
-                        <syncfusion:SfChart.SecondaryAxis>
-                            <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" />
-                        </syncfusion:SfChart.SecondaryAxis>
-                    </syncfusion:SfChart>
-                </Button>
-            </Border>
-            <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Employee productivity</TextBlock>
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="0" Margin="5, 0, 10, 15">
+            <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
+            <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelAirPressure" Name="Grid2" Width="250" Height="250">
+                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+            </Grid>
 
-            </Border>
-            <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Measured extremes</TextBlock>
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="1" Margin="5, 0, 10, 15">
-                <ListBox />
-            </Border>
-            <TextBlock Grid.Row="2" Grid.Column="2" Margin="5, 20" HorizontalAlignment="Left" FontFamily="XXII Menga" FontSize="20">Product list</TextBlock>
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="2" Margin="5, 0, 10, 15">
-                <ListBox>
+            <TextBlock RelativePanel.AlignRightWithPanel="True" Name="LabelHumidity" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <Grid RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="LabelHumidity" Name="Grid3" Width="250" Height="250">
+                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+            </Grid>
 
-                </ListBox>
-            </Border>
-        </Grid>
+            <TextBlock RelativePanel.Below="Grid1" Name="LabelEmployeeProd" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <Grid RelativePanel.Below="LabelEmployeeProd" Name="Grid4" Width="250" Height="250">
+                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+            </Grid>
+
+            <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Grid2" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <Grid Name="Grid5"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelExtremes"  Width="250" Height="250">
+                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+            </Grid>
+
+            <TextBlock Name="LabelProducts" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="Grid2" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <Grid Name="Grid6"  RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="LabelProducts"  Width="250" Height="250">
+                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+            </Grid>
+        </RelativePanel>
     </Grid>
 </Page>
