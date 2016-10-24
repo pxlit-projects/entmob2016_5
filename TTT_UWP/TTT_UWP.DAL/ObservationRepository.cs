@@ -58,7 +58,21 @@ namespace TTT_UWP.DAL
 
         public void LoadObservations()
         {
-
+            observations = new List<Observation>
+             {
+                new Observation { ObservationID = 1, Temperature = 20 },
+                new Observation { ObservationID = 2, Temperature = 21 },
+                new Observation { ObservationID = 3, Temperature = 18 },
+                new Observation { ObservationID = 4, Temperature = 24 },
+                new Observation { ObservationID = 5, Temperature = 20 },
+                new Observation { ObservationID = 6, Temperature = 23 },
+                new Observation { ObservationID = 7, Temperature = 24 },
+                new Observation { ObservationID = 8, Temperature = 21 },
+                new Observation { ObservationID = 9, Temperature = 24 },
+                new Observation { ObservationID = 10, Temperature = 28 },
+                new Observation { ObservationID = 11, Temperature = 24 },
+                new Observation { ObservationID = 12, Temperature = 15 }
+             };
         }
     }
 }

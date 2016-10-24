@@ -58,71 +58,71 @@ namespace TTT_UWP.ViewModels
         }
 
         //Mag er geredirect worden (huidig altijd true)
-    private bool CanRedirect(object o)
-    {
-        return true;
-    }
+        private bool CanRedirect(object o)
+        {
+            return true;
+        }
 
         //Laad de lijst van warehouses in (observable collection)
-    private void LoadData()
-    {
-        foreach (Warehouse item in warehouseRepository.GetWarehouses())
+        private void LoadData()
         {
-            warehouses.Add(item);
+            foreach (Warehouse item in warehouseRepository.GetWarehouses())
+            {
+                warehouses.Add(item);
+            }
         }
-    }
 
-    private void LoadCommands()
-    {
-        //ChangeWarehouseCommand = new CustomCommand(ChangeWarehouse, CanChangeWarehouse);
-    }
-
-    private void ChangeWarehouse(object obj)
-    {
-
-    }
-
-    private bool CanChangeWarehouse(object obj)
-    {
-        if (selectedWarehouse != null)
-            return true;
-        return false;
-    }
-
-    private void RaisePropertyChanged(string propertyName)
-    {
-        if (PropertyChanged != null)
+        private void LoadCommands()
         {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            //ChangeWarehouseCommand = new CustomCommand(ChangeWarehouse, CanChangeWarehouse);
         }
+
+        private void ChangeWarehouse(object obj)
+        {
+
+        }
+
+        private bool CanChangeWarehouse(object obj)
+        {
+            if (selectedWarehouse != null)
+                return true;
+            return false;
+        }
+
+        private void RaisePropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public ObservableCollection<Warehouse> Warehouses
+        {
+            get
+            {
+                return warehouses;
+            }
+            set
+            {
+                warehouses = value;
+                RaisePropertyChanged("Warehouses");
+            }
+        }
+
+        public Warehouse SelectedWarehouse
+        {
+            get
+            {
+                return selectedWarehouse;
+            }
+            set
+            {
+                selectedWarehouse = value;
+                RaisePropertyChanged("SelectedWarehouse");
+            }
+        }
+
+
     }
-
-    public ObservableCollection<Warehouse> Warehouses
-    {
-        get
-        {
-            return warehouses;
-        }
-        set
-        {
-            warehouses = value;
-            RaisePropertyChanged("Warehouses");
-        }
-    }
-
-    public Warehouse SelectedWarehouse
-    {
-        get
-        {
-            return selectedWarehouse;
-        }
-        set
-        {
-            selectedWarehouse = value;
-            RaisePropertyChanged("SelectedWarehouse");
-        }
-    }
-
-
-}
 }

@@ -11,29 +11,30 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel>
-            <syncfusion:SfChart RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,142">
+            <syncfusion:SfChart Height="800" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,142">
                 <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Temps}"
-                        XBindingPath="Date"
-                        YBindingPath="Temp" Margin="0,59,0,-151"/>
+                        ItemsSource="{Binding Observations}"
+                        XBindingPath="ObservationID"
+                        YBindingPath="Temperature" Margin="0,0,0,-11"/>
                 <syncfusion:SfChart.PrimaryAxis>
                     <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent"/>
                 </syncfusion:SfChart.PrimaryAxis>
                 <syncfusion:SfChart.SecondaryAxis>
-                    <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" Height="436" Width="31" />
+                    <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" Height="790" Width="18" />
                 </syncfusion:SfChart.SecondaryAxis>
             </syncfusion:SfChart>
-            <ListView x:Name="listView" RelativePanel.AlignLeftWithPanel="True" HorizontalAlignment="Left" Height="269" Margin="10,441,0,0" VerticalAlignment="Top" Width="1260">
+
+            <ListView x:Name="listView" ItemsSource="{Binding Observations}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" HorizontalAlignment="Left" Height="100" Margin="10,441,0,0" VerticalAlignment="Top" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{Binding Temp}" 
+                            <TextBlock Text="{Binding ObservationID}" 
                            Margin="20,0,20,8"
                            FontSize="24" 
                            FontStyle="Italic" 
                            FontWeight="SemiBold"
                            Foreground="DarkBlue" />
-                            <TextBlock Text="{Binding Day}" 
+                            <TextBlock Text="{Binding Temperature}" 
                            Margin="20,0,20,8"
                            FontSize="16"
                            Foreground="DarkGray" 
