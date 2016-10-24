@@ -102,9 +102,11 @@
     <Compile Include="Converters\HumidityConverter.cs" />
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\IObservationDataService.cs" />
     <Compile Include="Services\IProductDataService.cs" />
     <Compile Include="Services\IWarehouseDataService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ObservationDataService.cs" />
     <Compile Include="Services\ProductDataService.cs" />
     <Compile Include="Services\WarehouseDataService.cs" />

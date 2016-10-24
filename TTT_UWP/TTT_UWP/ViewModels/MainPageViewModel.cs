@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Windows.Input;
 using TTT_UWP.DAL;
 using TTT_UWP.Model;
+using TTT_UWP.Services;
 using TTT_UWP.Utility;
 using TTT_UWP.Views;
 using Windows.UI.Xaml;
@@ -16,6 +17,7 @@ namespace TTT_UWP.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private INavigationService navigationService = new NavigationService();
         private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
         private Warehouse selectedWarehouse = new Warehouse();
         private IWarehouseRepository warehouseRepository = new WarehouseRepository();
@@ -40,9 +42,13 @@ namespace TTT_UWP.ViewModels
 
         private void OnRedirect(object o)
         {
-            //Debug.WriteLine("awdawdawda" + o.ToString());
+            /*
             Frame cframe = (Frame)Window.Current.Content;
             cframe.Navigate(typeof(ListViewPage));
+            */
+            
+            navigationService.Navigate(typeof(ListViewPage));
+                    
         }
 
     private bool CanRedirect(object o)
