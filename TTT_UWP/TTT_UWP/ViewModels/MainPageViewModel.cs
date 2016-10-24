@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Reflection;
 using System.Windows.Input;
 using TTT_UWP.DAL;
 using TTT_UWP.Model;
@@ -46,10 +47,14 @@ namespace TTT_UWP.ViewModels
             Debug.WriteLine("Warehouse: " + selectedWarehouse.WarehouseName);
         }
 
-        //Redirect via navigationService, meegegeven parameters zitten in object o
+        /*
+         * Redirect via navigationService, meegegeven parameters zitten in object o
+         * Parameter is een string die zegt naar welke pagina verwezen moet worden,
+         * string wordt via typehelper service omgezet naar Type.
+        */
         private void OnRedirect(object o)
-        {
-            navigationService.Navigate(typeof(ListViewPage));                    
+        {            
+            navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));                    
         }
 
         //Mag er geredirect worden (huidig altijd true)
