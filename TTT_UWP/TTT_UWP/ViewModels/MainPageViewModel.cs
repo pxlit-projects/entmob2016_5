@@ -15,13 +15,18 @@ namespace TTT_UWP.ViewModels
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        //Services
         private INavigationService navigationService;
-        private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
-        private Warehouse selectedWarehouse = new Warehouse();
+
+        //Repositories
         private IWarehouseRepository warehouseRepository = new WarehouseRepository();
 
+        //Databinding 
+        private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
+        private Warehouse selectedWarehouse = new Warehouse();
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //Commands
         public ICommand ButtonCommand { get; set; }
         public ICommand RedirectCommand { get; set; }
         
@@ -41,21 +46,19 @@ namespace TTT_UWP.ViewModels
             Debug.WriteLine("Warehouse: " + selectedWarehouse.WarehouseName);
         }
 
+        //Redirect via navigationService, meegegeven parameters zitten in object o
         private void OnRedirect(object o)
         {
-            /*
-            Frame cframe = (Frame)Window.Current.Content;
-            cframe.Navigate(typeof(ListViewPage));
-            */
-            
             navigationService.Navigate(typeof(ListViewPage));                    
         }
 
+        //Mag er geredirect worden (huidig altijd true)
     private bool CanRedirect(object o)
     {
         return true;
     }
 
+        //Laad de lijst van warehouses in (observable collection)
     private void LoadData()
     {
         foreach (Warehouse item in warehouseRepository.GetWarehouses())
