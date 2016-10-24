@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TTT_UWP.Services;
+using TTT_UWP.ViewModels;
 using TTT_UWP.Views;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -22,6 +24,8 @@ namespace TTT_UWP
         public MainPage()
         {
             this.InitializeComponent();
+            var vm = new MainPageViewModel(new NavigationService());
+            this.DataContext = vm;
         }
     }
 }

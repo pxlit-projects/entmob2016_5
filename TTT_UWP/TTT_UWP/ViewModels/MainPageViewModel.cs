@@ -17,20 +17,21 @@ namespace TTT_UWP.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private INavigationService navigationService = new NavigationService();
+        private INavigationService navigationService;
         private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
         private Warehouse selectedWarehouse = new Warehouse();
         private IWarehouseRepository warehouseRepository = new WarehouseRepository();
 
         public ICommand ButtonCommand { get; set; }
         public ICommand RedirectCommand { get; set; }
-
-        public MainPageViewModel()
+        
+        public MainPageViewModel(INavigationService navigationService)
         {
             LoadData();
             LoadCommands();
             ButtonCommand = new CustomCommand(OnChangeWareHouse, CanRedirect);
             RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
+            this.navigationService = navigationService;
         }
 
         //Command nest
@@ -47,8 +48,7 @@ namespace TTT_UWP.ViewModels
             cframe.Navigate(typeof(ListViewPage));
             */
             
-            navigationService.Navigate(typeof(ListViewPage));
-                    
+            navigationService.Navigate(typeof(ListViewPage));                    
         }
 
     private bool CanRedirect(object o)
