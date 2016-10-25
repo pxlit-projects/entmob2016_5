@@ -55,10 +55,10 @@
                                     <ColumnDefinition  />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
-                                <TextBlock Grid.Column="1" Text="{Binding Temperature}" />
-                                <TextBlock Grid.Column="2" Text="{Binding Temperature}" />
-                                <TextBlock Grid.Column="3" Text="{Binding Temperature}" />
-                                <TextBlock Grid.Column="4" Text="{Binding Temperature}" />
+                                <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
+                                <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
+                                <TextBlock Grid.Column="3" Text="{Binding Humidity}" />
+                                <TextBlock Grid.Column="4" Text="{Binding Airpressure}" />
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
