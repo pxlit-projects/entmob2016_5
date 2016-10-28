@@ -8,11 +8,35 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel x:Name="rpPanel">
-            <ListView x:Name="lvProducts" Margin="50, 50, 50, 50" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
-            <Button x:Name="btnAdd" Content="Add product" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="lvProducts" Margin="50, 10, 10, 10"/>
-            <Button x:Name="btnEditProduct" Content="Edit product" RelativePanel.RightOf="btnAdd" RelativePanel.Below="lvProducts" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="10, 10, 10, 10"/>
-            <Button x:Name="btnDeleteProduct" Content="Delete product" RelativePanel.RightOf="btnEditProduct" RelativePanel.Below="lvProducts" RelativePanel.AlignRightWithPanel="True" Margin="10, 10, 50, 10"/>
+
+        <RelativePanel x:Name="rpPanel" Margin="50, 50, 50, 50">
+            <Grid x:Name="dataGrid" HorizontalAlignment="Stretch" DataContext="{Binding Products, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="ProductID" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="1" Text="WarehouseID" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="2" Text="RackID" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="3" Text="Productname" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="4" Text="Min Temperature" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="5" Text="Max Temperature" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="6" Text="Min Humidity" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="7" Text="Max Humidity" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="8" Text="Min Pressure" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="9" Text="Max Pressure" Margin="5, 5, 5, 5"/>
+            </Grid>
+            <Button x:Name="btnAdd" Content="Add product" RelativePanel.Below="dataGrid" RelativePanel.AlignLeftWith="dataGrid" Margin="50, 10, 10, 10"/>
+            <Button x:Name="btnEditProduct" Content="Edit product" RelativePanel.Below="dataGrid" RelativePanel.AlignHorizontalCenterWith="dataGrid" Margin="10, 10, 10, 10"/>
+            <Button x:Name="btnDeleteProduct" Content="Delete product" RelativePanel.Below="dataGrid" RelativePanel.AlignRightWith="dataGrid" Margin="10, 10, 50, 10"/>
         </RelativePanel>
     </Grid>
 </Page>

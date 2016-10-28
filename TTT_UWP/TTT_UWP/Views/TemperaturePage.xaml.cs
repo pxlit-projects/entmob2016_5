@@ -26,7 +26,7 @@ namespace TTT_UWP.Views
         public TemperaturePage()
         {
             this.InitializeComponent();
-            var vm = new ListViewPageViewModel();
+            var vm = new TemperaturePageViewModel();
             this.DataContext = vm;
         }
     }

@@ -10,14 +10,14 @@ using TTT_UWP.Model;
 
 namespace TTT_UWP.ViewModels
 {
-    public class ListViewPageViewModel : INotifyPropertyChanged
+    public class TemperaturePageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         public IObservationRepository observationRepository;
         public ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
 
-        public ListViewPageViewModel()
+        public TemperaturePageViewModel()
         {
             observationRepository = new ObservationRepository();
             AddDummyData();
