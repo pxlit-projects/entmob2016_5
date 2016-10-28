@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TTT_UWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,8 @@ namespace TTT_UWP.Views
         public ListViewPage()
         {
             this.InitializeComponent();
+            var vm = new ListViewPageViewModel();
+            this.DataContext = vm;
         }
     }
 }

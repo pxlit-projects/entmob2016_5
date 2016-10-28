@@ -11,37 +11,59 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel>
-            <syncfusion:SfChart RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,142">
+            <syncfusion:SfChart Height="800" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,142">
                 <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Temps}"
-                        XBindingPath="Date"
-                        YBindingPath="Temp" Margin="0,59,0,-151"/>
+                        ItemsSource="{Binding Observations}"
+                        XBindingPath="ObservationID"
+                        YBindingPath="Temperature" Margin="0,0,0,-11"/>
                 <syncfusion:SfChart.PrimaryAxis>
                     <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent"/>
                 </syncfusion:SfChart.PrimaryAxis>
                 <syncfusion:SfChart.SecondaryAxis>
-                    <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" Height="436" Width="31" />
+                    <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" Height="790" Width="18" />
                 </syncfusion:SfChart.SecondaryAxis>
             </syncfusion:SfChart>
-            <ListView x:Name="listView" RelativePanel.AlignLeftWithPanel="True" HorizontalAlignment="Left" Height="269" Margin="10,441,0,0" VerticalAlignment="Top" Width="1260">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Temp}" 
-                           Margin="20,0,20,8"
-                           FontSize="24" 
-                           FontStyle="Italic" 
-                           FontWeight="SemiBold"
-                           Foreground="DarkBlue" />
-                            <TextBlock Text="{Binding Day}" 
-                           Margin="20,0,20,8"
-                           FontSize="16"
-                           Foreground="DarkGray" 
-                           Opacity="0.8" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+
+            <Grid RelativePanel.AlignBottomWithPanel="True" Width="1300" Height="150" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid x:Name="listViewGrid" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="ID" />
+                    <TextBlock Grid.Column="1" Text="Temp" />
+                    <TextBlock Grid.Column="2" Text="Title Col 3" />
+                    <TextBlock Grid.Column="3" Text="Title Col 4" />
+                    <TextBlock Grid.Column="4" Text="Title Col 5" />
+                </Grid>
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="{Binding ElementName=listView, Path=ActualWidth}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
+                                <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
+                                <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
+                                <TextBlock Grid.Column="3" Text="{Binding Humidity}" />
+                                <TextBlock Grid.Column="4" Text="{Binding Airpressure}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
         </RelativePanel>
     </Grid>
 </Page>

@@ -13,9 +13,6 @@
    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
 
-    <Page.DataContext>
-        <viewmodel:MainPageViewModel/>
-        </Page.DataContext>
     
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
@@ -36,7 +33,7 @@
                     <ColumnDefinition Width="118*"/>
                     <ColumnDefinition Width="7*"/>
                 </Grid.ColumnDefinitions>
-                <Button Command="{Binding RedirectCommand}" CommandParameter="Temp" Background="Transparent" Width="150" Height="150" Margin="50,50,35.789,50">
+                <Button Command="{Binding RedirectCommand}" CommandParameter="ListViewPage" Background="Transparent" Width="150" Height="150" Margin="50,50,35.789,50">
                     <Image Width="150" Height="150" Source="/Assets/StoreLogo.png" Margin="-10,-6"></Image>
                 </Button>
             </Grid>           
