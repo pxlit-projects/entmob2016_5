@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TTT_UWP.ViewModels
 {
-    public class LineGraphPageViewModel : INotifyPropertyChanged
+    class PressurePageViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

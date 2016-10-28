@@ -15,25 +15,34 @@
 
     
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
-                ItemsSource="{Binding Warehouses}" 
-                SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
-                DisplayMemberPath="WarehouseName">
-            <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="SelectionChanged">
-                    <core:InvokeCommandAction Command="{Binding ButtonCommand}"/>
-                </core:EventTriggerBehavior>
-            </interactivity:Interaction.Behaviors>
-        </ComboBox>
 
-        <RelativePanel Margin="50,50,50,50" Name="relPanel">
+
+        <CommandBar Height="35" Background="Transparent">
+            <AppBarButton>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+                    <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
+                        ItemsSource="{Binding Warehouses}" 
+                        SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
+                        DisplayMemberPath="WarehouseName">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="SelectionChanged">
+                                <core:InvokeCommandAction Command="{Binding ButtonCommand}"/>
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </ComboBox>
+                </StackPanel>
+            </AppBarButton>
+            <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
+        </CommandBar>
+
+        <RelativePanel Margin="30,30,30,30" Name="relPanel">
             <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="118*"/>
                     <ColumnDefinition Width="7*"/>
                 </Grid.ColumnDefinitions>
-                <Button Command="{Binding RedirectCommand}" CommandParameter="ListViewPage" Background="Transparent" Width="150" Height="150" Margin="50,50,35.789,50">
+                <Button Command="{Binding RedirectCommand}" CommandParameter="TemperaturePage" Background="Transparent" Width="150" Height="150" Margin="50,50,35.789,50">
                     <Image Width="150" Height="150" Source="/Assets/StoreLogo.png" Margin="-10,-6"></Image>
                 </Button>
             </Grid>           
@@ -48,17 +57,12 @@
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
 
-            <TextBlock RelativePanel.Above="Grid4" Name="LabelEmployeeProd" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
-            <Grid RelativePanel.AlignBottomWithPanel="True" Name="Grid4" Width="250" Height="250">
-                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
-            </Grid>
-
-            <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Above="Grid5" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Above="Grid5" FontSize="25" Width="250" Height="50">Products</TextBlock>
             <Grid Name="Grid5"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True"  Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
 
-            <TextBlock Name="LabelProducts" RelativePanel.AlignRightWithPanel="True" RelativePanel.Above="Grid6" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <TextBlock Name="LabelProducts" RelativePanel.AlignRightWithPanel="True" RelativePanel.Above="Grid6" FontSize="25" Width="250" Height="50">Measured Extremes</TextBlock>
             <Grid Name="Grid6"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"  Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
