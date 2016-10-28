@@ -9,7 +9,6 @@ namespace TTT_Test_Final
 {
     public partial class App : Application
     {
-        private Device_Scan device_Scan;
 
         public App()
         {

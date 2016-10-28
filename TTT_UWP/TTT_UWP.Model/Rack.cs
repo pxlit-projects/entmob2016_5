@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TTT_UWP.Model
+namespace TTT.Model
 {
     public class Rack
     {
