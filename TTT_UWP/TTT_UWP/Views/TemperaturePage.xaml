@@ -9,7 +9,10 @@
     xmlns:viewmodel="using:TTT_UWP.ViewModels"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalAlignment="Top">
+        <CommandBar Background="Transparent" Height="35">
+            <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
+        </CommandBar>
         <RelativePanel Margin="50,50,50,50">
             <TextBlock Name="headerTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="25">Temperature readings:</TextBlock>
             <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" MaxHeight="700" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="20,20,20,20">
@@ -67,5 +70,5 @@
                 </ListView>
             </Grid>
         </RelativePanel>
-    </Grid>
+        </Grid>
 </Page>

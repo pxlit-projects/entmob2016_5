@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TTT_UWP.ViewModels;
+using TTT_UWP.Services;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -26,7 +27,7 @@ namespace TTT_UWP.Views
         public TemperaturePage()
         {
             this.InitializeComponent();
-            var vm = new TemperaturePageViewModel();
+            var vm = new TemperaturePageViewModel(new NavigationService());
             this.DataContext = vm;
         }
     }
