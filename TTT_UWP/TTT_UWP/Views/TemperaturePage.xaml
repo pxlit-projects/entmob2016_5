@@ -14,8 +14,8 @@
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
         </CommandBar>
         <RelativePanel Margin="50,50,50,50">
-            <TextBlock Name="headerTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="25">Temperature readings:</TextBlock>
-            <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" MaxHeight="700" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="20,20,20,20">
+            <TextBlock Name="headerTextBlock" Margin="0,0,10,10" RelativePanel.AlignTopWithPanel="True" FontSize="25">Temperature readings:</TextBlock>
+            <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" MaxHeight="700" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent">
                 <syncfusion:LineSeries                        
                         ItemsSource="{Binding Observations}"
                         XBindingPath="ObservationID"
@@ -28,8 +28,8 @@
                 </syncfusion:SfChart.SecondaryAxis>
             </syncfusion:SfChart>
 
-            <TextBlock Name="detailsTextBlock" FontSize="20" RelativePanel.Above="ListViewGrid">Temperature Details</TextBlock>
-            <Grid Name="ListViewGrid" Margin="50,10,50,10" HorizontalAlignment="Stretch" RelativePanel.AlignBottomWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+            <TextBlock Name="detailsTextBlock"  Margin="0,0,10,10" FontSize="20" RelativePanel.Above="ListViewGrid">Temperature Details</TextBlock>
+            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.AlignBottomWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition />
@@ -40,13 +40,11 @@
                         <ColumnDefinition  />
                         <ColumnDefinition  />
                         <ColumnDefinition  />
-                        <ColumnDefinition  />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="ID" />
-                    <TextBlock Grid.Column="1" Text="Temp" />
-                    <TextBlock Grid.Column="2" Text="Title Col 3" />
-                    <TextBlock Grid.Column="3" Text="Title Col 4" />
-                    <TextBlock Grid.Column="4" Text="Title Col 5" />
+                    <TextBlock Grid.Column="0" Text="Observation ID" />
+                    <TextBlock Grid.Column="1" Text="Region ID" />
+                    <TextBlock Grid.Column="2" Text="Timestamp" />
+                    <TextBlock Grid.Column="3" Text="Temperature" />
                 </Grid>
                 <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
@@ -57,13 +55,11 @@
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
-                                    <ColumnDefinition  />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
                                 <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
                                 <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
-                                <TextBlock Grid.Column="3" Text="{Binding Humidity}" />
-                                <TextBlock Grid.Column="4" Text="{Binding Airpressure}" />
+                                <TextBlock Grid.Column="3" Text="{Binding Temperature}" />
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
