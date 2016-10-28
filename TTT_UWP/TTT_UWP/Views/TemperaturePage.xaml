@@ -10,8 +10,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel>
-            <syncfusion:SfChart Height="800" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="10,10,-10,142">
+        <RelativePanel Margin="50,50,50,50">
+            <TextBlock Name="headerTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="25">Temperature readings:</TextBlock>
+            <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" MaxHeight="700" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="20,20,20,20">
                 <syncfusion:LineSeries                        
                         ItemsSource="{Binding Observations}"
                         XBindingPath="ObservationID"
@@ -24,7 +25,8 @@
                 </syncfusion:SfChart.SecondaryAxis>
             </syncfusion:SfChart>
 
-            <Grid RelativePanel.AlignBottomWithPanel="True" Width="1300" Height="150" >
+            <TextBlock Name="detailsTextBlock" FontSize="20" RelativePanel.Above="ListViewGrid">Temperature Details</TextBlock>
+            <Grid Name="ListViewGrid" Margin="50,10,50,10" HorizontalAlignment="Stretch" RelativePanel.AlignBottomWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition />
@@ -43,10 +45,10 @@
                     <TextBlock Grid.Column="3" Text="Title Col 4" />
                     <TextBlock Grid.Column="4" Text="Title Col 5" />
                 </Grid>
-                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" >
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Width="{Binding ElementName=listView, Path=ActualWidth}" >
+                            <Grid Width="{Binding ElementName=ListViewGrid, Path=ActualWidth}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
