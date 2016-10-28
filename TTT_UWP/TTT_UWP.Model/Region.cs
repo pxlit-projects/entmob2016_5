@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TTT.Model
+namespace TTT_UWP.Model
 {
     public class Region
     {

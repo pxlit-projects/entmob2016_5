@@ -19,7 +19,7 @@
         <CommandBar Height="35" Background="Transparent">
             <AppBarButton>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                    <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                    <ComboBox x:Name="cmbSelectWarehouse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 1, 60, 0" 
                         ItemsSource="{Binding Warehouses}" 
                         SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
                         DisplayMemberPath="WarehouseName">

@@ -35,9 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\TTT_UWP.Model\TTT.Model.csproj">
+    <ProjectReference Include="..\TTT_UWP.Model\TTT_UWP.Model.csproj">
       <Project>{70ecc56e-e782-4b9a-845c-94af4735b5bb}</Project>
-      <Name>TTT.Model</Name>
+      <Name>TTT_UWP.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

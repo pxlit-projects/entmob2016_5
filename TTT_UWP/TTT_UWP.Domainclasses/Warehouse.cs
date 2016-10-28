@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TTT.Domainclasses
+namespace TTT_UWP.Domainclasses
 {
     public class Warehouse
     {

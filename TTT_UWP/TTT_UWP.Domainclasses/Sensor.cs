@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TTT.Domainclasses;
+using TTT_UWP.Domainclasses;
 
-namespace TTT.Domainclasses
+namespace TTT_UWP.Domainclasses
 {
     public class Sensor
     {
