@@ -35,12 +35,10 @@ namespace TTT_UWP.ViewModels
         {
             LoadData();
             LoadCommands();
-            ButtonCommand = new CustomCommand(OnChangeWareHouse, CanRedirect);
-            RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
             this.navigationService = navigationService;
         }
 
-        //Command nest
+        //Commands
         private void OnChangeWareHouse(object o)
         {
             //TODO: redirect naar warehouse db enzo
@@ -74,7 +72,8 @@ namespace TTT_UWP.ViewModels
 
         private void LoadCommands()
         {
-            //ChangeWarehouseCommand = new CustomCommand(ChangeWarehouse, CanChangeWarehouse);
+            ButtonCommand = new CustomCommand(OnChangeWareHouse, CanRedirect);
+            RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
         }
 
         private void ChangeWarehouse(object obj)

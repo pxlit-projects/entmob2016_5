@@ -48,17 +48,12 @@
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
 
-            <TextBlock RelativePanel.Above="Grid4" Name="LabelEmployeeProd" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
-            <Grid RelativePanel.AlignBottomWithPanel="True" Name="Grid4" Width="250" Height="250">
-                <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
-            </Grid>
-
-            <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Above="Grid5" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Above="Grid5" FontSize="25" Width="250" Height="50">Products</TextBlock>
             <Grid Name="Grid5"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True"  Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
 
-            <TextBlock Name="LabelProducts" RelativePanel.AlignRightWithPanel="True" RelativePanel.Above="Grid6" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <TextBlock Name="LabelProducts" RelativePanel.AlignRightWithPanel="True" RelativePanel.Above="Grid6" FontSize="25" Width="250" Height="50">Measured Extremes</TextBlock>
             <Grid Name="Grid6"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"  Width="250" Height="250">
                 <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
             </Grid>
