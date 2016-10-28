@@ -26,7 +26,7 @@
             </interactivity:Interaction.Behaviors>
         </ComboBox>
 
-        <RelativePanel Margin="50,50,50,50" Name="relPanel">
+        <RelativePanel Margin="30,30,30,30" Name="relPanel">
             <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
                 <Grid.ColumnDefinitions>
