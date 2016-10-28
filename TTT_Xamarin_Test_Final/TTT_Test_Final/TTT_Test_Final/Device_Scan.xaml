@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TTT_Test_Final"
              x:Class="TTT_Test_Final.Device_Scan">
-
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
+  <ContentPage.Content>
+    <StackLayout>
+    <Label Text="Welcome to Xamarin Forms!"
+             HorizontalOptions="Center" />
+    <local:Test/>
+    <Label Text="Welcome to Xamarin Forms!"
            HorizontalOptions="Center" />
-
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TTT_UWP.Domainclasses
+namespace TTT.Domainclasses
 {
     public class Product
     {
