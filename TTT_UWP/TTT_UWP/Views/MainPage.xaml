@@ -56,30 +56,21 @@
                 </Button>
             </Grid>
 
-            <Grid x:Name="gridRow2" RelativePanel.Below="Grid1" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-            </Grid>
-            
-            <TextBlock Name="LabelExtremes" RelativePanel.Above="Grid5" FontSize="25" Width="250" Height="50">Products</TextBlock>
-            <Grid Name="Grid5" Width="250" Height="250" RelativePanel.AlignHorizontalCenterWithPanel="True">
-                <Button Command="{Binding RedirectCommand}" CommandParameter="ProductPage" Background="Transparent" Width="150" Height="150" Margin="50, 50, 50, 50">
-                    <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
-                </Button>
-            </Grid>
+            <RelativePanel RelativePanel.Below="Grid1" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                <TextBlock Name="LabelExtremes" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="25" Width="250" Height="50" Margin="0, 50, 0, 0">Products</TextBlock>
+                <Grid Name="Grid5" Width="250" Height="250" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelExtremes">
+                    <Button Command="{Binding RedirectCommand}" CommandParameter="ProductPage" Background="Transparent" Width="150" Height="150">
+                        <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+                    </Button>
+                </Grid>
 
-            <TextBlock Name="LabelProducts" FontSize="25" Width="250" Height="50">Measured Extremes</TextBlock>
-            <Grid Name="Grid6" Width="250" Height="250">
-                <Button Command="{Binding RedirectCommand}" CommandParameter="MeasuredExtremesPage" Background="Transparent" Width="150" Height="150" Margin="50, 50, 50, 50">
-                    <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
-                </Button>
-            </Grid>
+                <TextBlock Name="LabelProducts" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="25" Width="250" Height="50" Margin="0, 50, 0, 0">Measured Extremes</TextBlock>
+                <Grid Name="Grid6" Width="250" Height="250" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelProducts">
+                    <Button Command="{Binding RedirectCommand}" CommandParameter="MeasuredExtremesPage" Background="Transparent" Width="150" Height="150">
+                        <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+                    </Button>
+                </Grid>
+            </RelativePanel>
         </RelativePanel>
     </Grid>
 </Page>
