@@ -5,9 +5,69 @@
     xmlns:local="using:TTT_UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalAlignment="Top">
+        <CommandBar Background="Transparent" Height="35">
+            <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
+        </CommandBar>
+        <RelativePanel Margin="50,50,50,50">
+            <TextBlock Name="headerTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="25">Pressure readings:</TextBlock>
+            <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" MaxHeight="700" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" BorderBrush="Transparent" Background="Transparent" Margin="20,20,20,20">
+                <syncfusion:LineSeries                        
+                        ItemsSource="{Binding Observations}"
+                        XBindingPath="ObservationID"
+                        YBindingPath="Temperature" Margin="0,0,0,-11"/>
+                <syncfusion:SfChart.PrimaryAxis>
+                    <syncfusion:CategoryAxis ShowGridLines="False" BorderBrush="Transparent"/>
+                </syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:SfChart.SecondaryAxis>
+                    <syncfusion:NumericalAxis ShowGridLines="false" BorderBrush="transparent" Minimum="15" Maximum="30" Height="790" Width="18" />
+                </syncfusion:SfChart.SecondaryAxis>
+            </syncfusion:SfChart>
 
+            <TextBlock Name="detailsTextBlock" FontSize="20" RelativePanel.Above="ListViewGrid">Pressure Details</TextBlock>
+            <Grid Name="ListViewGrid" Margin="50,10,50,10" HorizontalAlignment="Stretch" RelativePanel.AlignBottomWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid x:Name="listViewGrid" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="ID" />
+                    <TextBlock Grid.Column="1" Text="Pressure" />
+                    <TextBlock Grid.Column="2" Text="Region" />
+                    <TextBlock Grid.Column="3" Text="Title Col 4" />
+                    <TextBlock Grid.Column="4" Text="Title Col 5" />
+                </Grid>
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" HorizontalAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="{Binding ElementName=ListViewGrid, Path=ActualWidth}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
+                                <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
+                                <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
+                                <TextBlock Grid.Column="3" Text="{Binding Humidity}" />
+                                <TextBlock Grid.Column="4" Text="{Binding Airpressure}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </RelativePanel>
     </Grid>
 </Page>

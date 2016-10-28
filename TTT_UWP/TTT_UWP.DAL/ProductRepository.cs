@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TTT_UWP.Model;
+using TTT.Model;
 
-namespace TTT_UWP.DAL
+namespace TTT.DAL
 {
     public class ProductRepository : IProductRepository
     {
