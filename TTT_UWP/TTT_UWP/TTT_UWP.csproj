@@ -114,6 +114,7 @@
     <Compile Include="Utility\CustomCommand.cs" />
     <Compile Include="Utility\Messenger.cs" />
     <Compile Include="ViewModels\HumidityPageViewModel.cs" />
+    <Compile Include="ViewModels\MeasuredExtremesViewModel.cs" />
     <Compile Include="ViewModels\TemperaturePageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\PressurePageViewModel.cs" />
@@ -163,6 +164,10 @@
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MeasuredExtremesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PressurePage.xaml">
       <SubType>Designer</SubType>
