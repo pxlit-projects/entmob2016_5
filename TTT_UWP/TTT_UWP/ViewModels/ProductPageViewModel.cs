@@ -38,6 +38,9 @@ namespace TTT_UWP.ViewModels
         {
             LoadData();
             LoadCommands();
+
+            Messenger.Default.Register<Product>(this, OnProductReceived);
+
             this.navigationService = navigationService;
         }
 
@@ -72,6 +75,11 @@ namespace TTT_UWP.ViewModels
         private void OnRedirectCommand(object o)
         {
             navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));
+        }
+
+        private void OnProductReceived(Product product)
+        {
+            SelectedProduct = product;
         }
 
         //Mag er geredirect worden (huidig altijd true)

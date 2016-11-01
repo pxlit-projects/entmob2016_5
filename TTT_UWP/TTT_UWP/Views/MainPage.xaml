@@ -10,9 +10,10 @@
     xmlns:interact="using:Microsoft.Xaml.Interactivity"
     xmlns:interactcore="using:Microsoft.Xaml.Interactions.Core"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-   xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
 
+    
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 

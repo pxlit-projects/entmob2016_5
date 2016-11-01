@@ -16,22 +16,28 @@ namespace TTT_UWP.ViewModels
 {
     public class TemperaturePageViewModel : INotifyPropertyChanged
     {
+        
+
+        //Services
+        private INavigationService navigationService;
+
+        //Dataservices
+        private static IObservationRepository observationRepository = new ObservationRepository();
+        private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
+
+        //Databinding
+        public ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //Redirect
-        private INavigationService navigationService;
+        //Commands
         public ICommand RedirectCommand { get; set; }
         public ICommand GoBackCommand { get; set; }
-
-        public IObservationRepository observationRepository;
-        public ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
 
         public TemperaturePageViewModel(INavigationService navigationService)
         {
             observationRepository = new ObservationRepository();
-            AddDummyData();
-            RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
-            GoBackCommand = new CustomCommand(OnGoBack, CanRedirect);
+            LoadData();
+            LoadCommands();
             this.navigationService = navigationService;
         }
 
@@ -51,12 +57,18 @@ namespace TTT_UWP.ViewModels
             return true;
         }
 
-        public void AddDummyData()
+        public void LoadData()
         {
             foreach (Observation item in observationRepository.GetObservations())
             {
                 observations.Add(item);
             }
+        }
+
+        private void LoadCommands()
+        {
+            RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
+            GoBackCommand = new CustomCommand(OnGoBack, CanRedirect);
         }
 
         public ObservableCollection<Observation> Observations

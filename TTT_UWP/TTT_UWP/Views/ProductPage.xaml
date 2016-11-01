@@ -5,12 +5,18 @@
     xmlns:local="using:TTT_UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-
+    mc:Ignorable="d"
+    xmlns:viewmodel="using:TTT_UWP.ViewModels"
+    xmlns:interact="using:Microsoft.Xaml.Interactivity"
+    xmlns:interactcore="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core">
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <CommandBar Background="Transparent" Height="35">
-            <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
+            <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"/>
         </CommandBar>
+        
         <RelativePanel x:Name="rpPanel" Margin="50, 50, 50, 50">
             <Grid x:Name="dataGrid" HorizontalAlignment="Stretch" DataContext="{Binding Products, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True">
                 <Grid.ColumnDefinitions>
@@ -36,9 +42,30 @@
                 <TextBlock Grid.Column="8" Text="Min Pressure" Margin="5, 5, 5, 5"/>
                 <TextBlock Grid.Column="9" Text="Max Pressure" Margin="5, 5, 5, 5"/>
             </Grid>
-            <Button x:Name="btnAdd" Content="Add product" RelativePanel.Below="dataGrid" RelativePanel.AlignLeftWith="dataGrid" Margin="50, 10, 10, 10"/>
-            <Button x:Name="btnEditProduct" Content="Edit product" RelativePanel.Below="dataGrid" RelativePanel.AlignHorizontalCenterWith="dataGrid" Margin="10, 10, 10, 10"/>
-            <Button x:Name="btnDeleteProduct" Content="Delete product" RelativePanel.Below="dataGrid" RelativePanel.AlignRightWith="dataGrid" Margin="10, 10, 50, 10"/>
+
+            <Button x:Name="btnAdd" Content="Add product" RelativePanel.Below="dataGrid" RelativePanel.AlignLeftWith="dataGrid" Margin="50, 10, 10, 10">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding AddCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            
+            <Button x:Name="btnEditProduct" Content="Edit product" RelativePanel.Below="dataGrid" RelativePanel.AlignHorizontalCenterWith="dataGrid" Margin="10, 10, 10, 10">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding EditCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            
+            <Button x:Name="btnDeleteProduct" Content="Delete product" RelativePanel.Below="dataGrid" RelativePanel.AlignRightWith="dataGrid" Margin="10, 10, 50, 10">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding DeleteCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
         </RelativePanel>
     </Grid>
 </Page>
