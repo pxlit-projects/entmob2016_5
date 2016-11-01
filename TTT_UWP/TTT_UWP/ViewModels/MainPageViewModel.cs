@@ -19,12 +19,19 @@ namespace TTT_UWP.ViewModels
         //Services
         private INavigationService navigationService;
 
+<<<<<<< HEAD
         //Dataservices
         private static IWarehouseRepository warehouseRepository = new WarehouseRepository();
         private static IWarehouseDataService warehouseDataService = new WarehouseDataService(warehouseRepository);
+=======
+        //Repositories
+        private IWarehouseRepository warehouseRepository = new WarehouseRepository();
+        private IObservationRepository observationRepository = new ObservationRepository();
+>>>>>>> a1e875726b86269b60f5d1f631590d4fa4bbdcb0
 
         //Databinding 
         private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
+        private ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
         private Warehouse selectedWarehouse = new Warehouse();
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -69,6 +76,10 @@ namespace TTT_UWP.ViewModels
             {
                 warehouses.Add(item);
             }
+            foreach (Observation item in observationRepository.GetObservations())
+            {
+                observations.Add(item);
+            }
         }
 
         private void LoadCommands()
@@ -107,6 +118,19 @@ namespace TTT_UWP.ViewModels
             {
                 warehouses = value;
                 RaisePropertyChanged("Warehouses");
+            }
+        }
+
+        public ObservableCollection<Observation> Observations
+        {
+            get
+            {
+                return observations;
+            }
+            set
+            {
+                observations = value;
+                RaisePropertyChanged("Wbservations");
             }
         }
 
