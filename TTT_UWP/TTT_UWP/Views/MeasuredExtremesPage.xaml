@@ -9,7 +9,6 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <CommandBar Background="Transparent" Height="35">
-<<<<<<< HEAD
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"/>
         </CommandBar>
 
@@ -34,9 +33,5 @@
                 <TextBlock Grid.Column="4" Text="Maximum Unit" Margin="5, 5, 5, 5"/>
             </Grid>
         </RelativePanel>
-=======
-            <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
-        </CommandBar>
->>>>>>> a1e875726b86269b60f5d1f631590d4fa4bbdcb0
     </Grid>
 </Page>
