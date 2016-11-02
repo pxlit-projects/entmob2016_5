@@ -19,15 +19,13 @@ namespace TTT_UWP.ViewModels
         //Services
         private INavigationService navigationService;
 
-<<<<<<< HEAD
         //Dataservices
         private static IWarehouseRepository warehouseRepository = new WarehouseRepository();
         private static IWarehouseDataService warehouseDataService = new WarehouseDataService(warehouseRepository);
-=======
+
         //Repositories
-        private IWarehouseRepository warehouseRepository = new WarehouseRepository();
-        private IObservationRepository observationRepository = new ObservationRepository();
->>>>>>> a1e875726b86269b60f5d1f631590d4fa4bbdcb0
+        private static IObservationRepository observationRepository = new ObservationRepository();
+        private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
 
         //Databinding 
         private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();

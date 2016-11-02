@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="TTT_UWP.AddProductPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TTT_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel Margin="50, 50, 50, 50">
+            <TextBlock x:Name="txbTitel" Text="Add product" FontWeight="Bold" FontSize="25" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" Margin="0, 0, 0, 20"/>
+            
+            <TextBlock x:Name="txbName" Text="Name: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txbTitel" Margin="0, 0, 10, 0"/>
+            <TextBox x:Name="txtName" RelativePanel.Below="txbTitel" RelativePanel.RightOf="txbName" RelativePanel.AlignVerticalCenterWith="txbName" Width="95"/>
+            
+            <TextBlock x:Name="txbWarehouse" Text="Warehouse: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtName" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtWarehouse" RelativePanel.Below="txbName" RelativePanel.RightOf="txbWarehouse" RelativePanel.AlignVerticalCenterWith="txbWarehouse" Width="95" Margin="0, 10, 0, 0"/>
+            
+            <TextBlock x:Name="txbRack" Text="Rack: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtWarehouse" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtRack" RelativePanel.Below="txbWarehouse" RelativePanel.RightOf="txbRack" RelativePanel.AlignVerticalCenterWith="txbRack" Width="95" Margin="0, 10, 0, 0"/>
+            
+            <TextBlock x:Name="txbMinTemp" Text="Minimum Temperature: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtRack" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtMinTemp" RelativePanel.Below="txbRack" RelativePanel.RightOf="txbMinTemp" RelativePanel.AlignVerticalCenterWith="txbMinTemp" Width="95" Margin="0, 10, 0, 0"/>
+            
+            <TextBlock x:Name="txbMaxTemp" Text="Maximum Temperature: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMinTemp" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtMaxTemp" RelativePanel.Below="txbMinTemp" RelativePanel.RightOf="txbMaxTemp" RelativePanel.AlignVerticalCenterWith="txbMaxTemp" Width="95" Margin="0, 10, 0, 0"/>
+
+            <TextBlock x:Name="txbMinHumidity" Text="Minimum Humidity: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMaxTemp" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtMinHumidity" RelativePanel.Below="txbMaxTemp" RelativePanel.RightOf="txbMinHumidity" RelativePanel.AlignVerticalCenterWith="txbMinHumidity" Width="95" Margin="0, 10, 0, 0"/>
+            
+            <TextBlock x:Name="txbMaxHumidity" Text="Maximum Humidity: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMinHumidity" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtMaxHumidity" RelativePanel.Below="txbMinHumidity" RelativePanel.RightOf="txbMaxHumidity" RelativePanel.AlignVerticalCenterWith="txbMaxHumidity" Width="95" Margin="0, 10, 0, 0"/>
+
+            <TextBlock x:Name="txbMinPressure" Text="Minimum Pressure: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMaxHumidity" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtMinPressure" RelativePanel.Below="txbMinPressure" RelativePanel.RightOf="txbMinPressure" RelativePanel.AlignVerticalCenterWith="txbMinPressure" Width="95" Margin="0, 10, 0, 0"/>
+            
+            <TextBlock x:Name="txbMaxPressure" Text="Maximum Pressure: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMinPressure" Margin="0, 10, 10, 0"/>
+            <TextBox x:Name="txtMaxPressure" RelativePanel.Below="txbMinPressure" RelativePanel.RightOf="txbMaxPressure" RelativePanel.AlignVerticalCenterWith="txbMaxPressure" Width="95" Margin="0, 10, 0, 0"/>
+
+            <Button x:Name="btnAdd" Content="Add product" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txbMaxPressure" Margin="0, 20, 0, 0"/>
+
+            <Button x:Name="btnCancel" Content="Cancel" RelativePanel.RightOf="btnAdd" RelativePanel.Below="txbMaxPressure" Margin="10, 20, 0, 0"/>
+        </RelativePanel>
+    </Grid>
+</Page>

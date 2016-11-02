@@ -113,6 +113,8 @@
     <Compile Include="Services\WarehouseDataService.cs" />
     <Compile Include="Utility\CustomCommand.cs" />
     <Compile Include="Utility\Messenger.cs" />
+    <Compile Include="ViewModels\AddProductPageViewModel.cs" />
+    <Compile Include="ViewModels\EditProductPageViewModel.cs" />
     <Compile Include="ViewModels\HumidityPageViewModel.cs" />
     <Compile Include="ViewModels\MeasuredExtremesViewModel.cs" />
     <Compile Include="ViewModels\TemperaturePageViewModel.cs" />
@@ -157,6 +159,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\AddProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HumidityPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
