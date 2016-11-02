@@ -51,6 +51,11 @@ namespace TTT_UWP.DAL
             productToUpdate = product;
         }
 
+        public void AddProduct(Product product)
+        {
+            //Add product to database
+        }
+
         public void LoadProducts()
         {
             //Load Products

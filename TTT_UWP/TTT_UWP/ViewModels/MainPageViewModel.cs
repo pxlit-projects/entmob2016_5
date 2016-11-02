@@ -18,22 +18,14 @@ namespace TTT_UWP.ViewModels
     {
         //Services
         private INavigationService navigationService;
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> a91867825f28c550840a4597712473eabbb9529f
-        //Dataservices
-        private static IWarehouseRepository warehouseRepository = new WarehouseRepository();
-        private static IWarehouseDataService warehouseDataService = new WarehouseDataService(warehouseRepository);
 
         //Repositories
-<<<<<<< HEAD
         private static IObservationRepository observationRepository = new ObservationRepository();
+        private static IWarehouseRepository warehouseRepository = new WarehouseRepository();
+
+        //Dataservices
+        private static IWarehouseDataService warehouseDataService = new WarehouseDataService(warehouseRepository);
         private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
-=======
-        private IObservationRepository observationRepository = new ObservationRepository();
->>>>>>> a91867825f28c550840a4597712473eabbb9529f
 
         //Databinding 
         private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
@@ -136,7 +128,7 @@ namespace TTT_UWP.ViewModels
             set
             {
                 observations = value;
-                RaisePropertyChanged("Wbservations");
+                RaisePropertyChanged("Observations");
             }
         }
 

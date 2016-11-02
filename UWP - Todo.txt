@@ -15,10 +15,10 @@
 - ProductPage + ProductPageViewModel
 	- Display table
 	- Add button redirects, edit button redirects with selected item, delete button deletes selected item
-- AddProductPage + AddProductPageViewModel
+- AddProductPage + AddProductPageViewModel //IN PROGRESS (Daan)
 	- Add product with data given by user
 	- Cancel functionality
-- EditProductPage + EditProductPageViewModel
+- EditProductPage + EditProductPageViewModel //IN PROGRESS (Daan)
 	- Fill textboxes with data from selected item
 	- Edit product with data given by user
 	- Cancel functionality
