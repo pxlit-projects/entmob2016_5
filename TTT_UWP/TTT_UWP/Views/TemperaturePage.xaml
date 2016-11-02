@@ -47,9 +47,15 @@
                     <TextBlock Grid.Column="3" Text="Temperature" />
                 </Grid>
                 <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" HorizontalAlignment="Stretch">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="MinWidth" Value="0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Width="{Binding ElementName=ListViewGrid, Path=ActualWidth}">
+                            <Grid Width="{Binding ElementName=ListViewGrid, Path=ActualWidth}" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
@@ -57,9 +63,9 @@
                                     <ColumnDefinition  />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
-                                <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
+                                <TextBlock Grid.Column="1" Text="{Binding RegionID}"  />
                                 <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
-                                <TextBlock Grid.Column="3" Text="{Binding Temperature}" />
+                                <TextBlock Grid.Column="3" Text="{Binding Temperature}"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
