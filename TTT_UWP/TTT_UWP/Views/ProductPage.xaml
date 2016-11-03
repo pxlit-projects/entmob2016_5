@@ -43,29 +43,11 @@
                 <TextBlock Grid.Column="9" Text="Max Pressure" Margin="5, 5, 5, 5"/>
             </Grid>
 
-            <Button x:Name="btnAdd" Content="Add product" RelativePanel.Below="dataGrid" RelativePanel.AlignLeftWith="dataGrid" Margin="50, 10, 10, 10">
-                <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="Click">
-                        <core:InvokeCommandAction Command="{Binding AddCommand}"/>
-                    </core:EventTriggerBehavior>
-                </interactivity:Interaction.Behaviors>
-            </Button>
-            
-            <Button x:Name="btnEditProduct" Content="Edit product" RelativePanel.Below="dataGrid" RelativePanel.AlignHorizontalCenterWith="dataGrid" Margin="10, 10, 10, 10">
-                <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="Click">
-                        <core:InvokeCommandAction Command="{Binding EditCommand}"/>
-                    </core:EventTriggerBehavior>
-                </interactivity:Interaction.Behaviors>
-            </Button>
-            
-            <Button x:Name="btnDeleteProduct" Content="Delete product" RelativePanel.Below="dataGrid" RelativePanel.AlignRightWith="dataGrid" Margin="10, 10, 50, 10">
-                <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="Click">
-                        <core:InvokeCommandAction Command="{Binding DeleteCommand}"/>
-                    </core:EventTriggerBehavior>
-                </interactivity:Interaction.Behaviors>
-            </Button>
+            <Button x:Name="btnAdd" Content="Add product" Command="{Binding RedirectCommand}" CommandParameter="AddProductPage" RelativePanel.Below="dataGrid" RelativePanel.AlignLeftWith="dataGrid" Margin="50, 10, 10, 10"></Button>
+
+            <Button x:Name="btnEditProduct" Content="Edit product" Command="{Binding RedirectCommand}" CommandParameter="EditProductPage" RelativePanel.Below="dataGrid" RelativePanel.AlignHorizontalCenterWith="dataGrid" Margin="10, 10, 10, 10"></Button>
+
+            <Button x:Name="btnDeleteProduct" Content="Delete product" Command="{Binding DeleteCommand}" RelativePanel.Below="dataGrid" RelativePanel.AlignRightWith="dataGrid" Margin="10, 10, 50, 10"></Button>
         </RelativePanel>
     </Grid>
 </Page>
