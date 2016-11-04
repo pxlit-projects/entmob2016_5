@@ -20,8 +20,12 @@ namespace TTT_UWP.ViewModels
         private INavigationService navigationService;
 
         //Repositories
-        private IWarehouseRepository warehouseRepository = new WarehouseRepository();
-        private IObservationRepository observationRepository = new ObservationRepository();
+        private static IObservationRepository observationRepository = new ObservationRepository();
+        private static IWarehouseRepository warehouseRepository = new WarehouseRepository();
+
+        //Dataservices
+        private static IWarehouseDataService warehouseDataService = new WarehouseDataService(warehouseRepository);
+        private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
 
         //Databinding 
         private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
@@ -43,7 +47,7 @@ namespace TTT_UWP.ViewModels
         //Commands
         private void OnChangeWareHouse(object o)
         {
-            //TODO: redirect naar warehouse db enzo
+            //TODO: databinding op grafieken en dropdownlist wijzigen 
             Debug.WriteLine("Warehouse: " + selectedWarehouse.WarehouseName);
         }
 
@@ -66,7 +70,7 @@ namespace TTT_UWP.ViewModels
         //Laad de lijst van warehouses in (observable collection)
         private void LoadData()
         {
-            foreach (Warehouse item in warehouseRepository.GetWarehouses())
+            foreach (Warehouse item in warehouseDataService.GetWarehouses())
             {
                 warehouses.Add(item);
             }
@@ -124,7 +128,7 @@ namespace TTT_UWP.ViewModels
             set
             {
                 observations = value;
-                RaisePropertyChanged("Wbservations");
+                RaisePropertyChanged("Observations");
             }
         }
 

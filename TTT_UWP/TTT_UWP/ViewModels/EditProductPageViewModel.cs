@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using TTT_UWP.DAL;
+using TTT_UWP.Model;
+using TTT_UWP.Services;
+using TTT_UWP.Utility;
+
+namespace TTT_UWP.ViewModels
+{
+    public class EditProductPageViewModel : INotifyPropertyChanged
+    {
+        //Services
+        private INavigationService navigationService;
+
+        //Repositories
+        private static IProductRepository productRepository = new ProductRepository();
+
+        //Dataservices
+        private static IProductDataService productDataService = new ProductDataService(productRepository);
+
+        //Databinding
+        private Product selectedProduct = new Product();
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //Commands
+        public ICommand EditCommand { get; set; }
+        public ICommand CancelCommand { get; set; }
+
+        public EditProductPageViewModel(INavigationService navigationService)
+        {
+            LoadCommands();
+            this.navigationService = navigationService;
+        }
+
+        private void LoadCommands()
+        {
+            EditCommand = new CustomCommand(OnEditProduct, CanRedirect);
+            CancelCommand = new CustomCommand(OnGoBack, CanRedirect);
+        }
+
+        private void OnEditProduct(object obj)
+        {
+            productDataService.UpdateProduct((Product)obj);
+            navigationService.GoBack();
+        }
+
+        private bool CanRedirect(object obj)
+        {
+            return true;
+        }
+
+        private void OnGoBack(object o)
+        {
+            navigationService.GoBack();
+        }
+    }
+}

@@ -14,5 +14,6 @@ namespace TTT_UWP.Services
         List<Product> GetProducts();
         List<Product> GetProductsByWarehouse(Warehouse warehouse);
         void UpdateProduct(Product product);
+        void AddProduct(Product product);
     }
 }

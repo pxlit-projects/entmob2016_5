@@ -42,5 +42,10 @@ namespace TTT_UWP.Services
         {
             repository.UpdateProduct(product);
         }
+
+        public void AddProduct(Product product)
+        {
+            repository.AddProduct(product);
+        }
     }
 }
