@@ -45,6 +45,7 @@ namespace TTT_UWP.ViewModels
         private void OnAddProduct(object obj)
         {
             productDataService.AddProduct((Product)obj);
+            Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
             navigationService.GoBack();
         }
 

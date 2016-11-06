@@ -3,54 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TTT_UWP.DAL;
 using TTT_UWP.Model;
 
-namespace TTT_UWP.DAL
+namespace TTT_UWP.Tests.Mocks
 {
-    public class ProductRepository : IProductRepository
+    public class MockProductRepository : IProductRepository
     {
 
-        private static List<Product> products;
+        private List<Product> products;
 
-        public void DeleteProduct(Product product)
+        public MockProductRepository()
         {
-            if (products == null)
-                LoadProducts();
-            products.Remove(product);
+            products = LoadMockProducts();
         }
 
-        public Product GetProduct()
+        private List<Product> LoadMockProducts()
         {
-            if (products == null)
-                LoadProducts();
-            return products.FirstOrDefault();
-        }
-
-        public Product GetProductById(int id)
-        {
-            if (products == null)
-                LoadProducts();
-            return products.Where(c => c.ProductID == id).FirstOrDefault();
-        }
-
-        public List<Product> GetProducts()
-        {
-            if (products == null)
-                LoadProducts();
-            return products;
-        }
-
-        public List<Product> GetProductsByWarehouse(Warehouse warehouse)
-        {
-            if (products == null)
-                LoadProducts();
-            return products.Where(c => c.WarehouseID == warehouse.WarehouseID).ToList();
-        }
-
-        public void UpdateProduct(Product product)
-        {
-            Product productToUpdate = products.Where(c => c.ProductID == product.ProductID).FirstOrDefault();
-            productToUpdate = product;
+            //mockdata
+            return null;
         }
 
         public void AddProduct(Product product)
@@ -58,14 +29,35 @@ namespace TTT_UWP.DAL
             products.Add(product);
         }
 
-        public void LoadProducts()
+        public void DeleteProduct(Product product)
         {
-            //Load Products
+            products.Remove(product);
         }
 
-        public void Sync()
+        public Product GetProduct()
         {
-            //sync met database
+            return products.FirstOrDefault();
+        }
+
+        public Product GetProductById(int id)
+        {
+            return products.Where(c => c.ProductID == id).FirstOrDefault();
+        }
+
+        public List<Product> GetProducts()
+        {
+            return products;
+        }
+
+        public List<Product> GetProductsByWarehouse(Warehouse warehouse)
+        {
+            return products.Where(c => c.WarehouseID == warehouse.WarehouseID).ToList();
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            Product productToUpdate = products.Where(c => c.ProductID == product.ProductID).FirstOrDefault();
+            productToUpdate = product;
         }
     }
 }

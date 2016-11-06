@@ -58,7 +58,7 @@
                                 <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
                                 <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
                                 <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
-                                <TextBlock Grid.Column="3" Text="{Binding AirPressure}" />
+                                <TextBlock Grid.Column="3" Text="{Binding AirPressure, Converter={StaticResource localAirPressureConverter}}" />
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

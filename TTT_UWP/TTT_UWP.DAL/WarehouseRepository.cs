@@ -57,5 +57,10 @@ namespace TTT_UWP.DAL
             };
         }
 
+        public void Sync()
+        {
+
+        }
+
     }
 }
