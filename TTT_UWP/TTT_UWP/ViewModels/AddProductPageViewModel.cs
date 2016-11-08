@@ -44,7 +44,8 @@ namespace TTT_UWP.ViewModels
 
         private void OnAddProduct(object obj)
         {
-            productDataService.AddProduct((Product)obj);
+            Product p = new Product { ProductID = 1, ProductName = "Sla", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 };
+            productDataService.AddProduct(p);
             Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
             navigationService.GoBack();
         }

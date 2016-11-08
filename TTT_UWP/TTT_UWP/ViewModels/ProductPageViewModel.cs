@@ -74,10 +74,10 @@ namespace TTT_UWP.ViewModels
          * string wordt via typehelper service omgezet naar Type.
         */
         private void OnRedirectCommand(object o)
-        {/*
+        {
             if (o.ToString().Equals("EditProductPage"))
                 Messenger.Default.Send<Product>(selectedProduct);
-                */
+                
             navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));
         }
 
