@@ -49,10 +49,10 @@ namespace TTT_UWP.ViewModels
 
         private void LoadData()
         {
-            /*foreach (Product product in productRepository.GetProducts())
+            foreach (Product product in productRepository.GetProducts())
             {
                 products.Add(product);
-            }*/
+            }
         }
 
         private void LoadCommands()
@@ -74,10 +74,10 @@ namespace TTT_UWP.ViewModels
          * string wordt via typehelper service omgezet naar Type.
         */
         private void OnRedirectCommand(object o)
-        {
+        {/*
             if (o.ToString().Equals("EditProductPage"))
                 Messenger.Default.Send<Product>(selectedProduct);
-
+                */
             navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));
         }
 
