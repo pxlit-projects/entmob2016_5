@@ -5,17 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using TTT_UWP.DAL;
 using TTT_UWP.Model;
+using TTT_UWP.Services;
 
-namespace TTT_UWP.Services
+namespace TTT_UWP.Tests.Mocks
 {
-    public class ProductDataService : IProductDataService
+    public class MockProductDataService : IProductDataService
     {
 
-        IProductRepository repository;
+        private IProductRepository repository;
 
-        public ProductDataService(IProductRepository repository)
+        public MockProductDataService(IProductRepository repository)
         {
             this.repository = repository;
+        }
+
+        public void AddProduct(Product product)
+        {
+            repository.AddProduct(product);
         }
 
         public void DeleteProduct(Product product)
@@ -41,11 +47,6 @@ namespace TTT_UWP.Services
         public void UpdateProduct(Product product)
         {
             repository.UpdateProduct(product);
-        }
-
-        public void AddProduct(Product product)
-        {
-            repository.AddProduct(product);
         }
     }
 }

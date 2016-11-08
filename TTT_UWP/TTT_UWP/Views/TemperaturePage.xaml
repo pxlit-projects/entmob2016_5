@@ -6,7 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
-    xmlns:viewmodel="using:TTT_UWP.ViewModels"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -65,7 +64,7 @@
                                 <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
                                 <TextBlock Grid.Column="1" Text="{Binding RegionID}"  />
                                 <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
-                                <TextBlock Grid.Column="3" Text="{Binding Temperature}"/>
+                                <TextBlock Grid.Column="3" Text="{Binding Temperature, Converter={StaticResource localTemperatureConverter}}"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

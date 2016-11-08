@@ -6,7 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
-    xmlns:viewmodel="using:TTT_UWP.ViewModels"
     xmlns:interact="using:Microsoft.Xaml.Interactivity"
     xmlns:interactcore="using:Microsoft.Xaml.Interactions.Core"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
@@ -86,7 +85,7 @@
                 </Button>
             </Grid>
 
-            <Grid Name="GridBla" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+            <Grid Name="grSecondRow" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
                 <RelativePanel>
                     <TextBlock Name="txMe" RelativePanel.AlignLeftWithPanel="True" Margin="50,0,0,0">Measured extremes</TextBlock>
                     <Button Name="button1" RelativePanel.AlignLeftWithPanel="True" Command="{Binding RedirectCommand}" CommandParameter="MeasuredExtremesPage" Background="Transparent" Width="150" Height="150" Margin="50, 50, 50, 50">

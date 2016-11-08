@@ -3,5 +3,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TTT_UWP"
-    RequestedTheme="Light">
+    RequestedTheme="Light"
+    xmlns:converters="using:TTT_UWP.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <converters:TemperatureConverter x:Key="localTemperatureConverter"/>
+            <converters:HumidityConverter x:Key="localHumidityConverter"/>
+            <converters:AirPressureConverter x:Key="localAirPressureConverter"/>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

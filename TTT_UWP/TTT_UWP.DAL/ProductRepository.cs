@@ -14,7 +14,9 @@ namespace TTT_UWP.DAL
 
         public void DeleteProduct(Product product)
         {
-            
+            if (products == null)
+                LoadProducts();
+            products.Remove(product);
         }
 
         public Product GetProduct()
@@ -51,9 +53,26 @@ namespace TTT_UWP.DAL
             productToUpdate = product;
         }
 
+        public void AddProduct(Product product)
+        {
+            products.Add(product);
+        }
+
         public void LoadProducts()
         {
-            //Load Products
+            products = new List<Product>()
+            {
+            new Product { ProductID = 1, ProductName = "Sla", WarehouseID= 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
+            new Product { ProductID = 2, ProductName = "Meer sla", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+            new Product { ProductID = 3, ProductName = "Wortel", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+            new Product { ProductID = 4, ProductName = "Balsamico", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+            new Product { ProductID = 5, ProductName = "Smartpony", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
+            };
+        }
+
+        public void Sync()
+        {
+            //sync met database
         }
     }
 }

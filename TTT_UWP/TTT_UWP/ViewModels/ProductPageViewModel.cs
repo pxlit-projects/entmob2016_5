@@ -29,8 +29,6 @@ namespace TTT_UWP.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Commands
-        public ICommand AddCommand { get; set; }
-        public ICommand EditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
         public ICommand RedirectCommand { get; set; }
 
@@ -39,29 +37,32 @@ namespace TTT_UWP.ViewModels
             LoadData();
             LoadCommands();
 
-            Messenger.Default.Register<Product>(this, OnProductReceived);
-
             this.navigationService = navigationService;
+
+            Messenger.Default.Register<UpdateListMessage>(this, OnUpdateListMessageReceived);
+        }
+
+        private void OnUpdateListMessageReceived(UpdateListMessage obj)
+        {
+            LoadData();
         }
 
         private void LoadData()
         {
-            foreach (Product product in productRepository.GetProducts())
+            /*foreach (Product product in productRepository.GetProducts())
             {
                 products.Add(product);
-            }
+            }*/
         }
 
         private void LoadCommands()
         {
-            AddCommand = new CustomCommand(OnAddProduct, CanRedirect);
-            EditCommand = new CustomCommand(OnEditProduct, CanRedirect);
             DeleteCommand = new CustomCommand(OnDeleteCommand, CanRedirect);
             RedirectCommand = new CustomCommand(OnRedirectCommand, CanRedirect);
         }
 
         //Commands
-        private void OnChangeWareHouse(object o)
+        private void OnChangeProduct(object o)
         {
             //TODO: redirect naar warehouse db enzo
             Debug.WriteLine("Product: " + selectedProduct.ProductName);
@@ -74,6 +75,9 @@ namespace TTT_UWP.ViewModels
         */
         private void OnRedirectCommand(object o)
         {
+            if (o.ToString().Equals("EditProductPage"))
+                Messenger.Default.Send<Product>(selectedProduct);
+
             navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));
         }
 
@@ -91,16 +95,6 @@ namespace TTT_UWP.ViewModels
         private void OnDeleteCommand(object obj)
         {
             productRepository.DeleteProduct(selectedProduct);
-        }
-
-        private void OnEditProduct(object obj)
-        {
-            
-        }
-
-        private void OnAddProduct(object obj)
-        {
-            
         }
 
         private bool CanEditOrDeleteProduct(object obj)

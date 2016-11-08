@@ -12,13 +12,11 @@ namespace TTT_UWP.DAL
 
         private static List<Observation> observations;
 
-        public ObservationRepository()
-        {
-
-        }
-
         public void DeleteObservation(Observation observation)
         {
+            if (observations == null)
+                LoadObservations();
+
             observations.Remove(observation);
         }
 

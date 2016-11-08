@@ -1,0 +1,26 @@
+- All pages
+	- Colors
+	- Responsive
+	- Change logo
+- MainPage + MainPageViewModel
+	- Display all graphs + tables
+- TemperaturePage + TemperaturePageViewModel
+	- Display graph + table
+- PressurePage + PressurePageViewModel
+	- Display graph + table
+- HumidityPage + HumidityPageViewModel
+	- Display graph + table
+- MeasuredExtremesPage + MeasuredExtremesPageViewModel
+	- Display table
+- ProductPage + ProductPageViewModel
+	- Display table
+	- Add button redirects, edit button redirects with selected item, delete button deletes selected item
+- AddProductPage + AddProductPageViewModel //IN PROGRESS (Daan)
+	- Add product with data given by user
+	- Cancel functionality
+- EditProductPage + EditProductPageViewModel //IN PROGRESS (Daan)
+	- Fill textboxes with data from selected item
+	- Edit product with data given by user
+	- Cancel functionality
+- Repository classes
+	- Get data from API
