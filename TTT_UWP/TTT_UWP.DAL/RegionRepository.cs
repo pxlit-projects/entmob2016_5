@@ -53,6 +53,27 @@ namespace TTT_UWP.DAL
             regionToUpdate = region;
         }
 
+        public double GetMaxTempPerRegion(int regionId)
+        {
+            IProductRepository repository = new ProductRepository();
+
+            List<Product> products = repository.GetProducts();
+            double lowestMaxTemp = 0;
+
+            foreach (Product p in products)
+            {
+                if (repository.GetRegionIDOfProduct(p) == regionId)
+                {
+                    if (p.MinimumTemperature < lowestMaxTemp)
+                    {
+                        lowestMaxTemp = p.MinimumTemperature;
+                    }
+                }
+            }
+
+            return lowestMaxTemp;
+        }
+
         public void LoadRegions()
         {
 

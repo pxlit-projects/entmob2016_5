@@ -58,6 +58,13 @@ namespace TTT_UWP.DAL
             products.Add(product);
         }
 
+        public int GetRegionIDOfProduct(Product product)
+        {
+            IRackRepository repository = new RackRepository();
+
+            return repository.GetRackById(product.RackID).RegionID;
+        }
+
         public void LoadProducts()
         {
             products = new List<Product>()

@@ -95,6 +95,8 @@
     <SDKReference Include="TestPlatform.Universal, Version=$(UnitTestPlatformVersion)" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mocks\MockRackRepository.cs" />
+    <Compile Include="Tests\Dataservices\RackDataServiceTests.cs" />
     <Compile Include="Tests\Viewmodels\HumidityPageViewModelTests.cs" />
     <Compile Include="Tests\Viewmodels\MainPageViewModelTests.cs" />
     <Compile Include="Tests\Viewmodels\MeasuredExtremesViewModelTests.cs" />
