@@ -8,6 +8,78 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <CommandBar Background="Transparent" Height="35">
+            <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"/>
+        </CommandBar>
 
+        <RelativePanel Margin="50,50,50,50">
+            <TextBlock Name="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="true" FontSize="30">Measured Extremes</TextBlock>
+            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.Below="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid x:Name="listViewGrid" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="ProductID"/>
+                    <TextBlock Grid.Column="1" Text="WarehouseID"/>
+                    <TextBlock Grid.Column="2" Text="RackID"/>
+                    <TextBlock Grid.Column="3" Text="Productname"/>
+                    <TextBlock Grid.Column="4" Text="Min Temperature"/>
+                    <TextBlock Grid.Column="5" Text="Max Temperature"/>
+                    <TextBlock Grid.Column="6" Text="Min Humidity"/>
+                    <TextBlock Grid.Column="7" Text="Max Humidity"/>
+                    <TextBlock Grid.Column="8" Text="Min Pressure"/>
+                    <TextBlock Grid.Column="9" Text="Max Pressure"/>
+                </Grid>
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Products}" HorizontalAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="{Binding ElementName=listViewGrid}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding ProductID}" />
+                                <TextBlock Grid.Column="1" Text="{Binding WarehouseID}" />
+                                <TextBlock Grid.Column="2" Text="{Binding ProductName}" />
+                                <TextBlock Grid.Column="3" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="4" Text="{Binding MinimumTemperature}" />
+                                <TextBlock Grid.Column="5" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="6" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="7" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="8" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="9" Text="{Binding MaximumTemperature}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
+        </RelativePanel>
     </Grid>
 </Page>
