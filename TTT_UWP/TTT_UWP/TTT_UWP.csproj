@@ -111,7 +111,7 @@
     <Compile Include="Services\ProductDataService.cs" />
     <Compile Include="Services\TypeHelper.cs" />
     <Compile Include="Services\WarehouseDataService.cs" />
-    <Compile Include="UpdateListMessage.cs" />
+    <Compile Include="Extensions\UpdateListMessage.cs" />
     <Compile Include="ViewModels\Utility\CustomCommand.cs" />
     <Compile Include="ViewModels\Utility\Messenger.cs" />
     <Compile Include="ViewModels\AddProductPageViewModel.cs" />
