@@ -64,6 +64,7 @@ namespace TTT_UWP.ViewModels
         private void LoadData()
         {
             //Ophalen waar ge-recorde temp/hum/pres groter is dan maximum van product of kleiner is dan minimum van product
+            
         }
 
         public ObservableCollection<Observation> Observations
