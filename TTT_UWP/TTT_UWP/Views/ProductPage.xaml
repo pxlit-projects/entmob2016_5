@@ -64,16 +64,16 @@
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="{Binding ProductID}" />
+                                <TextBlock Grid.Column="0" Text="{Binding ProductID}"/>
                                 <TextBlock Grid.Column="1" Text="{Binding WarehouseID}" />
                                 <TextBlock Grid.Column="2" Text="{Binding ProductName}" />
                                 <TextBlock Grid.Column="3" Text="{Binding MaximumTemperature}" />
                                 <TextBlock Grid.Column="4" Text="{Binding MinimumTemperature}" />
-                                <TextBlock Grid.Column="5" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="6" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="7" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="8" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="9" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="5" Text="{Binding MaximumHumidity}" />
+                                <TextBlock Grid.Column="6" Text="{Binding MinimumHumidity}" />
+                                <TextBlock Grid.Column="7" Text="{Binding MaximumAirPressure}" />
+                                <TextBlock Grid.Column="8" Text="{Binding MinimumAirPressure}" />
+                                <TextBlock Grid.Column="9" Text="{Binding Timestamp}" />
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

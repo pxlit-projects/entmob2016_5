@@ -99,6 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\AirPressureConverter.cs" />
+    <Compile Include="Converters\ColorConverter.cs" />
     <Compile Include="Converters\HumidityConverter.cs" />
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\products.png" />
+    <Content Include="Assets\scale.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
