@@ -15,10 +15,7 @@
         <CommandBar Height="35" Background="Transparent">
             <AppBarButton>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                    <ComboBox x:Name="cmbSelectWarehouse"
-                        ItemsSource="{Binding Warehouses}" 
-                        SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
-                        DisplayMemberPath="WarehouseName">
+                    <ComboBox x:Name="cmbSelectWarehouse" ItemsSource="{Binding Warehouses}" SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}" DisplayMemberPath="WarehouseName">
                         <interactivity:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="SelectionChanged">
                                 <core:InvokeCommandAction Command="{Binding ButtonCommand}"/>
@@ -35,10 +32,7 @@
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="TemperaturePage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Observations}"
-                        XBindingPath="ObservationID"
-                        YBindingPath="Temperature" Margin="-27,0,0,-11"/>
+                        <syncfusion:LineSeries ItemsSource="{Binding Observations}" XBindingPath="ObservationID" YBindingPath="Temperature" Margin="-27,0,0,-11"/>
                         <syncfusion:SfChart.PrimaryAxis>
                             <syncfusion:CategoryAxis FontSize="0.001" ShowGridLines="False" BorderBrush="Transparent"/>
                         </syncfusion:SfChart.PrimaryAxis>
@@ -53,10 +47,7 @@
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelAirPressure" Name="Grid2" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="PressurePage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True"  Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Observations}"
-                        XBindingPath="ObservationID"
-                        YBindingPath="AirPressure" Margin="-27,0,0,-11"/>
+                        <syncfusion:LineSeries ItemsSource="{Binding Observations}" XBindingPath="ObservationID" YBindingPath="AirPressure" Margin="-27,0,0,-11"/>
                         <syncfusion:SfChart.PrimaryAxis>
                             <syncfusion:CategoryAxis FontSize="0.001" ShowGridLines="False" BorderBrush="Transparent"/>
                         </syncfusion:SfChart.PrimaryAxis>
@@ -71,10 +62,7 @@
             <Grid RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="LabelHumidity" Name="Grid3" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="HumidityPage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True" Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Observations}"
-                        XBindingPath="ObservationID"
-                        YBindingPath="Humidity" Margin="-27,0,0,-11"/>
+                        <syncfusion:LineSeries ItemsSource="{Binding Observations}" XBindingPath="ObservationID" YBindingPath="Humidity" Margin="-27,0,0,-11"/>
                         <syncfusion:SfChart.PrimaryAxis>
                             <syncfusion:CategoryAxis FontSize="0.001" ShowGridLines="False" BorderBrush="Transparent"/>
                         </syncfusion:SfChart.PrimaryAxis>
