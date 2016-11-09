@@ -30,20 +30,18 @@
                         <ColumnDefinition  />
                         <ColumnDefinition  />
                         <ColumnDefinition  />
-                        <ColumnDefinition  />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="ProductID"/>
-                    <TextBlock Grid.Column="1" Text="WarehouseID"/>
-                    <TextBlock Grid.Column="2" Text="RackID"/>
-                    <TextBlock Grid.Column="3" Text="Productname"/>
-                    <TextBlock Grid.Column="4" Text="Min Temperature"/>
-                    <TextBlock Grid.Column="5" Text="Max Temperature"/>
-                    <TextBlock Grid.Column="6" Text="Min Humidity"/>
-                    <TextBlock Grid.Column="7" Text="Max Humidity"/>
-                    <TextBlock Grid.Column="8" Text="Min Pressure"/>
-                    <TextBlock Grid.Column="9" Text="Max Pressure"/>
+                    <TextBlock Grid.Column="0" Text="WarehouseID"/>
+                    <TextBlock Grid.Column="1" Text="RegionID"/>
+                    <TextBlock Grid.Column="2" Text="Max Temperature"/>
+                    <TextBlock Grid.Column="3" Text="Max Humidity"/>
+                    <TextBlock Grid.Column="4" Text="Max pressure Temperature"/>
+                    <TextBlock Grid.Column="5" Text="Temperature"/>
+                    <TextBlock Grid.Column="6" Text="Humidity"/>
+                    <TextBlock Grid.Column="7" Text="Pressure"/>
+                    <TextBlock Grid.Column="8" Text="Timestamp"/>
                 </Grid>
-                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Products}" HorizontalAlignment="Stretch">
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding MeasuredExtremes}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="{Binding ElementName=listViewGrid}" >
@@ -57,18 +55,16 @@
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
-                                    <ColumnDefinition  />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="{Binding ProductID}" />
-                                <TextBlock Grid.Column="1" Text="{Binding WarehouseID}" />
-                                <TextBlock Grid.Column="2" Text="{Binding ProductName}" />
-                                <TextBlock Grid.Column="3" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="4" Text="{Binding MinimumTemperature}" />
-                                <TextBlock Grid.Column="5" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="6" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="7" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="8" Text="{Binding MaximumTemperature}" />
-                                <TextBlock Grid.Column="9" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="0" Text="{Binding WarehouseID}" />
+                                <TextBlock Grid.Column="1" Text="{Binding ProductID}" />
+                                <TextBlock Grid.Column="2" Text="{Binding MaxTemperature}" />
+                                <TextBlock Grid.Column="3" Text="{Binding MaxHumidity}" />
+                                <TextBlock Grid.Column="4" Text="{Binding MaxPressure}" />
+                                <TextBlock Grid.Column="5" Text="{Binding Temperature}" Foreground="{Binding ProductID, Converter={StaticResource localColorConverter}}" />
+                                <TextBlock Grid.Column="6" Text="{Binding Humidity}" Foreground="{Binding ProductID, Converter={StaticResource localColorConverter}}" />
+                                <TextBlock Grid.Column="7" Text="{Binding Pressure}" Foreground="{Binding ProductID, Converter={StaticResource localColorConverter}}" />
+                                <TextBlock Grid.Column="8" Text="{Binding Timestamp}" />
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

@@ -78,7 +78,7 @@
                 <RelativePanel>
                     <TextBlock FontSize="25" Name="txMe" RelativePanel.AlignLeftWithPanel="True" Margin="50,0,0,0">Measured extremes</TextBlock>
                     <Button Name="button1" RelativePanel.AlignLeftWithPanel="True" Command="{Binding RedirectCommand}" CommandParameter="MeasuredExtremesPage" Background="Transparent" Width="250" Height="250" Margin="50, 50, 50, 50">
-                        <Image Width="250" Height="250" Source="/Assets/StoreLogo.png"></Image>
+                        <Image Width="250" Height="250" Source="/Assets/scale.jpg"></Image>
                     </Button>
                     <TextBlock FontSize="25" RelativePanel.AlignRightWithPanel="True" Margin="0,0,50,50">Products</TextBlock>
                     <Button Name="button2" RelativePanel.AlignRightWithPanel="True" RelativePanel.RightOf="button1" Command="{Binding RedirectCommand}" CommandParameter="ProductPage" Background="Transparent" Width="250" Height="250" Margin="50, 50, 50, 50">
