@@ -105,10 +105,12 @@
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\IObservationDataService.cs" />
     <Compile Include="Services\IProductDataService.cs" />
+    <Compile Include="Services\IRegionDataService.cs" />
     <Compile Include="Services\IWarehouseDataService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ObservationDataService.cs" />
     <Compile Include="Services\ProductDataService.cs" />
+    <Compile Include="Services\RegionDataService.cs" />
     <Compile Include="Services\TypeHelper.cs" />
     <Compile Include="Services\WarehouseDataService.cs" />
     <Compile Include="Extensions\UpdateListMessage.cs" />
