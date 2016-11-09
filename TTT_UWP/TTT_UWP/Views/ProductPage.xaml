@@ -16,62 +16,79 @@
         <CommandBar Background="Transparent" Height="35">
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"/>
         </CommandBar>
-        
-        <RelativePanel x:Name="rpPanel" Margin="50, 50, 50, 50">
-            <Grid x:Name="dataGrid" HorizontalAlignment="Stretch" DataContext="{Binding Products, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="ProductID"/>
-                <TextBlock Grid.Column="1" Text="WarehouseID"/>
-                <TextBlock Grid.Column="2" Text="RackID"/>
-                <TextBlock Grid.Column="3" Text="Productname"/>
-                <TextBlock Grid.Column="4" Text="Min Temperature"/>
-                <TextBlock Grid.Column="5" Text="Max Temperature"/>
-                <TextBlock Grid.Column="6" Text="Min Humidity"/>
-                <TextBlock Grid.Column="7" Text="Max Humidity"/>
-                <TextBlock Grid.Column="8" Text="Min Pressure"/>
-                <TextBlock Grid.Column="9" Text="Max Pressure"/>
+
+        <RelativePanel Margin="50,50,50,50">
+            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid x:Name="listViewGrid" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="ProductID"/>
+                    <TextBlock Grid.Column="1" Text="WarehouseID"/>
+                    <TextBlock Grid.Column="2" Text="RackID"/>
+                    <TextBlock Grid.Column="3" Text="Productname"/>
+                    <TextBlock Grid.Column="4" Text="Min Temperature"/>
+                    <TextBlock Grid.Column="5" Text="Max Temperature"/>
+                    <TextBlock Grid.Column="6" Text="Min Humidity"/>
+                    <TextBlock Grid.Column="7" Text="Max Humidity"/>
+                    <TextBlock Grid.Column="8" Text="Min Pressure"/>
+                    <TextBlock Grid.Column="9" Text="Max Pressure"/>
+                </Grid>
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Products}" HorizontalAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="{Binding ElementName=listViewGrid}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding ProductID}" />
+                                <TextBlock Grid.Column="1" Text="{Binding WarehouseID}" />
+                                <TextBlock Grid.Column="2" Text="{Binding ProductName}" />
+                                <TextBlock Grid.Column="3" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="4" Text="{Binding MinimumTemperature}" />
+                                <TextBlock Grid.Column="5" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="6" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="7" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="8" Text="{Binding MaximumTemperature}" />
+                                <TextBlock Grid.Column="9" Text="{Binding MaximumTemperature}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
             </Grid>
-            <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Products}" HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedProduct, Mode=TwoWay}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Width="{Binding ElementName=dataGrid, Path=ActualWidth}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition  />
-                                <ColumnDefinition  />
-                                <ColumnDefinition  />
-                                <ColumnDefinition  />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding ProductID}" />
-                            <TextBlock Grid.Column="1" Text="{Binding WarehouseID}" />
-                            <TextBlock Grid.Column="2" Text="{Binding ProductName}" />
-                            <TextBlock Grid.Column="3" Text="{Binding MaximumTemperature}" />
-                            <TextBlock Grid.Column="4" Text="{Binding MaximumTemperature}" />
-                            <TextBlock Grid.Column="5" Text="{Binding MaximumTemperature}" />
-                            <TextBlock Grid.Column="6" Text="{Binding MaximumTemperature}" />
-                            <TextBlock Grid.Column="7" Text="{Binding MaximumTemperature}" />
-                            <TextBlock Grid.Column="8" Text="{Binding MaximumTemperature}" />
-                            <TextBlock Grid.Column="9" Text="{Binding MaximumTemperature}" />
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            
+            <Button x:Name="btnAdd" Content="Add product" Command="{Binding RedirectCommand}" CommandParameter="AddProductPage" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Margin="50, 10, 10, 10"></Button>
+            <Button x:Name="btnEditProduct" Content="Edit product" Command="{Binding RedirectCommand}" CommandParameter="EditProductPage" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="10, 10, 10, 10"></Button>
+            <Button x:Name="btnDeleteProduct" Content="Delete product" Command="{Binding DeleteCommand}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="10, 10, 50, 10"></Button>
 
-            <Button x:Name="btnAdd" Content="Add product" Command="{Binding RedirectCommand}" CommandParameter="AddProductPage" RelativePanel.Below="listView" RelativePanel.AlignLeftWithPanel="True" Margin="50, 10, 10, 10"></Button>
-
-            <Button x:Name="btnEditProduct" Content="Edit product" Command="{Binding RedirectCommand}" CommandParameter="EditProductPage" RelativePanel.Below="listView" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="10, 10, 10, 10"></Button>
-
-            <Button x:Name="btnDeleteProduct" Content="Delete product" Command="{Binding DeleteCommand}" RelativePanel.Below="listView" RelativePanel.AlignRightWithPanel="True" Margin="10, 10, 50, 10"></Button>
         </RelativePanel>
     </Grid>
 </Page>
