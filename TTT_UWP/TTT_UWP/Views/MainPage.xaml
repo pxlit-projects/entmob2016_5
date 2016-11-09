@@ -15,6 +15,7 @@
         <CommandBar Height="35" Background="Transparent">
             <AppBarButton>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+                    <!--
                     <ComboBox x:Name="cmbSelectWarehouse"
                         ItemsSource="{Binding Warehouses}" 
                         SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
@@ -25,13 +26,15 @@
                             </core:EventTriggerBehavior>
                         </interactivity:Interaction.Behaviors>
                     </ComboBox>
+                    -->
                 </StackPanel>
             </AppBarButton>
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
         </CommandBar>
 
         <RelativePanel Margin="30,30,30,30" Name="relPanel">
-            <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
+            <TextBlock Name="HeaderText" FontWeight="Bold" FontSize="30" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">Temperature Track Tech</TextBlock>
+            <TextBlock RelativePanel.Below="HeaderText" Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="TemperaturePage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" Background="Transparent">
@@ -49,7 +52,7 @@
                 </Button>
             </Grid>
 
-            <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
+            <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="HeaderText"  Name="LabelAirPressure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelAirPressure" Name="Grid2" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="PressurePage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True"  Background="Transparent">
@@ -67,7 +70,7 @@
                 </Button>
             </Grid>
 
-            <TextBlock RelativePanel.AlignRightWithPanel="True" Name="LabelHumidity" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <TextBlock RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="HeaderText"  Name="LabelHumidity" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
             <Grid RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="LabelHumidity" Name="Grid3" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="HumidityPage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True" Background="Transparent">

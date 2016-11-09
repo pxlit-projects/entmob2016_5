@@ -18,7 +18,8 @@
         </CommandBar>
 
         <RelativePanel Margin="50,50,50,50">
-            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+            <TextBlock Name="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="true" FontSize="30">Products overview</TextBlock>
+            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.Below="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition />
