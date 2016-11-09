@@ -122,6 +122,12 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\PressurePageViewModel.cs" />
     <Compile Include="ViewModels\ProductPageViewModel.cs" />
+    <Compile Include="Views\AddProductPage.xaml.cs">
+      <DependentUpon>AddProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditProductPage.xaml.cs">
+      <DependentUpon>EditProductPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HumidityPage.xaml.cs">
       <DependentUpon>HumidityPage.xaml</DependentUpon>
     </Compile>

@@ -50,10 +50,10 @@ namespace TTT_UWP.DAL
         public void LoadWarehouses()
         {
             warehouses = new List<Warehouse> {
-                new Warehouse { Regions = null, WarehouseID = 1, WarehouseName = "Iets Warehouse ofzo" },
-                new Warehouse { Regions = null, WarehouseID = 2, WarehouseName = "Iets Warehousawdawde ofzo" },
-                new Warehouse { Regions = null, WarehouseID = 3, WarehouseName = "Iets Waraasehouse ofzo" },
-                new Warehouse { Regions = null, WarehouseID = 4, WarehouseName = "Iets Warehsssssouse ofzo" }
+                new Warehouse { Regions = null, WarehouseID = 1, WarehouseName = "Warehouse Elfde Linie" },
+                new Warehouse { Regions = null, WarehouseID = 2, WarehouseName = "Warehouse Neerpelt" },
+                new Warehouse { Regions = null, WarehouseID = 3, WarehouseName = "Wareblouse" },
+                new Warehouse { Regions = null, WarehouseID = 4, WarehouseName = "Warehose" }
             };
         }
 

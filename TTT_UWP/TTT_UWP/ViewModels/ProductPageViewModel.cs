@@ -31,6 +31,7 @@ namespace TTT_UWP.ViewModels
         //Commands
         public ICommand DeleteCommand { get; set; }
         public ICommand RedirectCommand { get; set; }
+        public ICommand GoBackCommand { get; set; }
 
         public ProductPageViewModel(INavigationService navigationService)
         {
@@ -49,16 +50,22 @@ namespace TTT_UWP.ViewModels
 
         private void LoadData()
         {
-            /*foreach (Product product in productRepository.GetProducts())
+            foreach (Product product in productRepository.GetProducts())
             {
                 products.Add(product);
-            }*/
+            }
         }
 
         private void LoadCommands()
         {
             DeleteCommand = new CustomCommand(OnDeleteCommand, CanRedirect);
             RedirectCommand = new CustomCommand(OnRedirectCommand, CanRedirect);
+            GoBackCommand = new CustomCommand(OnGoBack, CanRedirect);
+        }
+
+        private void OnGoBack(object obj)
+        {
+            navigationService.GoBack();
         }
 
         //Commands
@@ -67,7 +74,6 @@ namespace TTT_UWP.ViewModels
             //TODO: redirect naar warehouse db enzo
             Debug.WriteLine("Product: " + selectedProduct.ProductName);
         }
-
         /*
          * Redirect via navigationService, meegegeven parameters zitten in object o
          * Parameter is een string die zegt naar welke pagina verwezen moet worden,
@@ -77,7 +83,7 @@ namespace TTT_UWP.ViewModels
         {
             if (o.ToString().Equals("EditProductPage"))
                 Messenger.Default.Send<Product>(selectedProduct);
-
+                
             navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));
         }
 

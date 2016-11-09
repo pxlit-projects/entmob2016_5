@@ -35,10 +35,10 @@
                 </Grid.RowDefinitions>
                 <Grid x:Name="listViewGrid" >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition  />
-                        <ColumnDefinition  />
-                        <ColumnDefinition  />
-                        <ColumnDefinition  />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="Observation ID" />
                     <TextBlock Grid.Column="1" Text="Region ID" />
@@ -48,12 +48,12 @@
                 <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Width="{Binding ElementName=ListViewGrid, Path=ActualWidth}">
+                            <Grid Width="{Binding ElementName=ListViewGrid}">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition  />
-                                    <ColumnDefinition  />
-                                    <ColumnDefinition  />
-                                    <ColumnDefinition  />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
                                 <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
@@ -62,6 +62,11 @@
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
                 </ListView>
             </Grid>
         </RelativePanel>

@@ -34,10 +34,10 @@ namespace TTT_UWP.ViewModels
 
         public EditProductPageViewModel(INavigationService navigationService)
         {
-            LoadCommands();
 
             Messenger.Default.Register<Product>(this, OnProductReceived);
 
+            LoadCommands();
             this.navigationService = navigationService;
         }
 
