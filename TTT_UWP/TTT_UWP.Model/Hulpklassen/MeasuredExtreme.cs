@@ -12,5 +12,8 @@ namespace TTT_UWP.Model.Hulpklassen
         public double MaximumTemperature { get; set; }
         public double MaximumHumidity { get; set; }
         public double MaximumPressure { get; set; }
+        public double Temperature { get; set; }
+        public double Humidity { get; set; }
+        public double Pressure { get; set; }
     }
 }

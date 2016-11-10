@@ -47,5 +47,10 @@ namespace TTT_UWP.Services
         {
             repository.UpdateRegion(region);
         }
+
+        public double GetMaxTempPerRegion(int regionId)
+        {
+            return repository.GetMaxTempPerRegion(regionId);
+        }
     }
 }

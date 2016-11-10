@@ -15,5 +15,6 @@ namespace TTT_UWP.Services
         List<Region> GetRegions();
         List<Region> GetRegionsByWarehouse(Warehouse warehouse);
         void UpdateRegion(Region region);
+        double GetMaxTempPerRegion(int regionId);
     }
 }
