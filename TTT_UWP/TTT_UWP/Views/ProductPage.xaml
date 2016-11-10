@@ -31,7 +31,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="ProductID" Margin="5, 5, 5, 5"/>
+                <TextBlock Grid.Column="0" Text="ProductID" Margin="5, 5, 5, 5" />
                 <TextBlock Grid.Column="1" Text="WarehouseID" Margin="5, 5, 5, 5"/>
                 <TextBlock Grid.Column="2" Text="RackID" Margin="5, 5, 5, 5"/>
                 <TextBlock Grid.Column="3" Text="Productname" Margin="5, 5, 5, 5"/>
@@ -42,7 +42,24 @@
                 <TextBlock Grid.Column="8" Text="Min Pressure" Margin="5, 5, 5, 5"/>
                 <TextBlock Grid.Column="9" Text="Max Pressure" Margin="5, 5, 5, 5"/>
             </Grid>
-
+            <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" HorizontalAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="{Binding ElementName=ListViewGrid, Path=ActualWidth}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  />
+                                <ColumnDefinition  />
+                                <ColumnDefinition  />
+                                <ColumnDefinition  />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
+                            <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
+                            <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
+                            <TextBlock Grid.Column="3" Text="{Binding Humidity}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button x:Name="btnAdd" Content="Add product" Command="{Binding RedirectCommand}" CommandParameter="AddProductPage" RelativePanel.Below="dataGrid" RelativePanel.AlignLeftWith="dataGrid" Margin="50, 10, 10, 10"></Button>
 
             <Button x:Name="btnEditProduct" Content="Edit product" Command="{Binding RedirectCommand}" CommandParameter="EditProductPage" RelativePanel.Below="dataGrid" RelativePanel.AlignHorizontalCenterWith="dataGrid" Margin="10, 10, 10, 10"></Button>

@@ -44,10 +44,10 @@ namespace TTT_UWP.ViewModels
 
         private void LoadData()
         {
-            /*foreach (Product product in productRepository.GetProducts())
+            foreach (Product product in productRepository.GetProducts())
             {
                 products.Add(product);
-            }*/
+            }
         }
 
         private void LoadCommands()
