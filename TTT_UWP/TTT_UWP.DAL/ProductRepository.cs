@@ -40,13 +40,6 @@ namespace TTT_UWP.DAL
             return products;
         }
 
-        public List<Product> GetProductsByWarehouse(Warehouse warehouse)
-        {
-            if (products == null)
-                LoadProducts();
-            return products.Where(c => c.WarehouseID == warehouse.WarehouseID).ToList();
-        }
-
         public void UpdateProduct(Product product)
         {
             Product productToUpdate = products.Where(c => c.ProductID == product.ProductID).FirstOrDefault();
@@ -69,11 +62,11 @@ namespace TTT_UWP.DAL
         {
             products = new List<Product>()
             {
-            new Product { ProductID = 1, ProductName = "Sla", WarehouseID= 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
-            new Product { ProductID = 2, ProductName = "Meer sla", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-            new Product { ProductID = 3, ProductName = "Wortel", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-            new Product { ProductID = 4, ProductName = "Balsamico", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-            new Product { ProductID = 5, ProductName = "Smartpony", WarehouseID = 1, RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
+            new Product { ProductID = 1, ProductName = "Sla", RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
+            new Product { ProductID = 2, ProductName = "Meer sla", RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+            new Product { ProductID = 3, ProductName = "Wortel", RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+            new Product { ProductID = 4, ProductName = "Balsamico", RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+            new Product { ProductID = 5, ProductName = "Smartpony", RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
             };
         }
 

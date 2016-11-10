@@ -10,6 +10,6 @@ namespace TTT_UWP.Model
     {
         public int RackID { get; set; }
         public int RegionID { get; set; }
-        public Product[] Products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

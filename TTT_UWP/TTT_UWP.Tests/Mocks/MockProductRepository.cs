@@ -49,15 +49,15 @@ namespace TTT_UWP.Tests.Mocks
             return products;
         }
 
-        public List<Product> GetProductsByWarehouse(Warehouse warehouse)
-        {
-            return products.Where(c => c.WarehouseID == warehouse.WarehouseID).ToList();
-        }
-
         public void UpdateProduct(Product product)
         {
             Product productToUpdate = products.Where(c => c.ProductID == product.ProductID).FirstOrDefault();
             productToUpdate = product;
+        }
+
+        public int GetRegionIDOfProduct(Product product)
+        {
+            throw new NotImplementedException();
         }
     }
 }

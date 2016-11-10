@@ -39,11 +39,6 @@ namespace TTT_UWP.Tests.Mocks
             return repository.GetProducts();
         }
 
-        public List<Product> GetProductsByWarehouse(Warehouse warehouse)
-        {
-            return repository.GetProductsByWarehouse(warehouse);
-        }
-
         public void UpdateProduct(Product product)
         {
             repository.UpdateProduct(product);

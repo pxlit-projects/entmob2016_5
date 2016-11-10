@@ -12,7 +12,6 @@ namespace TTT_UWP.Services
         void DeleteProduct(Product product);
         Product GetProductById(int id);
         List<Product> GetProducts();
-        List<Product> GetProductsByWarehouse(Warehouse warehouse);
         void UpdateProduct(Product product);
         void AddProduct(Product product);
     }

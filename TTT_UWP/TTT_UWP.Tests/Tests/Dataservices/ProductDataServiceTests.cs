@@ -47,25 +47,5 @@ namespace TTT_UWP.Tests.Dataservices
             //Assert
             Assert.IsNotNull(products);
         }
-
-        [TestMethod]
-        public void GetProductsByWarehouse()
-        {
-            //Arrange
-            var service = new ProductDataService(repository);
-
-            //Act
-            Warehouse warehouse = new Warehouse
-            {
-                WarehouseID = 1,
-                WarehouseName = "Regio Hasselt",
-                Regions = null
-            };
-
-            List<Product> products = service.GetProductsByWarehouse(warehouse);
-
-            //Assert
-            Assert.IsNotNull(products);
-        }
     }
 }

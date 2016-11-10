@@ -13,7 +13,7 @@ namespace TTT_UWP.Model
         public string RegionName { get; set; }
         public int WarehouseID { get; set; }
         public int SensorID { get; set; }
-        public Observation[] Observations { get; set; }
-        public Rack[] Racks { get; set; }
+        public List<Observation> Observations { get; set; }
+        public List<Rack> Racks { get; set; }
     }
 }

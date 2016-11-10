@@ -77,7 +77,7 @@ namespace TTT_UWP.DAL
         public void LoadRegions()
         {
 
-            Observation[] observations = new Observation[]
+           List<Observation> observations = new List<Observation>()
              {
                 new Observation { ObservationID = 1, Temperature = 20.0, RegionID = 1, Humidity=5.0, AirPressure=11.9, Timestamp = DateTime.Now },
                 new Observation { ObservationID = 2, Temperature = 21.0, RegionID = 1, Humidity=6.1, AirPressure=12.8, Timestamp = DateTime.Now   },
@@ -93,59 +93,59 @@ namespace TTT_UWP.DAL
                 new Observation { ObservationID = 12, Temperature = 15.9 , RegionID = 6, Humidity=5.8, AirPressure=10.2, Timestamp = DateTime.Now  }
              };
 
-            Product[] groenten = new Product[]
+            List<Product> groenten = new List<Product>()
             {
-                new Product { ProductID = 1, ProductName = "Sla", WarehouseID = 1, RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
-                new Product { ProductID = 2, ProductName = "Tomaat", WarehouseID = 1, RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 3, ProductName = "Komkommer", WarehouseID = 1, RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 4, ProductName = "Wortel", WarehouseID = 1, RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 5, ProductName = "Boon", WarehouseID = 1, RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
+                new Product { ProductID = 1, ProductName = "Sla", RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
+                new Product { ProductID = 2, ProductName = "Tomaat", RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 3, ProductName = "Komkommer", RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 4, ProductName = "Wortel", RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 5, ProductName = "Boon", RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
             };
 
-            Product[] fruit = new Product[]
+            List<Product> fruit = new List<Product>
             {
-                new Product { ProductID = 6, ProductName = "Banaan", WarehouseID = 1, RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
-                new Product { ProductID = 7, ProductName = "Appel", WarehouseID = 1, RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 8, ProductName = "Peer", WarehouseID = 1, RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 9, ProductName = "Mango", WarehouseID = 1, RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 10, ProductName = "Druif", WarehouseID = 1, RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
+                new Product { ProductID = 6, ProductName = "Banaan", RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
+                new Product { ProductID = 7, ProductName = "Appel", RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 8, ProductName = "Peer", RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 9, ProductName = "Mango", RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 10, ProductName = "Druif", RackID = 2, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
             };
 
-            Product[] drank = new Product[]
+            List<Product> drank = new List<Product>()
             {
-                new Product { ProductID = 11, ProductName = "Melk", WarehouseID = 1, RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
-                new Product { ProductID = 12, ProductName = "Chocolademelk", WarehouseID = 1, RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 13, ProductName = "Cola", WarehouseID = 1, RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 14, ProductName = "Fanta", WarehouseID = 1, RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 15, ProductName = "Sprite", WarehouseID = 1, RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
+                new Product { ProductID = 11, ProductName = "Melk", RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
+                new Product { ProductID = 12, ProductName = "Chocolademelk", RackID = 1, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 13, ProductName = "Cola", RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 14, ProductName = "Fanta", RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 15, ProductName = "Sprite", RackID = 3, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
             };
 
-            Rack[] racksRegion1 = new Rack[]
+            List<Rack> racksRegion1 = new List<Rack>()
             {
                 new Rack { RackID = 1, RegionID = 1, Products = groenten},
                 new Rack { RackID = 2, RegionID = 1, Products = fruit},
                 new Rack { RackID = 3, RegionID = 1, Products = drank},
             };
 
-            Product[] tshirts = new Product[]
+            List<Product> tshirts = new List<Product>()
             {
-                new Product { ProductID = 16, ProductName = "T-Shirt S", WarehouseID = 1, RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
-                new Product { ProductID = 17, ProductName = "T-Shirt M", WarehouseID = 1, RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 18, ProductName = "T-Shirt L", WarehouseID = 1, RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 19, ProductName = "T-Shirt XL", WarehouseID = 1, RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 20, ProductName = "T-Shirt XXL", WarehouseID = 1, RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
+                new Product { ProductID = 16, ProductName = "T-Shirt S", RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
+                new Product { ProductID = 17, ProductName = "T-Shirt M", RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 18, ProductName = "T-Shirt L", RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 19, ProductName = "T-Shirt XL", RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 20, ProductName = "T-Shirt XXL", RackID = 4, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
             };
 
-            Product[] broeken = new Product[]
+            List<Product> broeken = new List<Product>()
             {
-                new Product { ProductID = 21, ProductName = "Broek S", WarehouseID = 1, RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
-                new Product { ProductID = 22, ProductName = "Broek M", WarehouseID = 1, RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 23, ProductName = "Broek L", WarehouseID = 1, RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 24, ProductName = "Broek XL", WarehouseID = 1, RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
-                new Product { ProductID = 25, ProductName = "Broek XXL", WarehouseID = 1, RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
+                new Product { ProductID = 21, ProductName = "Broek S", RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10},
+                new Product { ProductID = 22, ProductName = "Broek M", RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 23, ProductName = "Broek L", RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 24, ProductName = "Broek XL", RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 },
+                new Product { ProductID = 25, ProductName = "Broek XXL", RackID = 5, MaximumAirPressure = 20, MaximumHumidity = 20, MaximumTemperature = 20, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 }
             };
 
-            Rack[] racksRegion2 = new Rack[]
+            List<Rack> racksRegion2 = new List<Rack>()
             {
                 new Rack { RackID = 4, RegionID = 2, Products = tshirts},
                 new Rack { RackID = 5, RegionID = 2, Products = broeken},

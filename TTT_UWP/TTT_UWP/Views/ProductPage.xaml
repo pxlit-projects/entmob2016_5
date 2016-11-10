@@ -35,25 +35,22 @@
                         <ColumnDefinition  />
                         <ColumnDefinition  />
                         <ColumnDefinition  />
-                        <ColumnDefinition  />
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="ProductID"/>
                     <TextBlock Grid.Column="1" Text="WarehouseID"/>
-                    <TextBlock Grid.Column="2" Text="RackID"/>
-                    <TextBlock Grid.Column="3" Text="Productname"/>
-                    <TextBlock Grid.Column="4" Text="Min Temperature"/>
-                    <TextBlock Grid.Column="5" Text="Max Temperature"/>
-                    <TextBlock Grid.Column="6" Text="Min Humidity"/>
-                    <TextBlock Grid.Column="7" Text="Max Humidity"/>
-                    <TextBlock Grid.Column="8" Text="Min Pressure"/>
-                    <TextBlock Grid.Column="9" Text="Max Pressure"/>
+                    <TextBlock Grid.Column="2" Text="Productname"/>
+                    <TextBlock Grid.Column="3" Text="Min Temperature"/>
+                    <TextBlock Grid.Column="4" Text="Max Temperature"/>
+                    <TextBlock Grid.Column="5" Text="Min Humidity"/>
+                    <TextBlock Grid.Column="6" Text="Max Humidity"/>
+                    <TextBlock Grid.Column="7" Text="Min Pressure"/>
+                    <TextBlock Grid.Column="8" Text="Max Pressure"/>
                 </Grid>
                 <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Products}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="{Binding ElementName=listViewGrid}" >
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition  />
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
@@ -73,7 +70,6 @@
                                 <TextBlock Grid.Column="6" Text="{Binding MinimumHumidity}" />
                                 <TextBlock Grid.Column="7" Text="{Binding MaximumAirPressure}" />
                                 <TextBlock Grid.Column="8" Text="{Binding MinimumAirPressure}" />
-                                <TextBlock Grid.Column="9" Text="{Binding Timestamp}" />
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

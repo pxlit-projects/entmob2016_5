@@ -13,17 +13,6 @@
     mc:Ignorable="d">
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <CommandBar Height="35" Background="Transparent">
-            <AppBarButton>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                    <ComboBox x:Name="cmbSelectWarehouse" ItemsSource="{Binding Warehouses}" SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}" DisplayMemberPath="WarehouseName">
-                        <interactivity:Interaction.Behaviors>
-                            <core:EventTriggerBehavior EventName="SelectionChanged">
-                                <core:InvokeCommandAction Command="{Binding ButtonCommand}"/>
-                            </core:EventTriggerBehavior>
-                        </interactivity:Interaction.Behaviors>
-                    </ComboBox>
-                </StackPanel>
-            </AppBarButton>
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
         </CommandBar>
 
