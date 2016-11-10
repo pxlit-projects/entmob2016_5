@@ -14,7 +14,7 @@ using TTT_UWP.Utility;
 
 namespace TTT_UWP.ViewModels
 {
-    class PressurePageViewModel
+    public class PressurePageViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

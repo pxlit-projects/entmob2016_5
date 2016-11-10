@@ -34,8 +34,16 @@ namespace TTT_UWP.ViewModels
 
         public EditProductPageViewModel(INavigationService navigationService)
         {
+
+            Messenger.Default.Register<Product>(this, OnProductReceived);
+
             LoadCommands();
             this.navigationService = navigationService;
+        }
+
+        private void OnProductReceived(Product product)
+        {
+            selectedProduct = product;
         }
 
         private void LoadCommands()
@@ -47,6 +55,7 @@ namespace TTT_UWP.ViewModels
         private void OnEditProduct(object obj)
         {
             productDataService.UpdateProduct((Product)obj);
+            Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
             navigationService.GoBack();
         }
 

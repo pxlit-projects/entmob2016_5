@@ -15,30 +15,27 @@
         <CommandBar Height="35" Background="Transparent">
             <AppBarButton>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                    <ComboBox x:Name="cmbSelectWarehouse"
-                        ItemsSource="{Binding Warehouses}" 
-                        SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}"
-                        DisplayMemberPath="WarehouseName">
+                    <!--
+                    <ComboBox x:Name="cmbSelectWarehouse" ItemsSource="{Binding Warehouses}" SelectedItem="{Binding SelectedWarehouse, Mode=TwoWay}" DisplayMemberPath="WarehouseName">
                         <interactivity:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="SelectionChanged">
                                 <core:InvokeCommandAction Command="{Binding ButtonCommand}"/>
                             </core:EventTriggerBehavior>
                         </interactivity:Interaction.Behaviors>
                     </ComboBox>
+                    -->
                 </StackPanel>
             </AppBarButton>
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
         </CommandBar>
 
-        <RelativePanel Margin="30,30,30,30" Name="relPanel">
-            <TextBlock Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
+        <RelativePanel Margin="30,30,30,00" Name="relPanel">
+            <TextBlock Name="HeaderText" FontWeight="Bold" FontSize="30" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">Temperature Track Tech</TextBlock>
+            <TextBlock RelativePanel.Below="HeaderText" Name="LabelTemp" FontSize="25" Width="250" Height="50">Temperature graph</TextBlock>
             <Grid RelativePanel.Below="LabelTemp" Name="Grid1" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="TemperaturePage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True" Name="TemperatureGraph" Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Observations}"
-                        XBindingPath="ObservationID"
-                        YBindingPath="Temperature" Margin="-27,0,0,-11"/>
+                        <syncfusion:LineSeries ItemsSource="{Binding Observations}" XBindingPath="ObservationID" YBindingPath="Temperature" Margin="-27,0,0,-11"/>
                         <syncfusion:SfChart.PrimaryAxis>
                             <syncfusion:CategoryAxis FontSize="0.001" ShowGridLines="False" BorderBrush="Transparent"/>
                         </syncfusion:SfChart.PrimaryAxis>
@@ -49,14 +46,11 @@
                 </Button>
             </Grid>
 
-            <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True"  Name="LabelAirPressure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
+            <TextBlock RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="HeaderText"  Name="LabelAirPressure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Width="250" Height="50">Air pressure graph</TextBlock>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="LabelAirPressure" Name="Grid2" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="PressurePage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True"  Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Observations}"
-                        XBindingPath="ObservationID"
-                        YBindingPath="AirPressure" Margin="-27,0,0,-11"/>
+                        <syncfusion:LineSeries ItemsSource="{Binding Observations}" XBindingPath="ObservationID" YBindingPath="AirPressure" Margin="-27,0,0,-11"/>
                         <syncfusion:SfChart.PrimaryAxis>
                             <syncfusion:CategoryAxis FontSize="0.001" ShowGridLines="False" BorderBrush="Transparent"/>
                         </syncfusion:SfChart.PrimaryAxis>
@@ -67,14 +61,11 @@
                 </Button>
             </Grid>
 
-            <TextBlock RelativePanel.AlignRightWithPanel="True" Name="LabelHumidity" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
+            <TextBlock RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="HeaderText"  Name="LabelHumidity" FontSize="25" Width="250" Height="50">Humidity graph</TextBlock>
             <Grid RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="LabelHumidity" Name="Grid3" Width="250" Height="250">
                 <Button Command="{Binding RedirectCommand}" CommandParameter="HumidityPage" Background="Transparent">
                     <syncfusion:SfChart RelativePanel.Below="headerTextBlock" RelativePanel.Above="detailsTextBlock" RelativePanel.AlignLeftWithPanel="True" Background="Transparent">
-                        <syncfusion:LineSeries                        
-                        ItemsSource="{Binding Observations}"
-                        XBindingPath="ObservationID"
-                        YBindingPath="Humidity" Margin="-27,0,0,-11"/>
+                        <syncfusion:LineSeries ItemsSource="{Binding Observations}" XBindingPath="ObservationID" YBindingPath="Humidity" Margin="-27,0,0,-11"/>
                         <syncfusion:SfChart.PrimaryAxis>
                             <syncfusion:CategoryAxis FontSize="0.001" ShowGridLines="False" BorderBrush="Transparent"/>
                         </syncfusion:SfChart.PrimaryAxis>
@@ -87,13 +78,13 @@
 
             <Grid Name="grSecondRow" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
                 <RelativePanel>
-                    <TextBlock Name="txMe" RelativePanel.AlignLeftWithPanel="True" Margin="50,0,0,0">Measured extremes</TextBlock>
-                    <Button Name="button1" RelativePanel.AlignLeftWithPanel="True" Command="{Binding RedirectCommand}" CommandParameter="MeasuredExtremesPage" Background="Transparent" Width="150" Height="150" Margin="50, 50, 50, 50">
-                        <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+                    <TextBlock FontSize="25" Name="txMe" RelativePanel.AlignLeftWithPanel="True" Margin="50,0,0,0">Measured extremes</TextBlock>
+                    <Button Name="button1" RelativePanel.AlignLeftWithPanel="True" Command="{Binding RedirectCommand}" CommandParameter="MeasuredExtremesPage" Background="Transparent" Width="250" Height="250" Margin="50, 50, 50, 50">
+                        <Image Width="250" Height="250" Source="/Assets/scale.jpg"></Image>
                     </Button>
-                    <TextBlock RelativePanel.AlignRightWithPanel="True" Margin="0,0,50,50">Products</TextBlock>
-                    <Button Name="button2" RelativePanel.AlignRightWithPanel="True" RelativePanel.RightOf="button1" Command="{Binding RedirectCommand}" CommandParameter="ProductPage" Background="Transparent" Width="150" Height="150" Margin="50, 50, 50, 50">
-                        <Image Width="150" Height="150" Source="/Assets/StoreLogo.png"></Image>
+                    <TextBlock FontSize="25" RelativePanel.AlignRightWithPanel="True" Margin="0,0,50,50">Products</TextBlock>
+                    <Button Name="button2" RelativePanel.AlignRightWithPanel="True" RelativePanel.RightOf="button1" Command="{Binding RedirectCommand}" CommandParameter="ProductPage" Background="Transparent" Width="250" Height="250" Margin="50, 50, 50, 50">
+                        <Image Width="250" Height="250" Source="/Assets/products.png"></Image>
                     </Button>
                 </RelativePanel>
             </Grid>

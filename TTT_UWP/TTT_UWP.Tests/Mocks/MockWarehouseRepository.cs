@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TTT_UWP.DAL;
 using TTT_UWP.Model;
 
-namespace TTT_UWP.DAL
+namespace TTT_UWP.Tests.Mocks
 {
-    public class WarehouseRepository : IWarehouseRepository
+    public class MockWarehouseRepository : IWarehouseRepository
     {
-
         private List<Warehouse> warehouses;
 
-        public WarehouseRepository()
-        { }
+        public MockWarehouseRepository()
+        {
+            warehouses = LoadMockWarehouses();
+        }
+
+        private List<Warehouse> LoadMockWarehouses()
+        {
+            //mockdata
+            return null;
+        }
 
         public void DeleteWarehouse(Warehouse warehouse)
         {
@@ -22,22 +30,16 @@ namespace TTT_UWP.DAL
 
         public Warehouse GetWarehouse()
         {
-            if (warehouses == null)
-                LoadWarehouses();
             return warehouses.FirstOrDefault();
         }
 
         public Warehouse GetWarehouseById(int id)
         {
-            if (warehouses == null)
-                LoadWarehouses();
             return warehouses.Where(c => c.WarehouseID == id).FirstOrDefault();
         }
 
         public List<Warehouse> GetWarehouses()
         {
-            if (warehouses == null)
-                LoadWarehouses();
             return warehouses;
         }
 
@@ -46,21 +48,5 @@ namespace TTT_UWP.DAL
             Warehouse warehouseToUpdate = warehouses.Where(c => c.WarehouseID == warehouse.WarehouseID).FirstOrDefault();
             warehouseToUpdate = warehouse;
         }
-
-        public void LoadWarehouses()
-        {
-            warehouses = new List<Warehouse> {
-                new Warehouse { Regions = null, WarehouseID = 1, WarehouseName = "Warehouse Elfde Linie" },
-                new Warehouse { Regions = null, WarehouseID = 2, WarehouseName = "Warehouse Neerpelt" },
-                new Warehouse { Regions = null, WarehouseID = 3, WarehouseName = "Wareblouse" },
-                new Warehouse { Regions = null, WarehouseID = 4, WarehouseName = "Warehose" }
-            };
-        }
-
-        public void Sync()
-        {
-
-        }
-
     }
 }

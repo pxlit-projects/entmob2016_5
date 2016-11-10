@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="TTT_UWP.MeasuredExtremesPage"
+    x:Class="TTT_UWP.Views.MeasuredExtremesPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:TTT_UWP"
+    xmlns:local="using:TTT_UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -12,25 +12,69 @@
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"/>
         </CommandBar>
 
-        <RelativePanel x:Name="rpPanel" Margin="50, 50, 50, 50">
-            <Grid x:Name="dataGrid" HorizontalAlignment="Stretch" DataContext="{Binding Extremes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="WarehouseID" Margin="5, 5, 5, 5"/>
-                <TextBlock Grid.Column="1" Text="RegionID" Margin="5, 5, 5, 5"/>
-                <TextBlock Grid.Column="2" Text="Measured Unit" Margin="5, 5, 5, 5"/>
-                <TextBlock Grid.Column="3" Text="Minimum Unit" Margin="5, 5, 5, 5"/>
-                <TextBlock Grid.Column="4" Text="Maximum Unit" Margin="5, 5, 5, 5"/>
+        <RelativePanel Margin="50,50,50,50">
+            <TextBlock Name="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="true" FontSize="30">Measured Extremes</TextBlock>
+            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.Below="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid x:Name="listViewGrid" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="WarehouseID"/>
+                    <TextBlock Grid.Column="1" Text="RegionID"/>
+                    <TextBlock Grid.Column="2" Text="Max Temperature"/>
+                    <TextBlock Grid.Column="3" Text="Max Humidity"/>
+                    <TextBlock Grid.Column="4" Text="Max pressure Temperature"/>
+                    <TextBlock Grid.Column="5" Text="Temperature"/>
+                    <TextBlock Grid.Column="6" Text="Humidity"/>
+                    <TextBlock Grid.Column="7" Text="Pressure"/>
+                    <TextBlock Grid.Column="8" Text="Timestamp"/>
+                </Grid>
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding MeasuredExtremes}" HorizontalAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="{Binding ElementName=listViewGrid}" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                    <ColumnDefinition  />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding WarehouseID}" />
+                                <TextBlock Grid.Column="1" Text="{Binding ProductID}" />
+                                <TextBlock Grid.Column="2" Text="{Binding MaxTemperature}" />
+                                <TextBlock Grid.Column="3" Text="{Binding MaxHumidity}" />
+                                <TextBlock Grid.Column="4" Text="{Binding MaxPressure}" />
+                                <TextBlock Grid.Column="5" Text="{Binding Temperature}" Foreground="{Binding ProductID, Converter={StaticResource localColorConverter}}" />
+                                <TextBlock Grid.Column="6" Text="{Binding Humidity}" Foreground="{Binding ProductID, Converter={StaticResource localColorConverter}}" />
+                                <TextBlock Grid.Column="7" Text="{Binding Pressure}" Foreground="{Binding ProductID, Converter={StaticResource localColorConverter}}" />
+                                <TextBlock Grid.Column="8" Text="{Binding Timestamp}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
             </Grid>
         </RelativePanel>
     </Grid>

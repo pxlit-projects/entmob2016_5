@@ -99,20 +99,26 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\AirPressureConverter.cs" />
+    <Compile Include="Converters\ColorConverter.cs" />
     <Compile Include="Converters\HumidityConverter.cs" />
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\IObservationDataService.cs" />
     <Compile Include="Services\IProductDataService.cs" />
+    <Compile Include="Services\IRackDataService.cs" />
+    <Compile Include="Services\IRegionDataService.cs" />
     <Compile Include="Services\IWarehouseDataService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ObservationDataService.cs" />
     <Compile Include="Services\ProductDataService.cs" />
+    <Compile Include="Services\RackDataService.cs" />
+    <Compile Include="Services\RegionDataService.cs" />
     <Compile Include="Services\TypeHelper.cs" />
     <Compile Include="Services\WarehouseDataService.cs" />
-    <Compile Include="Utility\CustomCommand.cs" />
-    <Compile Include="Utility\Messenger.cs" />
+    <Compile Include="Extensions\UpdateListMessage.cs" />
+    <Compile Include="ViewModels\Utility\CustomCommand.cs" />
+    <Compile Include="ViewModels\Utility\Messenger.cs" />
     <Compile Include="ViewModels\AddProductPageViewModel.cs" />
     <Compile Include="ViewModels\EditProductPageViewModel.cs" />
     <Compile Include="ViewModels\HumidityPageViewModel.cs" />
@@ -121,6 +127,12 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\PressurePageViewModel.cs" />
     <Compile Include="ViewModels\ProductPageViewModel.cs" />
+    <Compile Include="Views\AddProductPage.xaml.cs">
+      <DependentUpon>AddProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditProductPage.xaml.cs">
+      <DependentUpon>EditProductPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HumidityPage.xaml.cs">
       <DependentUpon>HumidityPage.xaml</DependentUpon>
     </Compile>
@@ -128,6 +140,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MeasuredExtremesPage.xaml.cs">
+      <DependentUpon>MeasuredExtremesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PressurePage.xaml.cs">
       <DependentUpon>PressurePage.xaml</DependentUpon>
     </Compile>
@@ -145,6 +160,8 @@
     <None Include="TTT_UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\products.png" />
+    <Content Include="Assets\scale.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

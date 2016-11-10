@@ -22,8 +22,12 @@ namespace TTT_UWP.ViewModels
         //Repositories
         private static IObservationRepository observationRepository = new ObservationRepository();
         private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
+
         private static IProductRepository productRepository = new ProductRepository();
         private static IProductDataService productDataService = new ProductDataService(productRepository);
+
+        private static IRegionRepository regionRepository = new RegionRepository();
+        private static IRegionDataService regionDataService = new RegionDataService(regionRepository);
 
         //Databinding 
         private ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
@@ -32,6 +36,7 @@ namespace TTT_UWP.ViewModels
 
         //Commands
         public ICommand GoBackCommand { get; set; }
+        public ICommand RedirectCommand { get; set; }
 
         public MeasuredExtremesViewModel(INavigationService navigationService)
         {
@@ -50,6 +55,11 @@ namespace TTT_UWP.ViewModels
             navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));
         }
 
+        private void OnGoBack(object o)
+        {
+            navigationService.GoBack();
+        }
+
         //Mag er geredirect worden (huidig altijd true)
         private bool CanRedirect(object o)
         {
@@ -58,12 +68,14 @@ namespace TTT_UWP.ViewModels
 
         private void LoadCommands()
         {
-            GoBackCommand = new CustomCommand(OnRedirect, CanRedirect);
+            GoBackCommand = new CustomCommand(OnGoBack, CanRedirect);
+            RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
         }
 
         private void LoadData()
         {
             //Ophalen waar ge-recorde temp/hum/pres groter is dan maximum van product of kleiner is dan minimum van product
+            List<Observation> Observations = observationDataService.GetObservations();
         }
 
         public ObservableCollection<Observation> Observations

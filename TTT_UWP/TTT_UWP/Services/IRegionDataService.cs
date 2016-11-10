@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TTT_UWP.Model;
+
+namespace TTT_UWP.Services
+{
+    public interface IRegionDataService
+    {
+        void DeleteRegion(Region region);
+        Region GetRegion();
+        Region GetRegionById(int id);
+        List<Region> GetRegions();
+        List<Region> GetRegionsByWarehouse(Warehouse warehouse);
+        void UpdateRegion(Region region);
+    }
+}

@@ -48,7 +48,7 @@
                 <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Observations}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Width="{Binding ElementName=ListViewGrid, Path=ActualWidth}">
+                            <Grid Width="{Binding ElementName=ListViewGrid}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
@@ -58,10 +58,16 @@
                                 <TextBlock Grid.Column="0" Text="{Binding ObservationID}" />
                                 <TextBlock Grid.Column="1" Text="{Binding RegionID}" />
                                 <TextBlock Grid.Column="2" Text="{Binding Timestamp}" />
-                                <TextBlock Grid.Column="3" Text="{Binding AirPressure}" />
+                                <TextBlock Grid.Column="3" Text="{Binding AirPressure, Converter={StaticResource localAirPressureConverter}}" />
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
                 </ListView>
             </Grid>
         </RelativePanel>
