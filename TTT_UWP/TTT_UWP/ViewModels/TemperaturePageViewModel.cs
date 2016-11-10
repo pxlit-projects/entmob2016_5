@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -16,7 +17,8 @@ namespace TTT_UWP.ViewModels
 {
     public class TemperaturePageViewModel : INotifyPropertyChanged
     {
-        
+        //Vars
+        private Region selectedRegion = new Region();
 
         //Services
         private INavigationService navigationService;
@@ -25,20 +27,36 @@ namespace TTT_UWP.ViewModels
         private static IObservationRepository observationRepository = new ObservationRepository();
         private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
 
+        private static IRegionRepository regionRepository = new RegionRepository();
+        private static IRegionDataService regionDataservice = new RegionDataService(regionRepository);
+
         //Databinding
         public ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
+        public ObservableCollection<Region> regions = new ObservableCollection<Region>();
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Commands
         public ICommand RedirectCommand { get; set; }
         public ICommand GoBackCommand { get; set; }
+        public ICommand RegionSelectCommand { get; set; }
 
         public TemperaturePageViewModel(INavigationService navigationService)
         {
-            observationRepository = new ObservationRepository();
             LoadData();
             LoadCommands();
             this.navigationService = navigationService;
+        }
+
+        private void OnRegionSelect(object o)
+        {
+            observations.Clear();
+            foreach (Observation item in observationDataService.GetObservations())
+            {
+                if (item.RegionID == selectedRegion.RegionID)
+                {
+                    observations.Add(item);
+                }
+            }
         }
 
         private void OnRedirect(object o)
@@ -59,9 +77,16 @@ namespace TTT_UWP.ViewModels
 
         public void LoadData()
         {
-            foreach (Observation item in observationRepository.GetObservations())
+            foreach (Observation item in observationDataService.GetObservations())
             {
-                observations.Add(item);
+                if(item.RegionID == 1)
+                {
+                    observations.Add(item);
+                }
+            }
+            foreach (Region region in regionDataservice.GetRegions())
+            {
+                regions.Add(region);
             }
         }
 
@@ -69,6 +94,7 @@ namespace TTT_UWP.ViewModels
         {
             RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
             GoBackCommand = new CustomCommand(OnGoBack, CanRedirect);
+            RegionSelectCommand = new CustomCommand(OnRegionSelect, CanRedirect);
         }
 
         public ObservableCollection<Observation> Observations
@@ -81,6 +107,32 @@ namespace TTT_UWP.ViewModels
             {
                 observations = value;
                 RaisePropertyChanged("Observations");
+            }
+        }
+
+        public ObservableCollection<Region> Regions
+        {
+            get
+            {
+                return regions;
+            }
+            set
+            {
+                regions = value;
+                RaisePropertyChanged("Regions");
+            }
+        }
+
+        public Region SelectedRegion
+        {
+            get
+            {
+                return selectedRegion;
+            }
+            set
+            {
+                selectedRegion = value;
+                RaisePropertyChanged("SelectedRegion");
             }
         }
 

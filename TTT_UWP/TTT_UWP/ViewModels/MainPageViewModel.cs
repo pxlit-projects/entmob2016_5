@@ -21,16 +21,12 @@ namespace TTT_UWP.ViewModels
 
         //Repositories
         private static IObservationRepository observationRepository = new ObservationRepository();
-        private static IWarehouseRepository warehouseRepository = new WarehouseRepository();
 
         //Dataservices
-        private static IWarehouseDataService warehouseDataService = new WarehouseDataService(warehouseRepository);
         private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
 
         //Databinding 
-        private ObservableCollection<Warehouse> warehouses = new ObservableCollection<Warehouse>();
         private ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
-        private Warehouse selectedWarehouse = new Warehouse();
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Commands
@@ -42,13 +38,6 @@ namespace TTT_UWP.ViewModels
             LoadData();
             LoadCommands();
             this.navigationService = navigationService;
-        }
-
-        //Commands
-        private void OnChangeWareHouse(object o)
-        {
-            //TODO: databinding op grafieken en dropdownlist wijzigen 
-            Debug.WriteLine("Warehouse: " + selectedWarehouse.WarehouseName);
         }
 
         /*
@@ -70,10 +59,6 @@ namespace TTT_UWP.ViewModels
         //Laad de lijst van warehouses in (observable collection)
         private void LoadData()
         {
-            foreach (Warehouse item in warehouseDataService.GetWarehouses())
-            {
-                warehouses.Add(item);
-            }
             foreach (Observation item in observationRepository.GetObservations())
             {
                 observations.Add(item);
@@ -82,20 +67,7 @@ namespace TTT_UWP.ViewModels
 
         private void LoadCommands()
         {
-            ButtonCommand = new CustomCommand(OnChangeWareHouse, CanRedirect);
             RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
-        }
-
-        private void ChangeWarehouse(object obj)
-        {
-
-        }
-
-        private bool CanChangeWarehouse(object obj)
-        {
-            if (selectedWarehouse != null)
-                return true;
-            return false;
         }
 
         private void RaisePropertyChanged(string propertyName)
@@ -105,20 +77,6 @@ namespace TTT_UWP.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
-        public ObservableCollection<Warehouse> Warehouses
-        {
-            get
-            {
-                return warehouses;
-            }
-            set
-            {
-                warehouses = value;
-                RaisePropertyChanged("Warehouses");
-            }
-        }
-
         public ObservableCollection<Observation> Observations
         {
             get
@@ -131,20 +89,5 @@ namespace TTT_UWP.ViewModels
                 RaisePropertyChanged("Observations");
             }
         }
-
-        public Warehouse SelectedWarehouse
-        {
-            get
-            {
-                return selectedWarehouse;
-            }
-            set
-            {
-                selectedWarehouse = value;
-                RaisePropertyChanged("SelectedWarehouse");
-            }
-        }
-
-
     }
 }
