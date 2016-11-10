@@ -160,8 +160,8 @@
     <None Include="TTT_UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\measuredextremes.jpg" />
     <Content Include="Assets\products.png" />
-    <Content Include="Assets\scale.jpg" />
     <Content Include="Assets\TTT.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

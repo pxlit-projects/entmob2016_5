@@ -154,7 +154,9 @@ namespace TTT_UWP.DAL
             regions = new List<Region>
             {
                 new Region { RegionID = 1, SensorID = 1, WarehouseID = 1, Observations = observations, Racks = racksRegion1, RegionName = "Eten en drinken"},
-                new Region { RegionID = 2, SensorID = 2, WarehouseID = 1, Observations = observations, Racks = racksRegion2, RegionName = "Kleren" }
+                new Region { RegionID = 2, SensorID = 2, WarehouseID = 1, Observations = observations, Racks = racksRegion2, RegionName = "Kleren" },
+            new Region { RegionID = 3, SensorID = 3, WarehouseID = 1, Observations = observations, Racks = racksRegion2, RegionName = "Kleren" },
+            new Region { RegionID = 4, SensorID = 4, WarehouseID = 1, Observations = observations, Racks = racksRegion1, RegionName = "Kleren" }
             };
         }
     }
