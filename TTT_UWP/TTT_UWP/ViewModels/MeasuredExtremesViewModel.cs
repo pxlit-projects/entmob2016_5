@@ -90,6 +90,7 @@ namespace TTT_UWP.ViewModels
                         maxTemp = regionDataService.GetMaxTempPerRegion(r.RegionID);
                     }
                 }
+
                 if(o.Temperature > maxTemp)
                 {
                     measuredExtremes.Add(new MeasuredExtreme { RegionID = o.RegionID, MaximumTemperature = maxTemp, Temperature =  o.Temperature,

@@ -22,22 +22,22 @@
             <TextBox x:Name="txtWarehouse" RelativePanel.Below="txbName" RelativePanel.RightOf="txbWarehouse" RelativePanel.AlignVerticalCenterWith="txbWarehouse" Width="95" Margin="0, 10, 0, 0" Text="{Binding ProductToAdd.WarehouseID, Mode=TwoWay}"/>
 
             <TextBlock x:Name="txbMinTemp" Text="Minimum Temperature: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtWarehouse" Margin="0, 10, 10, 0"/>
-            <TextBox x:Name="txtMinTemp" RelativePanel.Below="txbWarehouse" RelativePanel.RightOf="txbMinTemp" RelativePanel.AlignVerticalCenterWith="txbMinTemp" Width="95" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="txtMinTemp" RelativePanel.Below="txbWarehouse" RelativePanel.RightOf="txbMinTemp" RelativePanel.AlignVerticalCenterWith="txbMinTemp" Width="95" Margin="0, 10, 0, 0" Text="{Binding ProductToAdd.MinimumTemperature, Mode=TwoWay}"/>
 
             <TextBlock x:Name="txbMaxTemp" Text="Maximum Temperature: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMinTemp" Margin="0, 10, 10, 0"/>
-            <TextBox x:Name="txtMaxTemp" RelativePanel.Below="txbMinTemp" RelativePanel.RightOf="txbMaxTemp" RelativePanel.AlignVerticalCenterWith="txbMaxTemp" Width="95" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="txtMaxTemp" RelativePanel.Below="txbMinTemp" RelativePanel.RightOf="txbMaxTemp" RelativePanel.AlignVerticalCenterWith="txbMaxTemp" Width="95" Margin="0, 10, 0, 0" Text="{Binding ProductToAdd.MaximumTemperature, Mode=TwoWay}"/>
 
             <TextBlock x:Name="txbMinHumidity" Text="Minimum Humidity: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMaxTemp" Margin="0, 10, 10, 0"/>
-            <TextBox x:Name="txtMinHumidity" RelativePanel.Below="txbMaxTemp" RelativePanel.RightOf="txbMinHumidity" RelativePanel.AlignVerticalCenterWith="txbMinHumidity" Width="95" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="txtMinHumidity" RelativePanel.Below="txbMaxTemp" RelativePanel.RightOf="txbMinHumidity" RelativePanel.AlignVerticalCenterWith="txbMinHumidity" Width="95" Margin="0, 10, 0, 0" Text="{Binding ProductToAdd.MinimumHumidity, Mode=TwoWay}"/>
 
             <TextBlock x:Name="txbMaxHumidity" Text="Maximum Humidity: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMinHumidity" Margin="0, 10, 10, 0"/>
-            <TextBox x:Name="txtMaxHumidity" RelativePanel.Below="txbMinHumidity" RelativePanel.RightOf="txbMaxHumidity" RelativePanel.AlignVerticalCenterWith="txbMaxHumidity" Width="95" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="txtMaxHumidity" RelativePanel.Below="txbMinHumidity" RelativePanel.RightOf="txbMaxHumidity" RelativePanel.AlignVerticalCenterWith="txbMaxHumidity" Width="95" Margin="0, 10, 0, 0" Text="{Binding ProductToAdd.MaximumHumidity, Mode=TwoWay}"/>
 
             <TextBlock x:Name="txbMinPressure" Text="Minimum Pressure: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMaxHumidity" Margin="0, 10, 10, 0"/>
-            <TextBox x:Name="txtMinPressure" RelativePanel.Below="txbMinPressure" RelativePanel.RightOf="txbMinPressure" RelativePanel.AlignVerticalCenterWith="txbMinPressure" Width="95" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="txtMinPressure" RelativePanel.Below="txbMinPressure" RelativePanel.RightOf="txbMinPressure" RelativePanel.AlignVerticalCenterWith="txbMinPressure" Width="95" Margin="0, 10, 0, 0" Text="{Binding ProductToAdd.MinimumPressure, Mode=TwoWay}"/>
 
             <TextBlock x:Name="txbMaxPressure" Text="Maximum Pressure: " FontSize="15" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txtMinPressure" Margin="0, 10, 10, 0"/>
-            <TextBox x:Name="txtMaxPressure" RelativePanel.Below="txbMinPressure" RelativePanel.RightOf="txbMaxPressure" RelativePanel.AlignVerticalCenterWith="txbMaxPressure" Width="95" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="txtMaxPressure" RelativePanel.Below="txbMinPressure" RelativePanel.RightOf="txbMaxPressure" RelativePanel.AlignVerticalCenterWith="txbMaxPressure" Width="95" Margin="0, 10, 0, 0" Text="{Binding ProductToAdd.MaximumPressure, Mode=TwoWay}"/>
 
             <Button x:Name="btnAdd" Content="Add product" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="txbMaxPressure" Margin="0, 20, 0, 0" Command="{Binding AddCommand}">
             </Button>

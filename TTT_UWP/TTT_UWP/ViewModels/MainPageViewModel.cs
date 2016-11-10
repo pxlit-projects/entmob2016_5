@@ -76,6 +76,7 @@ namespace TTT_UWP.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
         public ObservableCollection<Observation> Observations
         {
             get
