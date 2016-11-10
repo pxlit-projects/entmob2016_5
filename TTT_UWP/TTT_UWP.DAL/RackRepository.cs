@@ -48,7 +48,12 @@ namespace TTT_UWP.DAL
 
         public void LoadRacks()
         {
-
+            racks = new List<Rack>
+            {
+                new Rack { RackID = 1, RegionID = 1, Products = null},
+                new Rack { RackID = 2, RegionID = 1, Products = null},
+                new Rack { RackID = 3, RegionID = 1, Products = null},
+            };
         }
     }
 }

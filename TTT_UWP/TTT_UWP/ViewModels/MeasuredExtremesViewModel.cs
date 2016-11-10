@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TTT_UWP.DAL;
 using TTT_UWP.Model;
+using TTT_UWP.Model.Hulpklassen;
 using TTT_UWP.Services;
 using TTT_UWP.Utility;
 
@@ -31,6 +32,7 @@ namespace TTT_UWP.ViewModels
 
         //Databinding 
         private ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
+        public ObservableCollection<MeasuredExtreme> measuredExtremes = new ObservableCollection<MeasuredExtreme>();
         private Warehouse selectedWarehouse = new Warehouse();
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -76,6 +78,23 @@ namespace TTT_UWP.ViewModels
         {
             //Ophalen waar ge-recorde temp/hum/pres groter is dan maximum van product of kleiner is dan minimum van product
             List<Observation> Observations = observationDataService.GetObservations();
+            List<Region> Regions = regionDataService.GetRegions();
+
+            foreach (Observation o in Observations)
+            {
+                double maxTemp = 0;
+                foreach (Region r in Regions)
+                {
+                    if(r.RegionID == o.RegionID)
+                    {
+                        maxTemp = regionDataService.GetMaxTempPerRegion(r.RegionID);
+                    }
+                }
+                if(o.Temperature > maxTemp)
+                {
+                    measuredExtremes.Add(new MeasuredExtreme { RegionID = o.RegionID, MaximumTemperature = maxTemp });
+                }
+            }
         }
 
         public ObservableCollection<Observation> Observations
@@ -87,6 +106,18 @@ namespace TTT_UWP.ViewModels
             set
             {
                 observations = value;
+            }
+        }
+
+        public ObservableCollection<MeasuredExtreme> MeasuredExtremes
+        {
+            get
+            {
+                return measuredExtremes;
+            }
+            set
+            {
+                measuredExtremes = value;
             }
         }
     }
