@@ -25,7 +25,7 @@ namespace TTT_UWP.ViewModels
         private static IProductDataService productDataService = new ProductDataService(productRepository);
 
         //Databinding
-        private Product selectedProduct = new Product();
+        private Product selectedProduct;
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Commands
@@ -34,10 +34,10 @@ namespace TTT_UWP.ViewModels
 
         public EditProductPageViewModel(INavigationService navigationService)
         {
+            LoadCommands();
 
             Messenger.Default.Register<Product>(this, OnProductReceived);
 
-            LoadCommands();
             this.navigationService = navigationService;
         }
 
@@ -67,6 +67,27 @@ namespace TTT_UWP.ViewModels
         private void OnGoBack(object o)
         {
             navigationService.GoBack();
+        }
+
+        public Product SelectedProduct
+        {
+            get
+            {
+                return selectedProduct;
+            }
+            set
+            {
+                selectedProduct = value;
+                RaisePropertyChanged("SelectedProduct");
+            }
+        }
+
+        private void RaisePropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

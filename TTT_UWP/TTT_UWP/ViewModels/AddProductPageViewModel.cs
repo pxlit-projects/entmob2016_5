@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -25,6 +26,7 @@ namespace TTT_UWP.ViewModels
 
         //Databinding
         public event PropertyChangedEventHandler PropertyChanged;
+        private Product productToAdd;
 
         //Commands
         public ICommand AddCommand { get; set; }
@@ -44,10 +46,27 @@ namespace TTT_UWP.ViewModels
 
         private void OnAddProduct(object obj)
         {
-            Product p = new Product { ProductID = 1, ProductName = "Sla", RackID = 1, MaximumAirPressure = 10, MaximumHumidity = 10, MaximumTemperature = 10, MinimumAirPressure = 10, MinimumHumidity = 10, MinimumTemperature = 10 };
-            productDataService.AddProduct(p);
-            Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
-            navigationService.GoBack();
+            Boolean somethingNull = false;
+
+            foreach (PropertyInfo pi in productToAdd.GetType().GetProperties())
+            {
+                if (pi.PropertyType == typeof(string))
+                {
+                    string value = (string)pi.GetValue(productToAdd);
+                    if (string.IsNullOrEmpty(value))
+                    {
+                        somethingNull = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!somethingNull)
+            {
+                productDataService.AddProduct(productToAdd);
+                Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
+                navigationService.GoBack();
+            }
         }
 
         private bool CanRedirect(object obj)
@@ -58,6 +77,27 @@ namespace TTT_UWP.ViewModels
         private void OnGoBack(object o)
         {
             navigationService.GoBack();
+        }
+
+        private void RaisePropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public Product ProductToAdd
+        {
+            get
+            {
+                return productToAdd;
+            }
+            set
+            {
+                productToAdd = value;
+                RaisePropertyChanged("ProductToAdd");
+            }
         }
     }
 }
