@@ -14,7 +14,7 @@
 
         <RelativePanel Margin="50,50,50,50">
             <TextBlock Name="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="true" FontSize="30">Measured Extremes</TextBlock>
-            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.Below="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxHeight="150" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+            <Grid Name="ListViewGrid" HorizontalAlignment="Stretch" RelativePanel.Below="HeaderTextBox" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition />
@@ -26,14 +26,12 @@
                         <ColumnDefinition  />
                         <ColumnDefinition  />
                         <ColumnDefinition  />
-                        <ColumnDefinition  />
-                        <ColumnDefinition  />
-                        <ColumnDefinition  />
-                        <ColumnDefinition  />
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="RegionID"/>
-                    <TextBlock Grid.Column="1" Text="MaximumTemperature"/>
+                    <TextBlock Grid.Column="1" Text="Max Temperature"/>
                     <TextBlock Grid.Column="2" Text="Temperature"/>
+                    <TextBlock Grid.Column="3" Text="Air Pressure"/>
+                    <TextBlock Grid.Column="4" Text="Humidity"/>
                 </Grid>
                 <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding MeasuredExtremes}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
@@ -45,14 +43,12 @@
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
                                     <ColumnDefinition  />
-                                    <ColumnDefinition  />
-                                    <ColumnDefinition  />
-                                    <ColumnDefinition  />
-                                    <ColumnDefinition  />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding RegionID}"/>
                                 <TextBlock Grid.Column="1" Text="{Binding MaximumTemperature}"/>
                                 <TextBlock Grid.Column="2" Text="{Binding Temperature}"/>
+                                <TextBlock Grid.Column="3" Text="{Binding Pressure}"/>
+                                <TextBlock Grid.Column="4" Text="{Binding Humidity}"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

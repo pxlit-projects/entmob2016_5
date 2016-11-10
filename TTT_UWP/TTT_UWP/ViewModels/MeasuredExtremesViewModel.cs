@@ -92,7 +92,8 @@ namespace TTT_UWP.ViewModels
                 }
                 if(o.Temperature > maxTemp)
                 {
-                    measuredExtremes.Add(new MeasuredExtreme { RegionID = o.RegionID, MaximumTemperature = maxTemp });
+                    measuredExtremes.Add(new MeasuredExtreme { RegionID = o.RegionID, MaximumTemperature = maxTemp, Temperature =  o.Temperature,
+                                                                Humidity = o.Humidity, Pressure = o.AirPressure});
                 }
             }
         }

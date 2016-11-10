@@ -58,7 +58,7 @@ namespace TTT_UWP.DAL
             IProductRepository repository = new ProductRepository();
 
             List<Product> products = repository.GetProducts();
-            double lowestMaxTemp = 0;
+            double lowestMaxTemp = 99;
 
             foreach (Product p in products)
             {
