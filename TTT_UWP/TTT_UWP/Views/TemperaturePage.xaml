@@ -13,10 +13,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <CommandBar Background="Transparent" Height="35">
-            <AppBarButton>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                    <ComboBox x:Name="cmbSelectRegion" ItemsSource="{Binding Regions}" SelectedItem="{Binding SelectedRegion, Mode=TwoWay}" DisplayMemberPath="RegionID">
+        <CommandBar Background="Transparent">
+            <AppBarButton >
+                <StackPanel>
+                    <ComboBox x:Name="cmbSelectRegion" VerticalAlignment="Stretch" Height="30" ItemsSource="{Binding Regions}" SelectedItem="{Binding SelectedRegion, Mode=TwoWay}" DisplayMemberPath="RegionID">
                         <interactivity:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="SelectionChanged">
                                 <core:InvokeCommandAction Command="{Binding RegionSelectCommand}"/>

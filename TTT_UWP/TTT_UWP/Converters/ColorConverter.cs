@@ -17,7 +17,7 @@ namespace TTT_UWP.Converters
                 return new SolidColorBrush(Colors.Black);
 
             var dValue = System.Convert.ToDecimal(value);
-            if (dValue > 25)
+            if (dValue > 20)
                 return new SolidColorBrush(Colors.Red);
             else
                 return new SolidColorBrush(Colors.Black);

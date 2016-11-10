@@ -6,10 +6,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:interact="using:Microsoft.Xaml.Interactivity"
+    xmlns:interactcore="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <CommandBar Background="Transparent" Height="35">
+        <CommandBar Background="Transparent">
+            <AppBarButton >
+                <StackPanel>
+                    <ComboBox x:Name="cmbSelectRegion" VerticalAlignment="Stretch" Height="30" ItemsSource="{Binding Regions}" SelectedItem="{Binding SelectedRegion, Mode=TwoWay}" DisplayMemberPath="RegionID">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="SelectionChanged">
+                                <core:InvokeCommandAction Command="{Binding RegionSelectCommand}"/>
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </ComboBox>
+                </StackPanel>
+            </AppBarButton>
             <AppBarButton Icon="Back" Command="{Binding GoBackCommand}"></AppBarButton>
         </CommandBar>
         <RelativePanel Margin="50,50,50,50">

@@ -163,6 +163,7 @@
     <Content Include="Assets\measuredextremes.jpg" />
     <Content Include="Assets\products.png" />
     <Content Include="Assets\TTT.png" />
+    <Content Include="Assets\TTT.scale-100.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

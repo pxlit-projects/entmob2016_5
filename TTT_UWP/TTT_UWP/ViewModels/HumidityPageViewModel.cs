@@ -18,21 +18,50 @@ namespace TTT_UWP.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //Vars
+        private Region selectedRegion = new Region();
+
         //Redirect
         private INavigationService navigationService;
         public ICommand RedirectCommand { get; set; }
         public ICommand GoBackCommand { get; set; }
 
-        public IObservationRepository observationRepository;
+        //Dataservices
+        private static IObservationRepository observationRepository = new ObservationRepository();
+        private static IObservationDataService observationDataService = new ObservationDataService(observationRepository);
+
+        private static IRegionRepository regionRepository = new RegionRepository();
+        private static IRegionDataService regionDataservice = new RegionDataService(regionRepository);
+
         public ObservableCollection<Observation> observations = new ObservableCollection<Observation>();
+        public ObservableCollection<Region> regions = new ObservableCollection<Region>();
+        public ICommand RegionSelectCommand { get; set; }
 
         public HumidityPageViewModel(INavigationService navigationService)
         {
             observationRepository = new ObservationRepository();
-            AddDummyData();
+            LoadData();
+            LoadCommands();
+            this.navigationService = navigationService;
+        }
+
+        private void OnRegionSelect(object o)
+        {
+            observations.Clear();
+            foreach (Observation item in observationDataService.GetObservations())
+            {
+                if (item.RegionID == selectedRegion.RegionID)
+                {
+                    observations.Add(item);
+                }
+            }
+        }
+
+        private void LoadCommands()
+        {
             RedirectCommand = new CustomCommand(OnRedirect, CanRedirect);
             GoBackCommand = new CustomCommand(OnGoBack, CanRedirect);
-            this.navigationService = navigationService;
+            RegionSelectCommand = new CustomCommand(OnRegionSelect, CanRedirect);
         }
 
         private void OnRedirect(object o)
@@ -51,11 +80,18 @@ namespace TTT_UWP.ViewModels
             return true;
         }
 
-        public void AddDummyData()
+        public void LoadData()
         {
-            foreach (Observation item in observationRepository.GetObservations())
+            foreach (Observation item in observationDataService.GetObservations())
             {
-                observations.Add(item);
+                if (item.RegionID == 1)
+                {
+                    observations.Add(item);
+                }
+            }
+            foreach (Region region in regionDataservice.GetRegions())
+            {
+                regions.Add(region);
             }
         }
 
@@ -69,6 +105,32 @@ namespace TTT_UWP.ViewModels
             {
                 observations = value;
                 RaisePropertyChanged("Observations");
+            }
+        }
+
+        public ObservableCollection<Region> Regions
+        {
+            get
+            {
+                return regions;
+            }
+            set
+            {
+                regions = value;
+                RaisePropertyChanged("Regions");
+            }
+        }
+
+        public Region SelectedRegion
+        {
+            get
+            {
+                return selectedRegion;
+            }
+            set
+            {
+                selectedRegion = value;
+                RaisePropertyChanged("SelectedRegion");
             }
         }
 

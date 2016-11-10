@@ -39,7 +39,6 @@ namespace TTT_UWP.ViewModels
             LoadCommands();
             this.navigationService = navigationService;
         }
-
         /*
          * Redirect via navigationService, meegegeven parameters zitten in object o
          * Parameter is een string die zegt naar welke pagina verwezen moet worden,
