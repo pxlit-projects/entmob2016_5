@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TTT_UWP.DAL;
 using TTT_UWP.Model;
 
 namespace TTT_UWP.Services
@@ -10,9 +11,9 @@ namespace TTT_UWP.Services
     public class RegionDataService : IRegionDataService
     {
 
-        IRegionDataService repository;
+        IRegionRepository repository;
 
-        public RegionDataService(IRegionDataService repository)
+        public RegionDataService(IRegionRepository repository)
         {
             this.repository = repository;
         }
