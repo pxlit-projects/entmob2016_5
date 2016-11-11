@@ -18,7 +18,7 @@ namespace TTT_UWP.ViewModels
     public class TemperaturePageViewModel : INotifyPropertyChanged
     {
         //Vars
-        private Region selectedRegion = new Region();
+        private Region selectedRegion;
 
         //Services
         private INavigationService navigationService;
@@ -127,6 +127,10 @@ namespace TTT_UWP.ViewModels
         {
             get
             {
+                if(selectedRegion == null)
+                {
+                    selectedRegion = regionDataservice.GetRegionById(1);
+                }
                 return selectedRegion;
             }
             set
