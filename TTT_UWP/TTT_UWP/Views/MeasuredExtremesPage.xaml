@@ -46,9 +46,9 @@
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding RegionID}"/>
                                 <TextBlock Grid.Column="1" Text="{Binding MaximumTemperature}"/>
-                                <TextBlock Grid.Column="2" Text="{Binding Temperature}" Foreground="{Binding Temperature, Converter={StaticResource localColorConverter}}"/>
-                                <TextBlock Grid.Column="3" Text="{Binding Pressure}"/>
-                                <TextBlock Grid.Column="4" Text="{Binding Humidity}"/>
+                                <TextBlock Grid.Column="2" Text="{Binding Temperature, Converter={StaticResource localTemperatureConverter}}" Foreground="{Binding Temperature, Converter={StaticResource localColorConverter}}"/>
+                                <TextBlock Grid.Column="3" Text="{Binding Pressure, Converter={StaticResource localAirPressureConverter}}" Foreground="{Binding Temperature, Converter={StaticResource localColorConverter}}"/>
+                                <TextBlock Grid.Column="4" Text="{Binding Humidity, Converter={StaticResource localHumidityConverter}}" Foreground="{Binding Temperature, Converter={StaticResource localColorConverter}}"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

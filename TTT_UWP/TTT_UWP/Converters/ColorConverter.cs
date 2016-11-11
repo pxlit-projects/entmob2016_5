@@ -13,11 +13,8 @@ namespace TTT_UWP.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value == null || !(value is decimal))
-                return new SolidColorBrush(Colors.Black);
-
-            var dValue = System.Convert.ToDecimal(value);
-            if (dValue > 20)
+            double dValue = System.Convert.ToDouble(value);
+            if (dValue > 20.0)
                 return new SolidColorBrush(Colors.Red);
             else
                 return new SolidColorBrush(Colors.Black);
