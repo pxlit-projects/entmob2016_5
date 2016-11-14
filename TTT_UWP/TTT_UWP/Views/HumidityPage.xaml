@@ -16,7 +16,7 @@
         <CommandBar Background="Transparent">
             <AppBarButton >
                 <StackPanel>
-                    <ComboBox x:Name="cmbSelectRegion" VerticalAlignment="Stretch" Height="30" ItemsSource="{Binding Regions}" SelectedItem="{Binding SelectedRegion, Mode=TwoWay}" DisplayMemberPath="RegionID">
+                    <ComboBox x:Name="cmbSelectRegion" VerticalAlignment="Stretch" Padding="30,1,1,1" FontSize="12" Height="20" ItemsSource="{Binding Regions}" SelectedItem="{Binding SelectedRegion, Mode=TwoWay}" DisplayMemberPath="RegionID">
                         <interactivity:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="SelectionChanged">
                                 <core:InvokeCommandAction Command="{Binding RegionSelectCommand}"/>
