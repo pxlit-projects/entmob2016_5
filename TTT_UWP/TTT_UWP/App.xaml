@@ -10,7 +10,9 @@
             <converters:TemperatureConverter x:Key="localTemperatureConverter"/>
             <converters:HumidityConverter x:Key="localHumidityConverter"/>
             <converters:AirPressureConverter x:Key="localAirPressureConverter"/>
-            <converters:ColorConverter x:Key="localColorConverter"/>
+            <converters:ColorTemperatureConverter x:Key="localColorTemperatureConverter"/>
+            <converters:ColorHumidityConverter x:Key="localColorHumidityConverter"/>
+            <converters:ColorAirPressureConverter x:Key="localColorAirPressureConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

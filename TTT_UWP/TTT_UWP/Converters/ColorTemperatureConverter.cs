@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Media;
 
 namespace TTT_UWP.Converters
 {
-    class ColorConverter : IValueConverter
+    class ColorTemperatureConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {

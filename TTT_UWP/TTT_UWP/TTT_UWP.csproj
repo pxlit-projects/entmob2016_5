@@ -99,7 +99,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\AirPressureConverter.cs" />
-    <Compile Include="Converters\ColorConverter.cs" />
+    <Compile Include="Converters\ColorAirPressureConverter.cs" />
+    <Compile Include="Converters\ColorHumidityConverter.cs" />
+    <Compile Include="Converters\ColorTemperatureConverter.cs" />
     <Compile Include="Converters\HumidityConverter.cs" />
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
