@@ -72,7 +72,8 @@ namespace TTT_UWP.ViewModels
         private void OnChangeProduct(object o)
         {
             //TODO: redirect naar warehouse db enzo
-            Debug.WriteLine("Product: " + selectedProduct.ProductName);
+            //Debug.WriteLine("Product: " + selectedProduct.ProductName);
+            
         }
         /*
          * Redirect via navigationService, meegegeven parameters zitten in object o

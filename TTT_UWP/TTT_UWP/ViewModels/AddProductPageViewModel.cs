@@ -51,55 +51,9 @@ namespace TTT_UWP.ViewModels
 
         private void OnAddProduct(object obj)
         {
-            Product p = productToAdd;
-            /*
-            PropertyInfo productProperty = obj.GetType().GetProperty("Product");
-            Product product = (Product)productProperty.GetValue(obj);
-
-            product.ProductName = "foo";
-
-            
-            var objType = this.GetType();
-            List<PropertyInfo> properties = new List<PropertyInfo>();
-
-            properties.AddRange(objType.GetProperties());
-
-            foreach (PropertyInfo property in properties)
-            {
-                if (property.CanRead)
-                {
-                    if(property.Name == "ProductToAdd")
-                    {
-                        Object name = property.GetValue("txtName");
-                    }
-                }
-            }
-
-            
-            
-            Boolean somethingNull = false;
-            Object o2 = obj;
-
-            foreach (PropertyInfo pi in productToAdd.GetType().GetProperties())
-            {
-                if (pi.PropertyType == typeof(string))
-                {
-                    string value = (string)pi.GetValue(productToAdd);
-                    if (string.IsNullOrEmpty(value))
-                    {
-                        somethingNull = true;
-                        break;
-                    }
-                }
-            }
-            
-            if (!somethingNull)
-            {
-                productDataService.AddProduct(productToAdd);
-                Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
-                navigationService.GoBack();
-            }
-            */
+            //Product p = productToAdd;
+            productDataService.AddProduct(productToAdd);
+            navigationService.GoBack();
         }
 
         private bool CanRedirect(object obj)
