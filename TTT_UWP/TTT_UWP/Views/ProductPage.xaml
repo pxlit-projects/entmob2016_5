@@ -46,7 +46,7 @@
                     <TextBlock Grid.Column="7" Text="Min Pressure"/>
                     <TextBlock Grid.Column="8" Text="Max Pressure"/>
                 </Grid>
-                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Products}" HorizontalAlignment="Stretch">
+                <ListView x:Name="listView" Grid.Row="1" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" HorizontalAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="{Binding ElementName=listViewGrid}" >
