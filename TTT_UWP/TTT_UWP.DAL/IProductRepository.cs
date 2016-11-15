@@ -16,5 +16,6 @@ namespace TTT_UWP.DAL
         void UpdateProduct(Product product);
         void AddProduct(Product product);
         int GetRegionIDOfProduct(Product product);
+        int GetMaxProductId();
     }
 }

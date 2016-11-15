@@ -33,6 +33,11 @@ namespace TTT_UWP.Services
             return repository.GetProducts();
         }
 
+        public int GetMaxProductId()
+        {
+            return repository.GetMaxProductId();
+        }
+
         public void UpdateProduct(Product product)
         {
             repository.UpdateProduct(product);

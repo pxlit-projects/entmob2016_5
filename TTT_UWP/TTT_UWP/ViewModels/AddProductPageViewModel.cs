@@ -51,7 +51,7 @@ namespace TTT_UWP.ViewModels
 
         private void OnAddProduct(object obj)
         {
-            //Product p = productToAdd;
+            productToAdd.ProductID = productDataService.GetMaxProductId() + 1;
             productDataService.AddProduct(productToAdd);
             navigationService.GoBack();
         }

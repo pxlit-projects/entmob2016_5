@@ -14,5 +14,6 @@ namespace TTT_UWP.Services
         List<Product> GetProducts();
         void UpdateProduct(Product product);
         void AddProduct(Product product);
+        int GetMaxProductId();
     }
 }

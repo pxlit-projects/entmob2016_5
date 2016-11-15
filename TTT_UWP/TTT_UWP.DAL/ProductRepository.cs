@@ -40,6 +40,11 @@ namespace TTT_UWP.DAL
             return products;
         }
 
+        public int GetMaxProductId()
+        {
+            return products.OrderByDescending(c => c.ProductID).FirstOrDefault().ProductID;
+        }
+
         public void UpdateProduct(Product product)
         {
             Product productToUpdate = products.Where(c => c.ProductID == product.ProductID).FirstOrDefault();
