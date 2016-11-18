@@ -59,5 +59,10 @@ namespace TTT_UWP.Tests.Mocks
         {
             throw new NotImplementedException();
         }
+
+        public int GetMaxProductId()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -71,10 +71,9 @@ namespace TTT_UWP.ViewModels
         //Commands
         private void OnChangeProduct(object o)
         {
-            //TODO: redirect naar warehouse db enzo
             //Debug.WriteLine("Product: " + selectedProduct.ProductName);
-            
         }
+
         /*
          * Redirect via navigationService, meegegeven parameters zitten in object o
          * Parameter is een string die zegt naar welke pagina verwezen moet worden,
@@ -102,6 +101,7 @@ namespace TTT_UWP.ViewModels
         private void OnDeleteCommand(object obj)
         {
             productRepository.DeleteProduct(selectedProduct);
+            products.Remove(selectedProduct);
         }
 
         private bool CanEditOrDeleteProduct(object obj)

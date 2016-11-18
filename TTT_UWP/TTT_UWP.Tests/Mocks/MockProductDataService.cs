@@ -29,6 +29,11 @@ namespace TTT_UWP.Tests.Mocks
             repository.DeleteProduct(product);
         }
 
+        public int GetMaxProductId()
+        {
+            throw new NotImplementedException();
+        }
+
         public Product GetProductById(int id)
         {
             return repository.GetProductById(id);

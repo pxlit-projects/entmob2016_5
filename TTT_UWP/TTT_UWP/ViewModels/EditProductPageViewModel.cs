@@ -38,7 +38,11 @@ namespace TTT_UWP.ViewModels
         {
             LoadCommands();
             
-            Messenger.Default.Register<Product>(this, (action) => OnProductReceived(action));
+            //fout zit hier, komt niet eens in onproductreceived
+            Messenger.Default.Register<Product>(this, (product) =>
+            {
+                OnProductReceived(product);
+            });
 
             this.navigationService = navigationService;
         }
