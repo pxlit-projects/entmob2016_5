@@ -32,8 +32,7 @@ namespace TTT_UWP.ViewModels
         //Commands
         public ICommand AddCommand { get; set; }
         public ICommand CancelCommand { get; set; }
-
-        //Bullshit mvvm shit nest fuck
+                
         private string productName;
         private string productMaxTemperature, productMinTemperature, productMaxHumidity, productMinHumidity, productMaxAirPressure, productMinAirPressure;
 

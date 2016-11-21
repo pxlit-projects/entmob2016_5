@@ -38,7 +38,6 @@ namespace TTT_UWP.ViewModels
         {
             LoadCommands();
             
-            //fout zit hier, komt niet eens in onproductreceived
             Messenger.Default.Register<Product>(this, (product) =>
             {
                 OnProductReceived(product);

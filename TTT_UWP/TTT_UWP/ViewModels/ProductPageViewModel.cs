@@ -81,9 +81,11 @@ namespace TTT_UWP.ViewModels
         */
         private void OnRedirectCommand(object o)
         {
+            EditProductPageViewModel eppvm = new EditProductPageViewModel(new NavigationService());
+
             if (o.ToString().Equals("EditProductPage"))
                 Messenger.Default.Send<Product>(selectedProduct);
-                
+
             navigationService.Navigate(TypeHelper.GetTypeByString(o.ToString(), this.GetType().GetTypeInfo().Assembly));
         }
 
