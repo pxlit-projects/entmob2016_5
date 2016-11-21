@@ -5,7 +5,7 @@ import be.ttt.api.entities.Observation;
 import java.util.List;
 
 public interface ObservationService{
-	public List<Observation> getAll();
+	public List<Observation> getAll() throws Exception;
 	public Observation getById(int id);
 	public List<Observation> getByRegionId(int id);
 	public Observation getLastByRegionId(int id);
