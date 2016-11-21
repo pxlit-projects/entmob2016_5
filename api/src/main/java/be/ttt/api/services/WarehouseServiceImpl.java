@@ -3,10 +3,12 @@ package be.ttt.api.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import be.ttt.api.entities.Warehouse;
 import be.ttt.api.repositories.WarehouseRepository;
 
+@Service
 public class WarehouseServiceImpl implements WarehouseService {
 
 	@Autowired

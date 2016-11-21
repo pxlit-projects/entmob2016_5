@@ -3,16 +3,18 @@ package be.ttt.api.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import be.ttt.api.entities.Observation;
 import be.ttt.api.repositories.ObservationRepository;
 
+@Service
 public class ObservationServiceImpl implements ObservationService {
 
 	@Autowired
 	private ObservationRepository observationRepository;
-
-	public List<Observation> getAll() {
+	
+	public List<Observation> getAll(){
 		return (List<Observation>) observationRepository.findAll();
 	}
 

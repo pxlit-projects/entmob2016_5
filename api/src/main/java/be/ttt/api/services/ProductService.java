@@ -5,7 +5,7 @@ import be.ttt.api.entities.Product;
 
 import java.util.List;
 
-public interface ProductService {
+public interface ProductService{
 	public List<Product> getAll();
 	public Product getById(int id);
 	public List<Product> getByRackId(int id);

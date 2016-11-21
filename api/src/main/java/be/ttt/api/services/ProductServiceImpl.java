@@ -3,11 +3,13 @@ package be.ttt.api.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import be.ttt.api.entities.Observation;
 import be.ttt.api.entities.Product;
 import be.ttt.api.repositories.ProductRepository;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired

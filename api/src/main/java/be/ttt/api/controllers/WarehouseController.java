@@ -6,6 +6,7 @@ import be.ttt.api.services.WarehouseService;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,46 +14,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class WarehouseController implements ICrudController<Warehouse> {
+@Secured({"ROLE_USER"})
+public class WarehouseController {
 	@Autowired
 	private WarehouseService warehouseServiceImpl;
-	
-	@RequestMapping(value="/warehouses", method=RequestMethod.GET)
-	public List<Warehouse> getAll() {
+
+	@RequestMapping(value = "/warehouses", method = RequestMethod.GET)
+	public List<Warehouse> getAll(){
 		return warehouseServiceImpl.getAll();
 	}
 
-	@RequestMapping(value="/warehouse/{id}", method=RequestMethod.GET)
+	@RequestMapping(value = "/warehouse/{id}", method = RequestMethod.GET)
 	public Warehouse getById(@PathVariable int id) {
 		return warehouseServiceImpl.getById(id);
 	}
-	
-//	@RequestMapping(value = "/warehouse/{id}/{property}", method = RequestMethod.GET)
-//	public Object getPropertyById(@PathVariable int id, @PathVariable String property) {
-//		Warehouse selected = warehouseServiceImpl.getById(id);
-//		switch (property) {
-//		case "id":
-//			return selected.getId();
-//		case "name":
-//			return selected.getName();
-//		case "regions":
-//			return selected.getRegions();
-//		default:
-//			return "Property niet gevonden";
-//		}
-//	} //Kan gebruikt worden voor proprties op te vragen van een object
 
-	@RequestMapping(value="/warehouses", method=RequestMethod.POST)
+	@RequestMapping(value = "/warehouses", method = RequestMethod.POST)
 	public Warehouse add(@RequestBody Warehouse input) {
 		return warehouseServiceImpl.addWarehouse(input);
 	}
 
-	@RequestMapping(value="/warehouses", method=RequestMethod.PUT)
+	@RequestMapping(value = "/warehouses", method = RequestMethod.PUT)
 	public Warehouse update(@RequestBody Warehouse input) {
 		return warehouseServiceImpl.updateWarehouse(input);
 	}
 
-	@RequestMapping(value="/warehouse/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value = "/warehouse/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable int id) {
 		warehouseServiceImpl.deleteWarehouse(id);
 	}

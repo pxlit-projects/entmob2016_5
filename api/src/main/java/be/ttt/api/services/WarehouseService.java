@@ -3,7 +3,7 @@ package be.ttt.api.services;
 import be.ttt.api.entities.Warehouse;
 import java.util.List;
 
-public interface WarehouseService {
+public interface WarehouseService{
 	public List<Warehouse>getAll();
 	public Warehouse getById(int id);
 	public Warehouse addWarehouse(Warehouse warehouse);

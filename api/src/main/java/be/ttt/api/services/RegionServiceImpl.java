@@ -3,10 +3,12 @@ package be.ttt.api.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import be.ttt.api.entities.Region;
 import be.ttt.api.repositories.RegionRepository;
 
+@Service
 public class RegionServiceImpl implements RegionService {
 	
 	@Autowired

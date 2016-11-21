@@ -4,7 +4,7 @@ import be.ttt.api.entities.Observation;
 
 import java.util.List;
 
-public interface ObservationService {
+public interface ObservationService{
 	public List<Observation> getAll();
 	public Observation getById(int id);
 	public List<Observation> getByRegionId(int id);

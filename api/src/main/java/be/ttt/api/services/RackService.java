@@ -3,7 +3,7 @@ package be.ttt.api.services;
 import be.ttt.api.entities.Rack;
 import java.util.List;
 
-public interface RackService {
+public interface RackService{
 	public List<Rack>getAll();
 	public Rack getById(int id);
 	public List<Rack> getByRegionId(int id);

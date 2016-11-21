@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import be.ttt.api.entities.Observation;
 import be.ttt.api.entities.Product;
 
+@Repository
 public interface ProductRepository extends CrudRepository<Product, Integer> {
 	public List<Product> findAllByRackId(int id);
 	@Query("SELECT p FROM Product p WHERE "+

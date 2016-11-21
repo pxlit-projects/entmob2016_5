@@ -4,7 +4,7 @@ import be.ttt.api.entities.Region;
 
 import java.util.List;
 
-public interface RegionService {
+public interface RegionService{
 	public List<Region>getAll();
 	public Region getById(int id);
 	public List<Region>getByWarehouseId(int id);

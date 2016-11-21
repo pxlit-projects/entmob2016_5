@@ -6,6 +6,7 @@ import be.ttt.api.services.ObservationService;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ObservationController implements ICrudController<Observation> {
+@Secured({"ROLE_USER","ROLE_SENSOR"})
+public class ObservationController {
 	@Autowired
 	private ObservationService observationServiceImpl;
 
 	@RequestMapping(value = "/observations", method = RequestMethod.GET)
-	public List<Observation> getAll() {
+	public List<Observation> getAll() throws Exception{
 		return observationServiceImpl.getAll();
 	}
 
