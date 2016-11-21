@@ -26,6 +26,12 @@ namespace EntityFrameworkDummy
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            var products = modelBuilder.Entity<Product>();
+            products.ToTable("Products");
+            products.Property(g => g.ProductName).IsRequired();
+            products.Property(g => g.ProductName).HasMaxLength(50);
+            products.HasKey(g => g.ProductID);
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }

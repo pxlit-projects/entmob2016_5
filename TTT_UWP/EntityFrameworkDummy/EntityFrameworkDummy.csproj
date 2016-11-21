@@ -64,6 +64,14 @@
     <Compile Include="Migrations\201610141117289_second migration.Designer.cs">
       <DependentUpon>201610141117289_second migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611211114308_nieuwe.cs" />
+    <Compile Include="Migrations\201611211114308_nieuwe.Designer.cs">
+      <DependentUpon>201611211114308_nieuwe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611211148121_metFluentApi.cs" />
+    <Compile Include="Migrations\201611211148121_metFluentApi.Designer.cs">
+      <DependentUpon>201611211148121_metFluentApi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610141117289_second migration.resx">
       <DependentUpon>201610141117289_second migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611211114308_nieuwe.resx">
+      <DependentUpon>201611211114308_nieuwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611211148121_metFluentApi.resx">
+      <DependentUpon>201611211148121_metFluentApi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
