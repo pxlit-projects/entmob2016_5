@@ -26,7 +26,8 @@ namespace TTT_UWP.ViewModels
 
         //Databinding
         private Product selectedProduct = new Product();
-        private string productName, productMaxTemperature, productMinTemperature, productMaxHumidity, productMinHumidity, productMaxAirPressure, productMinAirPressure, productId;
+        private int productId;
+        private string productName, productMaxTemperature, productMinTemperature, productMaxHumidity, productMinHumidity, productMaxAirPressure, productMinAirPressure;
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Commands
@@ -50,7 +51,8 @@ namespace TTT_UWP.ViewModels
         {
             selectedProduct = product;
             ProductName = selectedProduct.ProductName;
-            ProductId = Convert.ToString(selectedProduct.ProductID);
+            //ProductId = selectedProduct.ProductID;
+            //selectedProduct.ProductID = product.ProductID;
 
             ProductMaxAirPressure = Convert.ToString(selectedProduct.MaximumAirPressure);
             ProductMinAirPressure = Convert.ToString(selectedProduct.MinimumAirPressure);
@@ -60,6 +62,7 @@ namespace TTT_UWP.ViewModels
 
             ProductMaxTemperature = Convert.ToString(selectedProduct.MaximumTemperature);
             ProductMinTemperature = Convert.ToString(selectedProduct.MinimumTemperature);
+
         }
 
         private void LoadCommands()
@@ -71,7 +74,7 @@ namespace TTT_UWP.ViewModels
 
         private void OnEditProduct(object obj)
         {
-            productDataService.UpdateProduct((Product)obj);
+            productDataService.UpdateProduct(selectedProduct);
             Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
             navigationService.GoBack();
         }
@@ -212,7 +215,7 @@ namespace TTT_UWP.ViewModels
             }
         }
 
-        public string ProductId
+        public int ProductId
         {
             get
             {
@@ -222,7 +225,7 @@ namespace TTT_UWP.ViewModels
             set
             {
                 productId = value;
-                selectedProduct.ProductID = Convert.ToInt32(value);
+                selectedProduct.ProductID = value;
                 RaisePropertyChanged("ProductId");
             }
         }
