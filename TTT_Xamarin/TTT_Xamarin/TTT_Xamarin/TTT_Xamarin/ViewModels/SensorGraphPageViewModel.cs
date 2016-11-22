@@ -13,7 +13,7 @@ namespace TTT_Xamarin.ViewModels
     public class SensorGraphPageViewModel : INotifyPropertyChanged
     {
         private Sensor sensor;
-        public string Name { get { return sensor.ImageId; } }
+        public string Name { get { return sensor?.ImageId; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,10 +22,11 @@ namespace TTT_Xamarin.ViewModels
         public SensorGraphPageViewModel()
         {
             History = new ObservableCollection<Sensor.dataPoint>();
-            MessagingCenter.Subscribe<DeviceScanPageViewModel, Sensor>(this, "open graph", (sender, arg) => {
+            MessagingCenter.Subscribe<DeviceDetailsPageViewModel, Sensor>(this, "open graph", (sender, arg) => {
 
                 this.sensor = arg;
                 sensor.NewDataDelegate += test;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
             });
         }
 
