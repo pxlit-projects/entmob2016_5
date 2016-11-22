@@ -19,19 +19,36 @@ public class Rack {
 	@OneToMany(mappedBy="rackId")
 	@JsonIgnore
 	private List<Product> products = new ArrayList<Product>();
-	
+
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public int getRegionId() {
 		return regionId;
 	}
-	public List<Product> getProducts(){
+
+	public void setRegionId(int regionId) {
+		this.regionId = regionId;
+	}
+
+	public List<Product> getProducts() {
 		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 }

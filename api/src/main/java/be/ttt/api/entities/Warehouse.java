@@ -17,14 +17,30 @@ public class Warehouse {
 	@OneToMany(mappedBy="warehouseId")
 	@JsonIgnore
 	private List<Region> regions = new ArrayList<Region>();
-	
+
 	public int getId() {
 		return id;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
-	public List<Region> getRegions(){
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Region> getRegions() {
 		return regions;
 	}
+
+	public void setRegions(List<Region> regions) {
+		this.regions = regions;
+	}
+	
+	
 }

@@ -13,10 +13,9 @@ public class ObservationServiceImpl implements ObservationService {
 
 	@Autowired
 	private ObservationRepository observationRepository;
-	
-	public List<Observation> getAll() throws Exception{
-		throw new Exception("AOP Test");
-		//return (List<Observation>) observationRepository.findAll();
+
+	public List<Observation> getAll() {
+		return (List<Observation>) observationRepository.findAll();
 	}
 
 	public Observation getById(int id) {
@@ -26,7 +25,7 @@ public class ObservationServiceImpl implements ObservationService {
 	public List<Observation> getByRegionId(int id) {
 		return observationRepository.findAllByRegionId(id);
 	}
-	
+
 	public Observation getLastByRegionId(int id) {
 		return observationRepository.findTopByRegionIdOrderByIdDesc(id);
 	}

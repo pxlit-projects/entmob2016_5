@@ -15,7 +15,7 @@ public class AfterThrowingAspects {
 	@Autowired
 	private ExceptionSender sender;
 	
-	@AfterThrowing(value="execution(* be.ttt.api.services.*.*(..))",throwing="ex")
+	@AfterThrowing(value="execution(* be.ttt.api.*.*.*(..))",throwing="ex")
 	public void afterThrowing(Exception ex){
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
@@ -23,4 +23,6 @@ public class AfterThrowingAspects {
 		String message = "[Exception] "+ LocalDateTime.now().toString() + " "+ sw.toString();
 		sender.sendException(message);	
 	}
+	
+	
 }

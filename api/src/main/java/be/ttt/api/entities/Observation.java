@@ -4,37 +4,42 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "observations")
-public class Observation{
+public class Observation {
 	@Id
-	@GeneratedValue( strategy=GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private int regionId;
-	
-	private double temp;	
+	private double temp;
 	private double humidity;
 	private double airPressure;
-	
-	public Observation(int regionId, double temp, double humidity, double airPressure) {
-		super();
-		this.regionId = regionId;
-		this.temp = temp;
-		this.humidity = humidity;
-		this.airPressure = airPressure;
-	}
-	public Observation(){}
 	public int getId() {
 		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getRegionId() {
+		return regionId;
+	}
+	public void setRegionId(int regionId) {
+		this.regionId = regionId;
 	}
 	public double getTemp() {
 		return temp;
 	}
+	public void setTemp(double temp) {
+		this.temp = temp;
+	}
 	public double getHumidity() {
 		return humidity;
+	}
+	public void setHumidity(double humidity) {
+		this.humidity = humidity;
 	}
 	public double getAirPressure() {
 		return airPressure;
 	}
-	public int getRegionId(){
-		return regionId;
+	public void setAirPressure(double airPressure) {
+		this.airPressure = airPressure;
 	}
 }
