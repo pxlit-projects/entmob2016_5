@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTT_UWP", "TTT_UWP\TTT_UWP.csproj", "{0389DE35-18E0-4A66-9DDE-56B500290968}"
 EndProject
@@ -28,6 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0389DE35-18E0-4A66-9DDE-56B500290968}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0389DE35-18E0-4A66-9DDE-56B500290968}.Debug|Any CPU.Build.0 = Debug|x86
+		{0389DE35-18E0-4A66-9DDE-56B500290968}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{0389DE35-18E0-4A66-9DDE-56B500290968}.Debug|ARM.ActiveCfg = Debug|ARM
 		{0389DE35-18E0-4A66-9DDE-56B500290968}.Debug|ARM.Build.0 = Debug|ARM
 		{0389DE35-18E0-4A66-9DDE-56B500290968}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -112,6 +114,8 @@ Global
 		{B80BC782-688D-4C5F-B041-D26E313CE841}.Release|x86.ActiveCfg = Release|Any CPU
 		{B80BC782-688D-4C5F-B041-D26E313CE841}.Release|x86.Build.0 = Release|Any CPU
 		{121C5E3A-00FA-49DF-892C-EBE83BCC2D12}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{121C5E3A-00FA-49DF-892C-EBE83BCC2D12}.Debug|Any CPU.Build.0 = Debug|x86
+		{121C5E3A-00FA-49DF-892C-EBE83BCC2D12}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{121C5E3A-00FA-49DF-892C-EBE83BCC2D12}.Debug|ARM.ActiveCfg = Debug|ARM
 		{121C5E3A-00FA-49DF-892C-EBE83BCC2D12}.Debug|ARM.Build.0 = Debug|ARM
 		{121C5E3A-00FA-49DF-892C-EBE83BCC2D12}.Debug|ARM.Deploy.0 = Debug|ARM
