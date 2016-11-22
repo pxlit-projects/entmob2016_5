@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TTT_Xamarin.Pages.Parts.AboutCell"  xmlns:src="ViewCell">
+  <StackLayout>
+    <Label FontSize="20" Text="{Binding Header}"/>
+    <Label FontSize="15" Text="{Binding Text}"/>
+  </StackLayout>
+</ViewCell>

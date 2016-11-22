@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TTT_Xamarin.Pages.Parts;assembly=TTT_Xamarin"
+             x:Class="TTT_Xamarin.Pages.AboutPage"
+             Title="About">
+
+  <StackLayout>
+    <ListView ItemsSource="{Binding Sections}"
+                HasUnevenRows="true">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <local:AboutCell Header="{Binding Header}" Text="{Binding Text}"></local:AboutCell>
+          
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

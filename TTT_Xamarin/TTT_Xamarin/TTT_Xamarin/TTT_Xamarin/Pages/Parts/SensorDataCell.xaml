@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TTT_Xamarin.Extensions;assembly=TTT_Xamarin"
+             x:Class="TTT_Xamarin.Pages.Parts.SensorDataCell"
+             xmlns:src="ViewCell">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <Image Source="{Binding ImageId,Converter={StaticResource ImageConverter}}" Grid.Column="0"></Image>
+    <Label IsVisible="{Binding Loading,Converter={StaticResource InverseBoolConverter}}" Text="{Binding Data}" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1"></Label>
+    <ActivityIndicator Color="Black" IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" Grid.Column="1"></ActivityIndicator>
+    <Label Text=">" FontSize="50" VerticalTextAlignment="Center" Grid.Column="2"></Label>
+  </Grid>
+</ViewCell>

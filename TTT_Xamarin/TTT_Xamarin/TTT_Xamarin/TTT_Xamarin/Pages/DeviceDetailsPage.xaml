@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TTT_Xamarin.Pages.Parts;assembly=TTT_Xamarin"
+             x:Class="TTT_Xamarin.Pages.DeviceDetailsPage"
+             Title="Device Details">
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text="{Binding Name,Converter={StaticResource ConnectionNameConverter}}"></Label>
+      <ActivityIndicator Color="Black" IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" Grid.Column="1"></ActivityIndicator>
+      <local:ListView ItemsSource="{Binding Sensors}"
+                  ItemClickCommand="{Binding Select}"
+              HasUnevenRows="true">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <local:SensorDataCell Data="{Binding Data}" ImageId="{Binding ImageId}"></local:SensorDataCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </local:ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

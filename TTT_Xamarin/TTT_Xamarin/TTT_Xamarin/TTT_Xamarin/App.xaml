@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TTT_Xamarin.App" xmlns:local="clr-namespace:TTT_Xamarin.Converters;assembly=TTT_Xamarin" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+  <Application.Resources>
+    <ResourceDictionary>
+      <local:ImageConverter x:Key="ImageConverter"></local:ImageConverter>
+      <local:ConnectionNameConverter x:Key="ConnectionNameConverter"></local:ConnectionNameConverter>
+      <local:InverseBoolConverter x:Key="InverseBoolConverter"></local:InverseBoolConverter>
+      </ResourceDictionary>
+  </Application.Resources>
+</Application>
